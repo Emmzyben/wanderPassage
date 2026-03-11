@@ -6,31 +6,25 @@ const achievementData = [
     {
         id: 1,
         icon: '/img/achievement-icon/01.svg',
-        count: 6561,
-        description: 'Satisfied Clients',
+        count: 2500,
+        description: 'Successful Visas',
         delay: '.3',
     },
     {
         id: 2,
         icon: '/img/achievement-icon/02.svg',
-        count: 600,
-        description: 'Finished Projects',
+        count: 650,
+        description: 'Partner Institutions',
         delay: '.5',
     },
     {
         id: 3,
         icon: '/img/achievement-icon/03.svg',
-        count: 250,
-        description: 'Skilled Experts',
+        count: 45,
+        description: 'Global Destinations',
         delay: '.7',
     },
-    {
-        id: 4,
-        icon: '/img/achievement-icon/04.svg',
-        count: 590,
-        description: 'Media Posts',
-        delay: '.9',
-    },
+
 ];
 
 
@@ -44,8 +38,8 @@ const AchievementTwo = ({ achievementWrapperClass, className }: { achievementWra
             <div className="container">
                 <div className={`achievement-wrapper ${achievementWrapperClass}`}>
                     <SectionTitle className="mb-0">
-                        <SectionTitle.SubTitle className="text-white">achievement</SectionTitle.SubTitle>
-                        <SectionTitle.Title className="text-white">Powering the Future with the Renew</SectionTitle.Title>
+                        <SectionTitle.SubTitle className="text-white">Our Milestones</SectionTitle.SubTitle>
+                        <SectionTitle.Title className="text-white">Navigating Your Path to <br /> Global Excellence</SectionTitle.Title>
                     </SectionTitle>
                     <div className="counter-area" ref={ref}>
                         {achievementData.map((item) => (

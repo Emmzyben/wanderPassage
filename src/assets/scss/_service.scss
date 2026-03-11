@@ -24,6 +24,10 @@
     position: relative;
     z-index: 9;
 
+    @include breakpoint (max-sm) {
+        padding: 25px 20px;
+    }
+
     &::before {
         @include before;
         background-color: $theme-color;
@@ -318,13 +322,15 @@
     }
 
     .service-image {
+        height: 250px;
         img {
             @include imgw;
+            object-fit: cover;
         }
     }
 
     .service-content {
-        padding: 35px 30px;
+        padding: 25px 20px;
         position: relative;
         z-index: 9;
         display: flex;

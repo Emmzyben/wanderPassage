@@ -12,7 +12,7 @@ import {
 export const serviceThreeData: ServiceDataType[] = [
     {
         id: 1,
-        image: '/img/service/02.jpg',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop',
         icon: '',
         lucideIcon: UserCheck,
         title: 'Free Personal Counseling',
@@ -22,7 +22,9 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 2,
-        image: '/img/service/03.jpg',
+
+        image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=600&auto=format&fit=crop',
+
         icon: '',
         lucideIcon: GraduationCap,
         title: 'University & Course Selection',
@@ -32,7 +34,7 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 3,
-        image: '/img/service/04.jpg',
+        image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=600',
         icon: '',
         lucideIcon: FileText,
         title: 'University Application',
@@ -42,7 +44,7 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 4,
-        image: '/img/service/05.jpg',
+        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600',
         icon: '',
         lucideIcon: Gift,
         title: 'Guidance for Scholarship',
@@ -52,7 +54,7 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 5,
-        image: '/img/service/02.jpg',
+        image: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?q=80&w=600&auto=format&fit=crop',
         icon: '',
         lucideIcon: Landmark,
         title: 'Education Loan Assistance',
@@ -62,7 +64,7 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 6,
-        image: '/img/service/03.jpg',
+        image: 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=600&auto=format&fit=crop',
         icon: '',
         lucideIcon: CreditCard,
         title: 'Free Visa Application Assistance',
@@ -72,7 +74,7 @@ export const serviceThreeData: ServiceDataType[] = [
     },
     {
         id: 7,
-        image: '/img/service/04.jpg',
+        image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=600',
         icon: '',
         lucideIcon: Home,
         title: 'Accommodation Assistance',

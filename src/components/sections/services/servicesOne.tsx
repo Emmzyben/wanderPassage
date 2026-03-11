@@ -13,12 +13,12 @@ const ServicesOne = () => {
           <SectionTitle>
             <SectionTitle.SubTitle>Services We Offer</SectionTitle.SubTitle>
             <SectionTitle.Title>
-              Provide Comprehensive Ecological<br /> Service
+              Global Immigration & Visa<br /> Specialist Services
             </SectionTitle.Title>
           </SectionTitle>
           <div className="array-button">
-            <button className="array-prev"><i className="fa fa-arrow-right" /></button>
-            <button className="array-next"><i className="fa fa-arrow-left" /></button>
+            <button className="array-prev"><i className="fa-solid fa-arrow-left" /></button>
+            <button className="array-next"><i className="fa-solid fa-arrow-right" /></button>
           </div>
         </div>
         <div className="service-wrapper">
@@ -26,31 +26,17 @@ const ServicesOne = () => {
             spaceBetween={30}
             speed={1500}
             loop
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
             navigation={{
-              nextEl: ".array-prev",
-              prevEl: ".array-next",
+              nextEl: ".array-next",
+              prevEl: ".array-prev",
             }}
 
             breakpoints={{
-              1199: {
-                slidesPerView: 4,
-              },
-              991: {
-                slidesPerView: 2,
-              },
-              767: {
-                slidesPerView: 2,
-              },
-              575: {
-                slidesPerView: 2,
-              },
-              0: {
-                slidesPerView: 1,
-              },
+              1199: { slidesPerView: 4 },
+              991: { slidesPerView: 2 },
+              767: { slidesPerView: 2 },
+              575: { slidesPerView: 1 },
+              0: { slidesPerView: 1 },
             }}
             modules={[Navigation]}
           >
@@ -62,7 +48,7 @@ const ServicesOne = () => {
           </Swiper>
           <div className="service-text wow slideUp" data-delay=".4">
             <h6>
-              Solar Power System.  <Link to="/service">View Services </Link>
+              Start your visa assessment today. <Link to="/contact">Book Consultation</Link>
             </h6>
           </div>
         </div>

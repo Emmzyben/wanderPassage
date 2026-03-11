@@ -1,26 +1,27 @@
 .news-wrapper {
     padding: 0 75px;
 
-    @include breakpoint (max-xl){
+    @include breakpoint (max-xl) {
         padding: 0;
     }
 }
 
 .single-news-items {
     margin-top: 30px;
-    padding: 40px 20px; border: 1px solid $border-color;
+    padding: 40px 20px;
+    border: 1px solid $border-color;
     @include flex;
     gap: 30px;
 
-    @include breakpoint (max-xl4){
+    @include breakpoint (max-xl4) {
         flex-wrap: wrap;
     }
 
-    @include breakpoint (max-md){
+    @include breakpoint (max-md) {
         flex-wrap: initial;
     }
 
-    @include breakpoint (max-xs){
+    @include breakpoint (max-xs) {
         flex-wrap: wrap;
     }
 
@@ -36,7 +37,7 @@
             left: 25px;
             background-color: $white;
             padding: 7px 10px;
-            
+
             span {
                 color: $header-color;
                 font-weight: 600;
@@ -67,12 +68,18 @@
 
 .news-card-items {
     margin-top: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .news-image {
         position: relative;
+        flex-shrink: 0;
 
         img {
             @include imgw;
+            height: 250px;
+            object-fit: cover;
         }
 
         .post-date {
@@ -97,20 +104,23 @@
     }
 
     .news-content {
-        padding: 30px; 
+        padding: 20px;
         background-color: $white;
         box-shadow: $shadow;
         position: relative;
         z-index: 9;
         margin-right: 40px;
         margin-top: -40px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
 
         ul {
             @include flex;
             gap: 50px;
             margin-bottom: 15px;
 
-            @include breakpoint (max-xl){
+            @include breakpoint (max-xl) {
                 gap: 20px;
             }
 
@@ -138,7 +148,8 @@
     }
 
     &.style-2 {
-        padding-bottom: 50px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
 
         .news-image {
             position: relative;
@@ -153,11 +164,12 @@
 
         .news-content {
             margin: 0;
+            flex-grow: 1;
+        }
 
-            ul {
-                li {
-                    font-size: 16px;
-                }
+        ul {
+            li {
+                font-size: 16px;
             }
         }
     }
@@ -185,9 +197,9 @@
 .news-standard-wrapper {
     .news-standard-items {
         border: 1px solid $border-color;
-        padding: 25px;
+        padding: 20px;
 
-        &:not(:last-child){
+        &:not(:last-child) {
             margin-bottom: 20px;
         }
 
@@ -204,12 +216,12 @@
                 position: absolute;
                 top: 30px;
                 left: 30px;
-    
+
                 h3 {
                     font-weight: 700;
                     font-size: 24px;
                     color: $white;
-    
+
                     span {
                         font-weight: 400;
                         font-size: 16px;
@@ -228,27 +240,27 @@
                 @include flex;
                 gap: 50px;
                 margin-bottom: 15px;
-    
-                @include breakpoint (max-xl){
+
+                @include breakpoint (max-xl) {
                     gap: 20px;
                 }
-    
+
                 li {
                     font-size: 14px;
                     font-weight: 500;
-    
+
                     i {
                         color: $theme-color;
                         margin-right: 5px;
                     }
                 }
             }
-    
+
             h3 {
                 font-weight: bold;
                 margin-bottom: 15px;
                 font-size: 26px;
-    
+
                 a {
                     &:hover {
                         color: $theme-color;
@@ -288,7 +300,7 @@
             form {
                 width: 100%;
                 position: relative;
-        
+
                 input {
                     background-color: $white;
                     font-size: 15px;
@@ -297,7 +309,7 @@
                     border: none;
                     color: $text-color;
                 }
-        
+
                 button {
                     position: absolute;
                     right: 0;
@@ -305,11 +317,11 @@
                     width: 70px;
                     font-size: 18px;
                     height: 100%;
-                    background-color:$theme-color;
+                    background-color: $theme-color;
                     color: $white;
                     text-align: center;
                     transition: all .3s ease-in-out;
-                    
+
                     &:hover {
                         background-color: $header-color;
                     }
@@ -320,7 +332,7 @@
         .news-widget-categories {
             ul {
                 li {
-                    
+
                     @include flex;
                     justify-content: space-between;
                     padding: 20px;
@@ -337,7 +349,7 @@
                         color: $header-color;
                     }
 
-                    &:not(:last-child){
+                    &:not(:last-child) {
                         margin-bottom: 12px;
                     }
 
@@ -357,7 +369,7 @@
 
                     &.active {
                         background-color: $theme-color;
-                       
+
                         a {
                             color: $white;
                         }
@@ -375,7 +387,7 @@
                 @include flex;
                 gap: 20px;
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     margin-bottom: 20px;
                 }
 
@@ -390,6 +402,7 @@
                             }
                         }
                     }
+
                     h6 {
                         font-weight: 700;
 
@@ -417,9 +430,9 @@
                 @include transition;
 
                 &:last-child {
-                    margin-right: 0;            
+                    margin-right: 0;
                 }
-                
+
                 &:hover {
                     background-color: $theme-color;
                     color: $white;
@@ -435,39 +448,39 @@
             .post-featured-thumb {
                 height: 400px;
 
-                @include breakpoint (max-md){
+                @include breakpoint (max-md) {
                     height: 400px;
                 }
             }
 
             .post-content {
                 margin-top: 30px;
-    
+
                 .post-list {
                     gap: 30px;
                     margin-bottom: 20px;
                     border-bottom: 1px solid $border-color;
                     padding-bottom: 20px;
-        
+
                     li {
                         font-size: 14px;
                         font-weight: 500;
-        
+
                         i {
                             color: $theme-color;
                             margin-right: 5px;
                         }
                     }
                 }
-        
+
                 h3 {
                     margin-bottom: 20px;
                     font-size: 32px;
-        
-                    @include breakpoint (max-sm){
+
+                    @include breakpoint (max-sm) {
                         font-size: 24px;
                     }
-        
+
                     a {
                         &:hover {
                             color: $theme-color;
@@ -519,7 +532,7 @@
                     -webkit-transition: all 0.4s ease-in-out;
                     transition: all 0.4s ease-in-out;
 
-                    @include breakpoint (max-sm){
+                    @include breakpoint (max-sm) {
                         margin-bottom: 5px;
                     }
 
@@ -541,7 +554,7 @@
                     font-size: 18px;
                     color: $header-color;
 
-                    &:not(:last-child){
+                    &:not(:last-child) {
                         margin-right: 10px;
                     }
 
@@ -560,15 +573,15 @@
             .comments-heading {
                 margin-bottom: 30px;
 
-                @include breakpoint (max-sm){
-                   margin-bottom: 20px;
+                @include breakpoint (max-sm) {
+                    margin-bottom: 20px;
                 }
 
                 h3 {
                     font-size: 32px;
                     font-weight: 500;
 
-                    @include breakpoint (max-sm){
+                    @include breakpoint (max-sm) {
                         font-size: 28px;
                     }
                 }
@@ -577,7 +590,7 @@
             .blog-single-comment {
                 border-bottom: 1px solid $border-color;
 
-                @include breakpoint (max-sm){
+                @include breakpoint (max-sm) {
                     flex-wrap: wrap;
                     gap: 20px;
                 }
@@ -590,6 +603,7 @@
                                 font-weight: 600;
                             }
                         }
+
                         .star {
                             i {
                                 color: $theme-color;
@@ -607,7 +621,7 @@
                     }
                 }
             }
-            
+
         }
 
         .comment-form-wrap {
@@ -615,14 +629,16 @@
                 font-size: 32px;
                 margin-bottom: 30px;
 
-                @include breakpoint (max-sm){
+                @include breakpoint (max-sm) {
                     font-size: 28px;
                     margin-bottom: 20px;
                 }
             }
 
             .form-clt {
-                input,textarea {
+
+                input,
+                textarea {
                     width: 100%;
                     outline: none;
                     border: none;

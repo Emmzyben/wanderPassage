@@ -5,7 +5,11 @@ const ServiceCard = ({ service, className }: { service: ServiceDataType; classNa
     return (
         <div className={`service-box-items ${className}`}>
             <div className="icon">
-                <img src={service.icon} alt="icon-img" />
+                {service.icon.startsWith('/') || service.icon.startsWith('http') ? (
+                    <img src={service.icon} alt="icon-img" />
+                ) : (
+                    <i className={`fa-solid ${service.icon}`} style={{ fontSize: '32px', color: 'inherit' }} />
+                )}
             </div>
             <div className="content">
                 <h4>

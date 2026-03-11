@@ -13,67 +13,51 @@ export interface ServiceDataType {
 export const serviceOneData: ServiceDataType[] = [
     {
         id: 1,
-        title: "Weed Extraction",
-        description: "For your car we will do everything advice repairs",
-        icon: "/img/service/icon/s-icon-1.svg",
-        link: "/service-details",
+        title: "Visa Processing & Guidance",
+        description: "Expert assistance with student, work, and visitor visa applications end-to-end.",
+        icon: "fa-certificate",
+        link: "/services/visa-processing",
         delay: '.3'
     },
     {
         id: 2,
-        title: "Pristine Garden",
-        description: "For your car we will do everything advice repairs",
-        icon: "/img/service/icon/s-icon-2.svg",
-        link: "/service-details",
+        title: "Australia PR Visa",
+        description: "Strategic guidance for Subclass 189, 190, and 491 migration programs.",
+        icon: "fa-passport",
+        link: "/immigration/australia",
         delay: '.5',
         active: true
     },
     {
         id: 3,
-        title: "Garden Renewal",
-        description: "For your car we will do everything advice repairs",
-        icon: "/img/service/icon/s-icon-3.svg",
-        link: "/service-details",
+        title: "Canada Immigration",
+        description: "Express Entry, PNP, and Study-to-PR pathways specialist consulting.",
+        icon: "fa-map-location-dot",
+        link: "/immigration/canada",
         delay: '.7'
     },
     {
         id: 4,
-        title: "SolarEdge Services",
-        description: "For your car we will do everything advice repairs",
-        icon: "/img/service/icon/s-icon-4.svg",
-        link: "/service-details",
+        title: "UK Skilled Worker Visa",
+        description: "Assistance with Certificate of Sponsorship (CoS) and 70-point threshold.",
+        icon: "fa-briefcase",
+        link: "/immigration/uk",
         delay: '.9'
     },
     {
         id: 5,
-        title: "Solar Repair",
-        description: "Mauris ultrices ligula eget volutpat aliquet nullam",
-        icon: "/img/service/icon/s-icon-10.svg",
-        link: "/service-details",
+        title: "Travel & Accommodation",
+        description: "Booking flights, finding safe student housing, and airport pick-up services.",
+        icon: "fa-plane-departure",
+        link: "/services/travel-assistance",
         delay: '.3'
     },
     {
         id: 6,
-        title: "Power Storage",
-        description: "Mauris ultrices ligula eget volutpat aliquet nullam",
-        icon: "/img/service/icon/s-icon-11.svg",
-        link: "/service-details",
+        title: "Test Preparation",
+        description: "Specialized coaching for IELTS, TOEFL, PTE, GRE, and GMAT examinations.",
+        icon: "fa-person-chalkboard",
+        link: "/services/test-preparation",
         delay: '.5'
-    },
-    {
-        id: 7,
-        title: "Solar Energy",
-        description: "Mauris ultrices ligula eget volutpat aliquet nullam",
-        icon: "/img/service/icon/s-icon-1.svg",
-        link: "/service-details",
-        delay: '.7'
-    },
-    {
-        id: 8,
-        title: "SolarEdge Services",
-        description: "Mauris ultrices ligula eget volutpat aliquet nullam",
-        icon: "/img/service/icon/s-icon-2.svg",
-        link: "/service-details",
-        delay: '.9'
     }
 ];

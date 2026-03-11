@@ -1,0 +1,349 @@
+.uk-page {
+    @extend .country-study-page;
+
+    // UK navy/union-jack blue accent
+    --accent-gradient: linear-gradient(135deg, #0d2b6b, #1a50b5);
+    --uk-red: #c0392b;
+    --uk-navy: #0d2b6b;
+
+    // -------------------------------------------------------
+    // Stat card — UK navy
+    // -------------------------------------------------------
+    .stat-card-premium {
+        background: var(--accent-gradient) !important;
+    }
+
+    // -------------------------------------------------------
+    // Course Cards
+    // -------------------------------------------------------
+    .top-courses-section {
+        .course-card {
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 24px;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+
+            .course-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 18px;
+                background: linear-gradient(135deg, #0d2b6b 0%, #1a50b5 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 22px;
+
+                i {
+                    font-size: 26px;
+                    color: #fff;
+                }
+            }
+
+            h5 {
+                font-size: 18px;
+                font-weight: 800;
+                color: var(--header);
+                margin-bottom: 14px;
+            }
+
+            p {
+                font-size: 15px;
+                color: #666;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(13, 43, 107, 0.12);
+                border-color: rgba(13, 43, 107, 0.2);
+            }
+        }
+    }
+
+    // -------------------------------------------------------
+    // Process Cards
+    // -------------------------------------------------------
+    .process-section {
+        .process-card {
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 24px;
+            height: 100%;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--accent-gradient);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .process-step {
+                font-size: 56px;
+                font-weight: 950;
+                color: rgba(13, 43, 107, 0.05);
+                line-height: 1;
+                margin-bottom: -20px;
+            }
+
+            .process-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+                background: #f0f4ff;
+                color: var(--theme);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                margin: 0 auto 20px;
+                position: relative;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+
+            h5 {
+                font-size: 17px;
+                font-weight: 800;
+                color: var(--header);
+                margin-bottom: 12px;
+                position: relative;
+                z-index: 1;
+            }
+
+            p {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.7;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(13, 43, 107, 0.1);
+                border-color: rgba(13, 43, 107, 0.15);
+
+                &::before {
+                    opacity: 1;
+                }
+
+                .process-icon {
+                    background: var(--accent-gradient);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // -------------------------------------------------------
+    // Scholarship Cards (UK variant)
+    // -------------------------------------------------------
+    .scholarships-section {
+        .scholarship-card {
+            background: #fff;
+            padding: 36px 30px;
+            border-radius: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f0f0f0;
+
+            .scholarship-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+
+            h5 {
+                font-size: 17px;
+                font-weight: 800;
+                color: var(--header);
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            .scholarship-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                flex: 1;
+
+                .meta-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    font-size: 13.5px;
+                    font-weight: 500;
+                    color: #666;
+
+                    i {
+                        width: 18px;
+                        color: var(--theme);
+                        font-size: 12px;
+                        margin-top: 3px;
+                        flex-shrink: 0;
+                    }
+
+                    &.amount {
+                        font-weight: 700;
+                        color: #0d2b6b;
+                        font-size: 14px;
+
+                        i {
+                            color: #0d2b6b;
+                        }
+                    }
+                }
+            }
+
+            .scholarship-btn {
+                display: inline-block;
+                padding: 11px 24px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 700;
+                text-align: center;
+                margin-top: auto;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(13, 43, 107, 0.12);
+                border-color: rgba(13, 43, 107, 0.2);
+            }
+        }
+    }
+
+    // -------------------------------------------------------
+    // Fees Table (centered max-width)
+    // -------------------------------------------------------
+    .fees-section {
+        .fees-table-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    }
+
+    // -------------------------------------------------------
+    // UK Info Cards (Intakes + IELTS)
+    // -------------------------------------------------------
+    .uk-info-section {
+        background: #f8faff;
+
+        .uk-info-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #eef2ff;
+
+            .uk-info-card-header {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 32px;
+                padding-bottom: 24px;
+                border-bottom: 2px solid #f0f4ff;
+
+                i {
+                    width: 52px;
+                    height: 52px;
+                    background: linear-gradient(135deg, #0d2b6b, #1a50b5);
+                    color: #fff;
+                    border-radius: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                    flex-shrink: 0;
+                }
+
+                h4 {
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--header);
+                    margin: 0;
+                }
+            }
+
+            .uk-info-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 16px;
+
+                    p {
+                        font-size: 14.5px;
+                        color: #555;
+                        line-height: 1.7;
+                        margin: 4px 0 0;
+                        flex: 1;
+                    }
+                }
+            }
+
+            .intake-badge {
+                display: inline-block;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 800;
+                white-space: nowrap;
+                flex-shrink: 0;
+                margin-top: 4px;
+
+                &.intake-sep {
+                    background: #dbeafe;
+                    color: #1e40af;
+                }
+
+                &.intake-jan {
+                    background: #dcfce7;
+                    color: #15803d;
+                }
+
+                &.intake-may {
+                    background: #fef3c7;
+                    color: #b45309;
+                }
+            }
+        }
+    }
+}

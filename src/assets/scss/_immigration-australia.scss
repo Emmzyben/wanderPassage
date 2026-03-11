@@ -1,0 +1,135 @@
+.australia-immigration-page {
+    @extend .canada-immigration-page;
+
+    // Points Grid Section
+    .points-row-card {
+        background: #fff;
+        border: 1px solid #e8edf5;
+        border-radius: 14px;
+        padding: 16px 20px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+        }
+
+        &.tier-high {
+            border-left: 4px solid #10b981;
+        }
+
+        &.tier-mid {
+            border-left: 4px solid #f59e0b;
+        }
+
+        &.tier-low {
+            border-left: 4px solid #94a3b8;
+        }
+
+        .points-row-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+
+            .points-factor {
+                font-size: 14px;
+                font-weight: 600;
+                color: #1a1a2e;
+                line-height: 1.4;
+                flex: 1;
+            }
+
+            .points-badge {
+                font-size: 13px;
+                font-weight: 800;
+                padding: 3px 12px;
+                border-radius: 50px;
+                white-space: nowrap;
+                flex-shrink: 0;
+
+                &.tier-high {
+                    background: rgba(16, 185, 129, 0.12);
+                    color: #059669;
+                }
+
+                &.tier-mid {
+                    background: rgba(245, 158, 11, 0.12);
+                    color: #d97706;
+                }
+
+                &.tier-low {
+                    background: rgba(148, 163, 184, 0.18);
+                    color: #64748b;
+                }
+            }
+        }
+
+        .points-bar-track {
+            height: 6px;
+            background: #f1f5f9;
+            border-radius: 99px;
+            overflow: hidden;
+
+            .points-bar-fill {
+                height: 100%;
+                border-radius: 99px;
+                transition: width 0.6s ease;
+            }
+        }
+
+        &.tier-high .points-bar-fill {
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        &.tier-mid .points-bar-fill {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        &.tier-low .points-bar-fill {
+            background: linear-gradient(90deg, #94a3b8, #cbd5e1);
+        }
+    }
+
+    .points-legend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 32px;
+        padding: 16px 24px;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid #e8edf5;
+        flex-wrap: wrap;
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #4b5563;
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                flex-shrink: 0;
+            }
+
+            &.high .dot {
+                background: #10b981;
+            }
+
+            &.mid .dot {
+                background: #f59e0b;
+            }
+
+            &.low .dot {
+                background: #94a3b8;
+            }
+        }
+    }
+}

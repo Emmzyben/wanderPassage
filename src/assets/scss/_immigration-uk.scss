@@ -1,0 +1,223 @@
+.uk-immigration-page {
+    @extend .canada-immigration-page;
+
+    // Application Process Steps
+    .process-steps-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .process-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        position: relative;
+        padding-bottom: 0;
+
+        &:not(:last-child) {
+            .step-connector {
+                position: absolute;
+                left: 27px;
+                top: 58px;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(180deg, var(--theme), rgba(var(--theme-rgb), 0.1));
+                height: calc(100% - 20px);
+                min-height: 50px;
+            }
+        }
+
+        .step-icon-wrap {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--theme);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 1;
+            box-shadow: 0 8px 24px rgba(var(--theme-rgb), 0.3);
+
+            i {
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+
+        .step-body {
+            background: #fff;
+            border: 1px solid #eef0f5;
+            border-radius: 18px;
+            padding: 22px 28px;
+            flex: 1;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+                border-color: rgba(var(--theme-rgb), 0.3);
+            }
+
+            .step-num {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--theme);
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            h5 {
+                font-size: 17px;
+                font-weight: 700;
+                color: #1a1a2e;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #6b7280;
+                line-height: 1.65;
+                margin: 0;
+            }
+        }
+    }
+
+    // Points Grid (reuse Australia styles)
+    .points-row-card {
+        background: #fff;
+        border: 1px solid #e8edf5;
+        border-radius: 14px;
+        padding: 16px 20px;
+        transition: all 0.2s ease;
+        border-left: 4px solid #1a4a7c;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+        }
+
+        .points-row-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+
+            .points-factor {
+                font-size: 14px;
+                font-weight: 600;
+                color: #1a1a2e;
+                line-height: 1.4;
+                flex: 1;
+            }
+
+            .points-badge {
+                font-size: 13px;
+                font-weight: 800;
+                padding: 3px 14px;
+                border-radius: 50px;
+                white-space: nowrap;
+                flex-shrink: 0;
+                background: rgba(26, 74, 124, 0.1);
+                color: #1a4a7c;
+            }
+        }
+
+        .points-bar-track {
+            height: 6px;
+            background: #f1f5f9;
+            border-radius: 99px;
+            overflow: hidden;
+
+            .points-bar-fill {
+                height: 100%;
+                border-radius: 99px;
+                background: linear-gradient(90deg, var(--theme), #1a4a7c);
+                transition: width 0.6s ease;
+            }
+        }
+    }
+
+    // 70 Points target banner
+    .uk-points-target-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: linear-gradient(135deg, #0a2540 0%, #1a4a7c 100%);
+        border-radius: 20px;
+        padding: 28px 36px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+
+        .target-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #fff;
+
+            i {
+                font-size: 36px;
+                color: #7dd3fc;
+                flex-shrink: 0;
+            }
+
+            strong {
+                font-size: 22px;
+                font-weight: 800;
+                display: block;
+                color: #fff;
+            }
+
+            span {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.7);
+                display: block;
+                margin-top: 4px;
+            }
+        }
+    }
+
+    // Points note
+    .uk-points-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 24px;
+        padding: 16px 20px;
+        background: #fff;
+        border: 1px solid #e8edf5;
+        border-radius: 12px;
+        border-left: 4px solid #1a4a7c;
+
+        i {
+            color: #1a4a7c;
+            font-size: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        span {
+            font-size: 13.5px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+    }
+
+    // Eligibility card with desc instead of list
+    .eligibility-card {
+        p {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 14px;
+            line-height: 1.65;
+            margin: 0;
+            flex: 1;
+        }
+    }
+}

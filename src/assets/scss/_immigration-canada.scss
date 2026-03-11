@@ -1,0 +1,442 @@
+.canada-immigration-page {
+    @extend .country-study-page;
+
+    // Intro Banner
+    .immig-intro-banner {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        background: linear-gradient(135deg, #0a2540 0%, #1a4a7c 100%);
+        border-radius: 30px;
+        padding: 60px;
+        color: #fff;
+        margin: 50px 0;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            padding: 40px 30px;
+            gap: 30px;
+        }
+
+        .immig-intro-content {
+            flex: 1;
+
+            .sub-title {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 14px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 12px;
+            }
+
+            h2 {
+                font-size: 36px;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 16px;
+                line-height: 1.2;
+
+                @media (max-width: 767px) {
+                    font-size: 26px;
+                }
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.75);
+                font-size: 15px;
+                line-height: 1.7;
+                margin-bottom: 28px;
+            }
+        }
+
+        .immig-intro-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            min-width: 340px;
+
+            @media (max-width: 991px) {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .intro-stat-item {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 16px;
+                padding: 24px 20px;
+                text-align: center;
+                backdrop-filter: blur(10px);
+
+                h3 {
+                    font-size: 30px;
+                    font-weight: 800;
+                    color: #fff;
+                    margin: 0 0 6px;
+                    background: linear-gradient(90deg, #7dd3fc, #a5f3fc);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+
+                span {
+                    font-size: 13px;
+                    color: rgba(255, 255, 255, 0.65);
+                }
+            }
+        }
+    }
+
+    // Immigration Reason Cards (10-grid)
+    .immig-reason-card {
+        background: #fff;
+        border: 1px solid #eef0f5;
+        border-radius: 20px;
+        padding: 28px 24px;
+        position: relative;
+        height: 100%;
+        transition: all 0.3s ease;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--theme), #1a4a7c);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+
+            &::before {
+                opacity: 1;
+            }
+
+            .reason-icon {
+                background: var(--theme);
+                color: #fff;
+            }
+        }
+
+        .reason-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(var(--theme-rgb), 0.08);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 20px;
+                color: var(--theme);
+                transition: color 0.3s ease;
+            }
+        }
+
+        .reason-num {
+            font-size: 48px;
+            font-weight: 900;
+            color: #f0f2f5;
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            line-height: 1;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 13.5px;
+            color: #6b7280;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+
+    // Eligibility Section
+    .eligibility-section {
+        background: linear-gradient(135deg, #0a2540 0%, #1a1a2e 100%) !important;
+    }
+
+    .eligibility-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 32px 28px;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .elig-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+
+            i {
+                font-size: 28px;
+                color: var(--theme);
+            }
+
+            .elig-num {
+                font-size: 40px;
+                font-weight: 900;
+                color: rgba(255, 255, 255, 0.08);
+                font-family: 'Outfit', sans-serif;
+                line-height: 1;
+            }
+        }
+
+        h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 7px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+                &:last-child {
+                    border: none;
+                }
+
+                i {
+                    color: #4ade80;
+                    font-size: 13px;
+                    margin-top: 3px;
+                    flex-shrink: 0;
+                }
+
+                span {
+                    font-size: 13.5px;
+                    color: rgba(255, 255, 255, 0.75);
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .elig-max {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--theme), #1a4a7c);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    // Programs Section
+    .program-card {
+        background: #fff;
+        border: 1px solid #eef0f5;
+        border-radius: 24px;
+        padding: 32px 28px;
+        height: 100%;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+            border-color: var(--theme);
+
+            .prog-icon {
+                background: var(--theme);
+                color: #fff;
+            }
+        }
+
+        .program-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .prog-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(var(--theme-rgb), 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 22px;
+                color: var(--theme);
+                transition: color 0.3s ease;
+            }
+        }
+
+        .prog-badge {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, rgba(var(--theme-rgb), 0.1), rgba(26, 74, 124, 0.1));
+            color: var(--theme);
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .prog-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            flex: 1;
+            border-top: 1px solid #eef0f5;
+            padding-top: 16px;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 7px 0;
+
+                i {
+                    color: var(--theme);
+                    font-size: 12px;
+                    margin-top: 4px;
+                    flex-shrink: 0;
+                }
+
+                span {
+                    font-size: 13.5px;
+                    color: #4b5563;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .prog-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid var(--theme);
+            color: var(--theme);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+
+            &:hover {
+                background: var(--theme);
+                color: #fff;
+            }
+        }
+    }
+
+    // FAQ
+    .immig-faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .immig-faq-item {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.open {
+            border-color: var(--theme);
+            box-shadow: 0 4px 20px rgba(var(--theme-rgb), 0.1);
+
+            .faq-question {
+                color: var(--theme);
+            }
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            gap: 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: color 0.3s ease;
+
+            i {
+                font-size: 14px;
+                flex-shrink: 0;
+                color: var(--theme);
+            }
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            border-top: 1px solid #eef0f5;
+
+            p {
+                font-size: 14px;
+                color: #6b7280;
+                line-height: 1.7;
+                margin: 16px 0 0;
+            }
+        }
+    }
+}

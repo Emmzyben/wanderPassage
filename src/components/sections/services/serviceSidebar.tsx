@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 
 const services = [
-    { name: 'Cleaning Solution', link: '/service-details' },
-    { name: 'Plumbing Solution', link: '/service-details' },
-    { name: 'Air Conditioning', link: '/service-details', active: true },
-    { name: 'Electricity Solution', link: '/service-details' },
-    { name: 'Mechanic Solution', link: '/service-details' },
+    { name: 'Visa Processing & Guidance', link: '/services/visa-processing' },
+    { name: 'Australia PR Visa', link: '/immigration/australia' },
+    { name: 'Canada Immigration', link: '/immigration/canada' },
+    { name: 'UK Skilled Worker Visa', link: '/immigration/uk' },
+    { name: 'Travel & Accommodation', link: '/services/travel-assistance' },
+    { name: 'Test Preparation', link: '/services/test-preparation' },
 ];
 
 const openingHours = [
-    { day: 'Mon - Sat', time: '10.00 AM - 4.00 PM' },
-    { day: 'Sun', time: '09.00 AM - 4.00 PM' },
-    { day: 'Friday', time: 'Closed' },
-    { day: 'Emergency', time: '24 hours' },
+    { day: 'Mon - Fri', time: '09.00 AM - 6.00 PM' },
+    { day: 'Saturday', time: '10.00 AM - 4.00 PM' },
+    { day: 'Sunday', time: 'Closed' },
+    { day: 'Support', time: '24/7 Online' },
 ];
 
 const ServiceSidebar = () => {
@@ -20,12 +21,12 @@ const ServiceSidebar = () => {
         <div className="main-sidebar">
             <div className="single-sidebar-widget">
                 <div className="wid-title">
-                    <h3>All Services</h3>
+                    <h3>Our Services</h3>
                 </div>
                 <div className="widget-categories">
                     <ul>
                         {services.map((service, index) => (
-                            <li key={index} className={service.active ? 'active' : ''}>
+                            <li key={index}>
                                 <Link to={service.link}>{service.name}</Link>
                                 <i className="fa-solid fa-arrow-right-long" />
                             </li>

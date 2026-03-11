@@ -1,45 +1,36 @@
 import { ProjectDataType } from "@/db/projectsOneData";
 import { Link } from "react-router-dom";
 
-type ProjectCardPropsType = {
+interface ProjectCardProps {
     project: ProjectDataType;
     className?: string;
     iconCalss?: string;
-    isIconShow?: boolean
 }
-const ProjectCard = ({ project, className, iconCalss, isIconShow = true }: ProjectCardPropsType) => {
+
+const ProjectCard = ({ project, className, iconCalss }: ProjectCardProps) => {
+    const { image, category, title, link, flag } = project;
+
     return (
-        <div className={`project-items ${className}`}>
+        <div className={`project-items ${className || ""}`}>
             <div className="project-image">
-                <img src={project.image} alt="project-img" />
+                <Link to={link}>
+                    <img src={image} alt={title} />
+                </Link>
                 <div className="project-content">
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Link to={project.link}>{project.title}</Link>
-                        {project.flag ? (
-                            <img
-                                src={project.flag}
-                                alt="flag"
-                                style={{
-                                    width: '30px',
-                                    height: 'auto',
-                                    borderRadius: '2px',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                                }}
-                            />
-                        ) : (
-                            <span style={{ fontSize: '1.2em' }}>{project.category}</span>
-                        )}
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "5px" }}>
+                        {flag && <img src={flag} alt="flag" style={{ width: "24px", height: "auto", borderRadius: "2px" }} />}
+                        <p style={{ margin: 0, color: "var(--theme)", fontWeight: "500" }}>{category}</p>
+                    </div>
+                    <h4>
+                        <Link to={link}>{title}</Link>
                     </h4>
-                    {
-                        isIconShow &&
-                        <Link to={project.link} className={`${iconCalss}`}>
-                            <i className="fa-solid fa-arrow-right" />
-                        </Link>
-                    }
+                    <Link to={link} className={iconCalss || "icon"}>
+                        <i className="fa-solid fa-arrow-right-long" />
+                    </Link>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ProjectCard
+export default ProjectCard;

@@ -11,9 +11,7 @@ const HeaderThree = () => {
         <header>
             <TopHeaderTwo />
             <div id="header-sticky" className={`header-3 ${isSticky ? 'sticky' : ''}`}>
-                <div className="plane-shape">
-                    <img src="/img/plane.png" alt="shape-img" />
-                </div>
+
                 <div className="container">
                     <div className="mega-menu-wrapper">
                         <div className="header-main">

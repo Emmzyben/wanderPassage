@@ -18,10 +18,13 @@ const ServiceCardTwo = ({ service }: { service: ServiceDataType }) => {
                     <Link to={service.link}>{service.title}</Link>
                 </h4>
                 <p>{service.description}</p>
-                <Link to="/contact" className="theme-btn-2 mt-3">
+                <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('toggle-consultation-modal'))}
+                    className="theme-btn-2 mt-3"
+                >
                     Book Consultation
                     <i className="fa-solid fa-arrow-right-long" />
-                </Link>
+                </button>
             </div>
         </div>
     )

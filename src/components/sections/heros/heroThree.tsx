@@ -22,8 +22,6 @@ const HeroThree = () => {
                                     display: 'inline-block',
                                     padding: '6px 16px',
                                     borderRadius: '4px',
-                                    fontSize: '14px',
-                                    fontWeight: '600',
                                     textTransform: 'uppercase'
                                 }}
                             >
@@ -34,7 +32,7 @@ const HeroThree = () => {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.6, delay: 0.4 }}
-                                style={{ lineHeight: '1.2', marginBottom: '20px', fontSize: '56px' }}
+                                style={{ marginBottom: '20px' }}
                             >
                                 Study Abroad <br /> Consultants in Nigeria
                             </motion.h1>
@@ -43,7 +41,7 @@ const HeroThree = () => {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
-                                style={{ fontSize: '18px', opacity: '0.9', maxWidth: '650px', lineHeight: '1.6' }}
+                                style={{ opacity: '0.9', maxWidth: '650px' }}
                             >
                                 At Wander Passage Travels and Tours, our experienced study abroad consultants are dedicated to helping you achieve your international education dreams. Based in Nigeria, our expert advisors provide end-to-end guidance, from university selection to visa processing and pre-departure support.
                             </motion.p>
@@ -60,12 +58,15 @@ const HeroThree = () => {
                                         <i className="fa-solid fa-arrow-right-long" />
                                     </span>
                                 </Link>
-                                <Link to="/contact" className="theme-btn bg-white">
+                                <button
+                                    onClick={() => window.dispatchEvent(new CustomEvent('toggle-consultation-modal'))}
+                                    className="theme-btn bg-white"
+                                >
                                     <span>
                                         Book Consultation
                                         <i className="fa-solid fa-arrow-right-long" />
                                     </span>
-                                </Link>
+                                </button>
                             </motion.div>
                         </div>
                     </div>
@@ -78,16 +79,13 @@ const HeroThree = () => {
                             style={{ padding: '20px' }}
                         >
                             <img
-                                src="/img/hero/hero-11.jpg"
-                                alt="Study Abroad Students"
+                                src="/img/testimonial.webp"
+                                alt="Two students laughing"
                                 style={{
-                                    width: '110%',
-                                    height: '350px',
-                                    maxHeight: '350px',
+                                    objectFit: 'cover',
                                     borderRadius: '15px',
                                     border: '8px solid rgba(255,255,255,0.2)',
                                     boxShadow: '0 15px 35px rgba(0,0,0,0.4)',
-                                    margin: '0 auto'
                                 }}
                             />
                         </motion.div>

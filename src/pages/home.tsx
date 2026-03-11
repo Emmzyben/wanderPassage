@@ -1,37 +1,34 @@
-import AboutOne from '@/components/sections/about/aboutOne'
-import AchievementOne from '@/components/sections/achievements/achievementOne'
-import BlogsOne from '@/components/sections/blogs/blogsOne'
-import FaqHomeOne from '@/components/sections/faqHomeOne'
-import HeroOne from '@/components/sections/heros/heroOne'
-import MarqueOne from '@/components/sections/marques/marqueOne'
-import MarqueTwo from '@/components/sections/marques/marqueTwo'
-import NewsLetter from '@/components/sections/newsLetter'
-import PartnersOne from '@/components/sections/partners/partnersOne'
-import PriceGridOne from '@/components/sections/pricing/priceGridOne'
-import ProjectsOne from '@/components/sections/projects/projectsOne'
-import ServicesOne from '@/components/sections/services/servicesOne'
-import TeamesOne from '@/components/sections/teames/teamesOne'
-import TestimonialOne from '@/components/sections/testimonials/testimonialOne'
+import AboutThree from "@/components/sections/about/aboutThree"
+import AchievementTwo from "@/components/sections/achievements/achievementTwo"
+import BlogsThree from "@/components/sections/blogs/blogsThree"
+import HeroThree from "@/components/sections/heros/heroThree"
+import PartnersOne from "@/components/sections/partners/partnersOne"
+import ProjectsThree from "@/components/sections/projects/projectsThree"
+import ServicesThree from "@/components/sections/services/servicesThree"
+import NewsLetterTwo from "@/components/sections/newsLetterTwo"
+import TestimonialThree from "@/components/sections/testimonials/testimonialThree"
+import FaqHomeThree from "@/components/sections/faqHomeThree"
+
+import ImmigrationDestinations from "@/components/sections/destinations/immigrationDestinations"
+import MigrationCategory from "@/components/sections/migration/migrationCategory"
 
 const Home = () => {
-    return (
-        <div>
-            <HeroOne />
-            <MarqueOne/>
-            <AboutOne />
-            <PartnersOne className='pt-0'/>
-            <ServicesOne/>
-            <AchievementOne/>
-            <ProjectsOne/>
-            <MarqueTwo/>
-            <TestimonialOne/>
-            <TeamesOne/>
-            <PriceGridOne/>
-            <FaqHomeOne/>
-            <BlogsOne/>
-            <NewsLetter/>
-        </div>
-    )
+  return (
+    <>
+      <HeroThree />
+      <AboutThree />
+      <PartnersOne className="pt-0" />
+      <ServicesThree />
+      <NewsLetterTwo />
+      <ProjectsThree />
+      <MigrationCategory />
+      <ImmigrationDestinations />
+      <AchievementTwo achievementWrapperClass="style-2" className="section-bg-2" />
+      <TestimonialThree />
+      <FaqHomeThree />
+      <BlogsThree />
+    </>
+  )
 }
 
 export default Home

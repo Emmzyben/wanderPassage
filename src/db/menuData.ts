@@ -31,9 +31,9 @@ export type MenuItemDataType = {
 
 export const studyAbroadCountries: CountryMenuItemType[] = [
   { name: 'Australia', flag: 'https://flagcdn.com/w40/au.png', link: '/study-abroad/australia' },
+  { name: 'USA', flag: 'https://flagcdn.com/w40/us.png', link: '/study-abroad/usa' },
   { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png', link: '/study-abroad/canada' },
   { name: 'UK', flag: 'https://flagcdn.com/w40/gb.png', link: '/study-abroad/uk' },
-  { name: 'USA', flag: 'https://flagcdn.com/w40/us.png', link: '/study-abroad/usa' },
   { name: 'Ireland', flag: 'https://flagcdn.com/w40/ie.png', link: '/study-abroad/ireland' },
   { name: 'Germany', flag: 'https://flagcdn.com/w40/de.png', link: '/study-abroad/germany' },
   { name: 'New Zealand', flag: 'https://flagcdn.com/w40/nz.png', link: '/study-abroad/new-zealand' },
@@ -59,7 +59,7 @@ export const studyAbroadCountries: CountryMenuItemType[] = [
 export const menuData: MenuItemDataType[] = [
   {
     title: 'Home',
-    link: '/home-three',
+    link: '/',
   },
   {
     title: 'About',
@@ -74,32 +74,31 @@ export const menuData: MenuItemDataType[] = [
     title: 'Services',
     link: '#',
     submenu: [
-      { title: 'Visa Processing & Guidance', link: '/' },
+      { title: 'Visa Processing & Guidance', link: '/services/visa-processing' },
       {
         title: 'Immigration',
         link: '/',
         submenu: [
-          { title: 'Canada Immigration', link: '/' },
-          { title: 'Australia PR Visa', link: '/' },
-          { title: 'UK Skilled Worker Visa', link: '/' },
+          { title: 'Canada Immigration', link: '/immigration/canada' },
+          { title: 'Australia PR Visa', link: '/immigration/australia' },
+          { title: 'UK Skilled Worker Visa', link: '/immigration/uk' },
         ],
       },
-      { title: 'Travel & Accommodation Assistance', link: '/' },
-      { title: 'Test Preparation', link: '/' },
-
+      { title: 'Travel & Accommodation Assistance', link: '/services/travel-assistance' },
+      { title: 'Test Preparation', link: '/services/test-preparation' },
     ],
   },
   {
     title: 'Apply',
     link: '#',
     submenu: [
-      { title: 'Student Application Portal Login', link: '/student-application-portal' },
-      { title: 'New Application', link: '/new-application' },
+      { title: 'Student Application Portal Login', link: '/student-login' },
+      { title: 'New Application', link: '/student-login' },
     ],
   },
   {
     title: 'Blog',
-    link: '/',
+    link: '/news',
   },
   {
     title: 'Contact',

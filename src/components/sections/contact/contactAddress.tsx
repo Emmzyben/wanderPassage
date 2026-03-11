@@ -6,20 +6,20 @@ const ContactAddress = () => {
             <div className="contact-info-area-2">
                 <div className="contact-info-items mb-4">
                     <div className="icon">
-                        <i className="fa-solid fa-phone-volume" style={{ color: 'white', fontSize: '24px' }}></i>
+                        <i className="fa-solid fa-phone-volume" style={{ color: 'white' }}></i>
                     </div>
                     <div className="content">
                         <p>Call Us 7/24</p>
-                        <h3>
-                            <Link to="tel:+2349135000681">+234 913 500 0681</Link><br />
-                            <Link to="tel:+2349135000687">+234 913 500 0687</Link><br />
-                            <Link to="tel:+2349042602215">+234 904 260 2215</Link>
-                        </h3>
+                        <div>
+                            <h3><Link to="tel:+2349135000681">+234 913 500 0681</Link></h3>
+                            <h3><Link to="tel:+2349135000687">+234 913 500 0687</Link></h3>
+                            <h3><Link to="tel:+2349042602215">+234 904 260 2215</Link></h3>
+                        </div>
                     </div>
                 </div>
                 <div className="contact-info-items mb-4">
                     <div className="icon">
-                        <i className="fa-solid fa-envelope" style={{ color: 'white', fontSize: '24px' }}></i>
+                        <i className="fa-solid fa-envelope" style={{ color: 'white' }}></i>
                     </div>
                     <div className="content">
                         <p>Email Us</p>
@@ -30,7 +30,7 @@ const ContactAddress = () => {
                 </div>
                 <div className="contact-info-items mb-4">
                     <div className="icon">
-                        <i className="fa-solid fa-location-dot" style={{ color: 'white', fontSize: '24px' }}></i>
+                        <i className="fa-solid fa-location-dot" style={{ color: 'white' }}></i>
                     </div>
                     <div className="content">
                         <p>Head Office</p>
@@ -42,7 +42,7 @@ const ContactAddress = () => {
                 </div>
                 <div className="contact-info-items border-none">
                     <div className="icon">
-                        <i className="fa-solid fa-building" style={{ color: 'white', fontSize: '24px' }}></i>
+                        <i className="fa-solid fa-building" style={{ color: 'white' }}></i>
                     </div>
                     <div className="content">
                         <p>Branch Office</p>

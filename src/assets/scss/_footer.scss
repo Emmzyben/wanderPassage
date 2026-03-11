@@ -37,10 +37,14 @@
             h3 {
                 font-weight: bold;
                 color: $white;
-                font-size: 24px;
+                font-size: clamp(20px, 5vw, 24px);
                 border-bottom: 1px solid $white;
                 display: inline-block;
-                padding-bottom: 20px;
+                padding-bottom: 15px;
+
+                @include breakpoint (max-sm){
+                    padding-bottom: 10px;
+                }
             }
         }
 
@@ -308,6 +312,9 @@
 
         p {
             color: $white;
+            @include breakpoint (max-sm){
+                font-size: 13px;
+            }
 
             a {
                color:  $white;
@@ -319,6 +326,9 @@
             gap: 20px;
 
             li {
+                @include breakpoint (max-sm){
+                    font-size: 13px;
+                }
                 a {
                     color: $white;
                     background-image: linear-gradient($white,$white);

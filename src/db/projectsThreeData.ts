@@ -7,7 +7,7 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'United Kingdom',
         flag: 'https://flagcdn.com/w80/gb.png',
-        link: '/project-details',
+        link: '/study-abroad/uk',
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'United States',
         flag: 'https://flagcdn.com/w80/us.png',
-        link: '/project-details',
+        link: '/study-abroad/usa',
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'Canada',
         flag: 'https://flagcdn.com/w80/ca.png',
-        link: '/project-details',
+        link: '/study-abroad/canada',
     },
     {
         id: 4,
@@ -31,7 +31,7 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'Australia',
         flag: 'https://flagcdn.com/w80/au.png',
-        link: '/project-details',
+        link: '/study-abroad/australia',
     },
     {
         id: 5,
@@ -39,7 +39,7 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'Germany',
         flag: 'https://flagcdn.com/w80/de.png',
-        link: '/project-details',
+        link: '/study-abroad/germany',
     },
     {
         id: 6,
@@ -47,6 +47,6 @@ export const projectsThreeData: ProjectDataType[] = [
         category: 'Study Abroad',
         title: 'Ireland',
         flag: 'https://flagcdn.com/w80/ie.png',
-        link: '/project-details',
+        link: '/study-abroad/ireland',
     },
 ];

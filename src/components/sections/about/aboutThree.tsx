@@ -10,13 +10,8 @@ const AboutThree = () => {
                     <div className="row">
                         <div className="col-lg-6 wow slideUp" data-delay=".4">
                             <div className="about-image">
-                                <div className="shape-image">
-                                    <img src="/img/about/shape.png" alt="shape-img" />
-                                </div>
-                                <div className="circle-shape">
-                                    <img src="/img/about/circle.png" alt="shape-img" />
-                                </div>
-                                <img src="/img/about/05.png" alt="about-img" />
+
+                                <img src="/img/serve.jpg" alt="about-img" />
 
                             </div>
                         </div>

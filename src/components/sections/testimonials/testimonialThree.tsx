@@ -19,8 +19,8 @@ const TestimonialThree = () => {
             </div>
             <div className="container">
                 <SectionTitle className="text-center">
-                    <SectionTitle.SubTitle className="text-white">Testimonials</SectionTitle.SubTitle>
-                    <SectionTitle.Title className="text-white">Here is Some Clients<br />Feedbacks</SectionTitle.Title>
+                    <SectionTitle.SubTitle className="text-white">Success Stories</SectionTitle.SubTitle>
+                    <SectionTitle.Title className="text-white">Voices of Success From <br />Our Global Community</SectionTitle.Title>
                 </SectionTitle>
                 <Swiper
                     speed={1500}

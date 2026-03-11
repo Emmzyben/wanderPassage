@@ -1,12 +1,11 @@
-
 .faq-section {
     position: relative;
 
-    @include breakpoint (max-xl){
+    @include breakpoint (max-xl) {
         padding-bottom: 0;
         margin-bottom: -15px;
     }
-    
+
     .faq-shape-box {
         position: absolute;
         top: 0;
@@ -17,7 +16,7 @@
         z-index: -1;
         height: 950px;
 
-        @include breakpoint (max-xl){
+        @include breakpoint (max-xl) {
             display: none;
         }
 
@@ -26,7 +25,7 @@
             top: 0;
             left: 0;
             bottom: 0;
-    
+
             img {
                 @include imgw;
                 object-fit: cover;
@@ -39,17 +38,17 @@
         top: 0;
         right: 0;
 
-        @include breakpoint (max-xxl){
+        @include breakpoint (max-xxl) {
             display: none;
         }
     }
 
     &.style-2 {
-        @include breakpoint (max-xl){
+        @include breakpoint (max-xl) {
             margin-top: -100px;
         }
 
-        @include breakpoint (max-md){
+        @include breakpoint (max-md) {
             margin-top: -90px;
         }
     }
@@ -61,8 +60,8 @@
         border: 0;
         background-color: $white;
 
-        .accordion-header { 
-            .accordion-button { 
+        .accordion-header {
+            .accordion-button {
                 font-weight: 600;
                 color: $theme-color;
                 letter-spacing: -.2px;
@@ -85,6 +84,7 @@
                     background-image: url(/img/chevron-right.svg);
                     color: $theme-color-2;
                 }
+
                 &:not(.collapsed)::after {
                     // content: "\f068";
                     // font-family: "Font Awesome 6 Free";
@@ -101,11 +101,11 @@
                     padding: 25px 30px;
                     color: $header-color;
                 }
-              
+
             }
         }
 
-        .accordion-collapse { 
+        .accordion-collapse {
 
             .accordion-body {
                 padding-right: 150px;
@@ -114,11 +114,11 @@
                 color: $text-color;
                 background-color: $bg-color;
 
-                @include breakpoint (max-xxl){
+                @include breakpoint (max-xxl) {
                     padding-right: 50px;
                 }
 
-                @include breakpoint (max-lg){
+                @include breakpoint (max-lg) {
                     padding-right: 30px;
                 }
             }
@@ -128,15 +128,15 @@
     &.style-2 {
         margin-left: 50px;
 
-        @include breakpoint (max-xl){
+        @include breakpoint (max-xl) {
             margin-left: 20px;
         }
 
-        @include breakpoint (max-lg){
+        @include breakpoint (max-lg) {
             margin-left: 0;
         }
     }
-    
+
     &.style-3 {
         margin-top: 40px;
 
@@ -144,21 +144,21 @@
             border: 0;
             background-color: $white;
             box-shadow: $shadow;
-    
-            .accordion-header { 
-                .accordion-button { 
+
+            .accordion-header {
+                .accordion-button {
                     background-color: $white;
                     font-size: 20px;
                     border: none;
                 }
             }
 
-            .accordion-collapse { 
+            .accordion-collapse {
 
                 .accordion-body {
-                   background-color: $white;
-                   padding-bottom: 30px;
-                }   
+                    background-color: $white;
+                    padding-bottom: 30px;
+                }
             }
         }
     }
@@ -168,6 +168,68 @@
     .faq-image {
         img {
             @include imgw;
+        }
+    }
+
+    .faq-image-3 {
+        position: relative;
+
+        img {
+            border-radius: 20px;
+            box-shadow: $shadow-2;
+        }
+
+        .overlay-content {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: #D4AF37;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+            h3 {
+                color: $black;
+                font-weight: 800;
+                margin-bottom: 5px;
+            }
+
+            span {
+                color: $black;
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.section-bg-2 {
+    .faq-content {
+        .accordion-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+
+            .accordion-button {
+                background-color: transparent;
+                color: $white;
+                border: none;
+
+                &.collapsed {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+
+                &::after {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            .accordion-body {
+                background-color: transparent;
+                color: rgba(255, 255, 255, 0.7);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
         }
     }
 }

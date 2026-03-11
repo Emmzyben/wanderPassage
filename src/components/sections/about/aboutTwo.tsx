@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const AboutTwo = () => {
     return (
-        <section id="about" className="about-section section-padding fix bg-cover" style={{ backgroundImage: 'url("/img/service/service-bg-2.jpg")' }}>
+        <section id="about" className="about-section section-padding fix">
             <div className="container">
                 <div className="about-wrapper style-2">
                     <div className="row">
@@ -17,13 +17,19 @@ const AboutTwo = () => {
                                         <img src="/img/about/icon-1.svg" alt="icon-img" />
                                     </div>
                                     <div className="content">
-                                        <h3><span className="count">25</span>Years</h3>
+                                        <h3><span className="count">15</span>+ Years</h3>
                                         <p>Of Experience</p>
                                     </div>
                                 </div>
-                                <div className="about-image-1 bg-cover wow slideLeft" data-delay=".3" style={{ backgroundImage: 'url("/img/about/03.png")' }}>
+                                <div
+                                    className="about-image-1 bg-cover wow slideLeft"
+                                    data-delay=".3"
+                                >
                                     <div className="about-image-2 wow slideUp" data-delay=".5">
-                                        <img src="/img/about/04.jpg" alt="about-img" />
+                                        <img
+                                            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600"
+                                            alt="Travel experience"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -32,10 +38,10 @@ const AboutTwo = () => {
                             <div className="about-content">
                                 <SectionTitle>
                                     <SectionTitle.SubTitle>About Us</SectionTitle.SubTitle>
-                                    <SectionTitle.Title>Welcome To Solaren Solar Power <span>Energy System</span></SectionTitle.Title>
+                                    <SectionTitle.Title>Welcome To <span>WanderPassage Travels</span></SectionTitle.Title>
                                 </SectionTitle>
                                 <p className="mt-3 mt-md-0 wow slideUp" data-delay=".5">
-                                    It is a long established fact that a reader will be distracted the readable <br /> content of a page when looking at layout the point.
+                                    WanderPassage Travels is a dynamic and forward-thinking travel company dedicated to providing a wide range of travel services to our valued clients. Our mission is to simplify the travel experience, making it accessible, affordable, and hassle-free for all.
                                 </p>
                                 <div className="about-icon-items">
                                     <div className="icon-items wow slideUp" data-delay=".7">
@@ -43,9 +49,9 @@ const AboutTwo = () => {
                                             <img src="/img/about/icon-4.svg" alt="icon-img" />
                                         </div>
                                         <div className="content">
-                                            <h4>Energy System</h4>
+                                            <h4>Our Services</h4>
                                             <p>
-                                                Aliquam erat volutpat Nullam imperdiet
+                                                Student visas, work visas, tourism &amp; business visas, and international &amp; local flight bookings.
                                             </p>
                                         </div>
                                     </div>
@@ -54,26 +60,19 @@ const AboutTwo = () => {
                                             <img src="/img/about/icon-5.svg" alt="icon-img" />
                                         </div>
                                         <div className="content">
-                                            <h4>Evergreen Sun</h4>
+                                            <h4>Global Reach &amp; Quality</h4>
                                             <p>
-                                                Ut vehiculadictumst. Maecenas ante.
+                                                With a global network of partners, we deliver meticulously planned journeys with a client-centric approach.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="about-author">
                                     <div className="about-button wow slideUp" data-delay=".5">
-                                        <Link to="/about" className="theme-btn">
-                                            Explore More
+                                        <Link to="/contact" className="theme-btn">
+                                            Contact Us
                                             <i className="fa-solid fa-arrow-right-long" />
                                         </Link>
-                                    </div>
-                                    <div className="author-image wow slideUp" data-delay=".7">
-                                        <img src="/img/about/author.png" alt="author-img" />
-                                        <div className="content">
-                                            <h6>Ronald Richards</h6>
-                                            <p>Co, Founder</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

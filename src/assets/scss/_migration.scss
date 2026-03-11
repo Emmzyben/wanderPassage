@@ -1,0 +1,95 @@
+.migration-category-section {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        @include before;
+        background-color: rgba(10, 58, 134, 0.85); // Theme color with opacity
+        z-index: -1;
+    }
+
+    .visa-types {
+        .visa-item {
+            gap: 20px;
+
+            .icon-box {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+                background-color: #D4AF37;
+                color: $black;
+                font-weight: 800;
+                border-radius: 50%;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+
+            .text {
+                h5 {
+                    color: $white;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .bg-white-opacity {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        .service-list {
+            li {
+                color: $white;
+                margin-bottom: 10px;
+                font-weight: 500;
+
+                i {
+                    color: #D4AF37;
+                }
+            }
+        }
+    }
+
+    .migration-image-area {
+        .main-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .overlay-badge {
+            position: absolute;
+            bottom: 40px;
+            right: -20px;
+            background-color: #D4AF37;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: $shadow-2;
+
+            @include breakpoint(max-md) {
+                right: 0;
+                bottom: 10px;
+                padding: 20px;
+            }
+
+            h3 {
+                color: $black;
+                font-weight: 800;
+                margin-bottom: 0;
+            }
+
+            span {
+                color: $black;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+}

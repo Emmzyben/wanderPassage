@@ -1,13 +1,3 @@
-/*
-Theme Name: Sungo 
-Author: theme_ocean
-Author URI: https://themeforest.net/user/theme_ocean
-Description: Sungo - Ecology & Solar Energy HTML Template<
-Version: 1.0.0
-*/
-
-/*CSS Table Of Content Ends Here*/
-
 //>> Bootstrap <<//
 @import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -87,8 +77,103 @@ Version: 1.0.0
 //>> Team <<//
 @import "_team";
 
+//>> Destination <<//
+@import "_destination";
+
+//>> Migration <<//
+@import "_migration";
+
 //>> Testimonial <<//
 @import "_testimonial";
 
-//>> Template Section Style End <<//
+//>> WhatsApp <<//
+@import "_whatsapp";
 
+//>> Consultation Modal <<//
+@import "_consultation-modal";
+
+//>> Student Portal <<//
+@import "_student-portal";
+
+//>> Country Pages Shared <<//
+@import "_country-page-shared";
+
+//>> Australia Page <<//
+@import "_australia";
+
+//>> USA Page <<//
+@import "_usa";
+
+//>> Germany Page <<//
+@import "_germany";
+
+//>> Canada Page <<//
+@import "_canada";
+
+//>> UK Page <<//
+@import "_uk";
+
+//>> Ireland Page <<//
+@import "_ireland";
+
+//>> New Zealand Page <<//
+@import "_new-zealand";
+
+//>> Singapore Page <<//
+@import "_singapore";
+
+//>> Poland Page <<//
+@import "_poland";
+
+//>> Italy Page <<//
+@import "_italy";
+
+//>> Malta Page <<//
+@import "_malta";
+
+//>> France Page <<//
+@import "_france";
+
+//>> Portugal Page <<//
+@import "_portugal";
+
+//>> Spain Page <<//
+@import "_spain";
+
+//>> Sweden Page <<//
+@import "_sweden";
+
+//>> Switzerland Page <<//
+@import "_switzerland";
+
+//>> Hungary Page <<//
+@import "_hungary";
+
+//>> Finland Page <<//
+@import "_finland";
+
+//>> India Page <<//
+@import "_india";
+
+//>> China Page <<//
+@import "_china";
+
+//>> South Korea Page <<//
+@import "_south-korea";
+
+//>> Japan Page <<//
+@import "_japan";
+
+//>> Canada Immigration Page <<//
+@import "_immigration-canada";
+
+//>> Australia Immigration Page <<//
+@import "_immigration-australia";
+
+//>> UK Immigration Page <<//
+@import "_immigration-uk";
+
+//>> Specific Services Page <<//
+@import "_specific-services";
+
+//>> Template Section Style End <<//

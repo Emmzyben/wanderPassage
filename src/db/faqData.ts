@@ -1,46 +1,53 @@
 export const faqData = [
   {
     id: 'faq1',
-    question: 'How to use Solaren?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
+    question: 'How do I start my study abroad journey?',
+    answer: 'Starting is easy! Simply book a consultation with our experts. We will evaluate your profile, help you choose the right destination and university, and guide you through the application process.',
     delay: '.3',
-    isOpen: false
-  },
-  {
-    id: 'faq2',
-    question: 'What services does you offer?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
-    delay: '.5',
     isOpen: true
   },
   {
+    id: 'faq2',
+    question: 'Does WanderPassage assist with visa processing?',
+    answer: 'Yes, we provide comprehensive visa assistance. Our experienced consultants will help you with documentation, interview preparation, and ensuring all requirements are met for a successful visa application.',
+    delay: '.5',
+    isOpen: false
+  },
+  {
     id: 'faq3',
-    question: 'How to soft launch your business?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
+    question: 'What countries do you specialize in?',
+    answer: 'We specialize in major study and migration destinations including Canada, Australia, the United Kingdom, and various European countries. Each country has specific programs tailored to your needs.',
     delay: '.7',
+    isOpen: false
+  },
+  {
+    id: 'faq4',
+    question: 'Do you offer help with English proficiency tests?',
+    answer: 'Absolutely. We provide guidance and resources for preparing for IELTS, TOEFL, and other proficiency tests required by universities and immigration authorities.',
+    delay: '.9',
     isOpen: false
   }
 ];
 
 export const faqDataTwo = [
   {
-    id: 'faq1',
-    question: 'How long should a business plan be?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
+    id: 'faq21',
+    question: 'How long does the immigration process take?',
+    answer: 'The timeline varies depending on the destination and the visa category. Generally, it can take anywhere from 6 to 18 months. Our consultants will provide a more specific timeline during your evaluation.',
     delay: '.3',
-    expanded: false,
-  },
-  {
-    id: 'faq2',
-    question: 'What is included in your services?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
-    delay: '.5',
     expanded: true,
   },
   {
-    id: 'faq3',
-    question: 'What type of company is measured?',
-    answer: 'There are many variations of passages Lorem Ipsum but the majority have suffered alteration in some form, by injected humor.',
+    id: 'faq22',
+    question: 'What are the main migration pathways available?',
+    answer: 'Key pathways include Skilled Worker Visas, Permanent Residency, Study-to-Work transitions, and Business/Investment Visas. We help identify the most suitable path for your qualifications.',
+    delay: '.5',
+    expanded: false,
+  },
+  {
+    id: 'faq23',
+    question: 'Is a job offer required for migration?',
+    answer: 'Not necessarily. Some programs like Canada\\\'s Express Entry or Australia\\\'s Skilled Independent Visa do not always require a job offer, though having one can significantly increase your points.',
     delay: '.7',
     expanded: false,
   },

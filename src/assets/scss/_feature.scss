@@ -44,7 +44,7 @@
     }
 
     @include breakpoint (max-sm){
-        padding: 60px 50px;
+        padding: 40px 20px;
         text-align: center;
         justify-self: center;
         gap: 30px;
@@ -68,6 +68,10 @@
         }
 
         .counter-items {
+            @include breakpoint (max-sm){
+                width: 100%;
+            }
+
             &:not(:last-child){
                 border-right: 1px solid $white;
                 padding-right: 70px;
@@ -77,16 +81,38 @@
                     border: none;
                 }
             }
+
+            .icon {
+                @include breakpoint (max-sm){
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+
             .content {
                 margin-top: 20px;
 
+                @include breakpoint (max-sm){
+                    margin-top: 10px;
+                }
+
                 h2 {
                     color: $white;
+
+                    @include breakpoint (max-sm){
+                        font-size: 28px;
+                    }
                 }
 
                 p {
                     color: $white;
                     margin-top: 5px;
+
+                    @include breakpoint (max-sm){
+                        font-size: 14px;
+                    }
                 }
             }
         }

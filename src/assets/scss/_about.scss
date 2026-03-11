@@ -58,11 +58,17 @@
 
         .about-image-1 {
             max-width: 415px;
-            height: 445px;
+            height: auto;
             position: relative;
 
+            img {
+                @include imgw;
+                height: auto;
+                border-radius: 10px;
+            }
+
             @include breakpoint (max-lg) {
-                max-width: 560px;
+                max-width: 100%;
             }
 
             .about-image-2 {

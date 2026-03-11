@@ -8,32 +8,32 @@ export interface TestimonialType {
     feedback: string;
 }
 
-export const testimonialsTwoData:TestimonialType[] = [
+export const testimonialsTwoData: TestimonialType[] = [
     {
         id: 1,
-        name: 'Kathryn Murphy',
-        role: 'Web Designer',
-        image: '/img/testimonial/02.jpg',
+        name: 'Chidi Okoro',
+        role: 'MSc Student, Toronto',
+        image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?q=80&w=400&auto=format&fit=crop',
         icon: '/img/testimonial/icon.png',
         stars: 5,
-        feedback: 'Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo',
+        feedback: "WanderPassage made my dream of studying in Canada a reality. Their guidance on university selection and the visa process was flawless. I couldn't have done it without their expert team!",
     },
     {
         id: 2,
-        name: 'Albert Flores',
-        role: 'Medical Assistant',
-        image: '/img/testimonial/03.jpg',
+        name: 'Sarah Williams',
+        role: 'Skilled Worker, Australia',
+        image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=400&auto=format&fit=crop',
         icon: '/img/testimonial/icon.png',
-        stars: 4.5,
-        feedback: 'Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo',
+        stars: 5,
+        feedback: "The migration process to Australia seemed daunting until I met the consultants at WanderPassage. They handled my profile evaluation and job assistance with utmost professionalism.",
     },
     {
         id: 3,
-        name: 'Kathryn Murphy',
-        role: 'Web Designer',
-        image: '/img/testimonial/02.jpg',
+        name: 'Amina Bello',
+        role: 'Undergraduate, UK',
+        image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=400&auto=format&fit=crop',
         icon: '/img/testimonial/icon.png',
         stars: 5,
-        feedback: 'Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo',
+        feedback: "Getting my UK student visa was so stressful before I found WanderPassage. They simplified everything and kept me informed at every step. Highly recommended for any student!",
     },
 ];

@@ -1,0 +1,314 @@
+.service-details-page-custom {
+    .service-details-content {
+        h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a2e;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    // Features Grid (Visa Page)
+    .feature-item-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid #eef0f5;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: var(--theme);
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(var(--theme-rgb), 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 24px;
+                color: var(--theme);
+            }
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+
+    // Methodology (Visa Page)
+    .methodology-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .method-step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+
+            .step-num {
+                width: 50px;
+                height: 50px;
+                background: var(--theme);
+                color: #fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 800;
+                flex-shrink: 0;
+                font-family: 'Outfit', sans-serif;
+            }
+
+            .step-content {
+                h5 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    // Travel Service Boxes
+    .travel-service-box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid #eef0f5;
+        display: flex;
+        gap: 15px;
+        height: 100%;
+
+        .icon {
+            font-size: 28px;
+            color: var(--theme);
+            margin-top: 5px;
+        }
+
+        h5 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 13.5px;
+            margin: 0;
+        }
+    }
+
+    .accommodation-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a2e;
+            padding: 8px 0;
+
+            i {
+                color: var(--theme);
+                font-size: 14px;
+            }
+        }
+    }
+
+    .brief-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 600;
+
+        i {
+            color: var(--theme);
+        }
+    }
+
+    // Test Prep Cards
+    .test-card {
+        padding: 40px 30px;
+        border-radius: 24px;
+        background: #fff;
+        border: 1px solid #eef0f5;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+
+            .badge {
+                background: var(--theme);
+                color: #fff;
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #f8faff;
+            color: var(--theme);
+            padding: 10px 25px;
+            border-radius: 0 0 0 24px;
+            font-size: 16px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        h5 {
+            font-size: 15px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .learn-more {
+            background: none;
+            border: none;
+            color: var(--theme);
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+
+            &:hover i {
+                transform: translateX(5px);
+            }
+
+            i {
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    .feature-small {
+        display: flex;
+        gap: 15px;
+
+        i {
+            font-size: 24px;
+            color: var(--theme);
+            margin-top: 5px;
+        }
+
+        h6 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+
+    .success-banner {
+        background: linear-gradient(135deg, #0a2540 0%, #1a4a7c 100%);
+        color: #fff;
+
+        h2 {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    // Unified CTA Inline
+    .cta-box-inline {
+        background: #f8faff;
+        border: 1px solid var(--theme);
+        padding: 40px;
+        border-radius: 24px;
+
+        h4 {
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+    }
+
+    .service-cta-card {
+        background: var(--theme);
+        color: #fff;
+        padding: 40px 30px;
+        border-radius: 24px;
+
+        h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .theme-btn {
+            background: #fff;
+            color: var(--theme);
+
+            &:hover {
+                background: #f0f2f5;
+            }
+        }
+    }
+}
