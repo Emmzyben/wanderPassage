@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Poland = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Warsaw", icon: "fa-city" },
+        { label: "Currency", value: "Złoty (PLN)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "38 Million", icon: "fa-users" },
+        { label: "Language", value: "Polish", icon: "fa-language" },
+        { label: "Min Wage", value: "€611 / mo", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Sept & Feb", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 - 3 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "INR 8,272 (avg)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="poland-page">
@@ -13,27 +25,7 @@ const Poland = () => {
                 backgroundImage="https://images.unsplash.com/photo-1519197924294-4ba991a11128?q=80&w=1469&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Polish Złoty", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "3.68 Crores", icon: "fa-users" },
-                        { label: "Language", value: "Polish", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "€610.79/mo", icon: "fa-wallet" },
-                        { label: "Provinces", value: "16", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

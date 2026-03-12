@@ -1,9 +1,24 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Switzerland = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Bern", icon: "fa-city" },
+        { label: "Currency", value: "Swiss Franc (CHF)", icon: "fa-coins" },
+        { label: "Population", value: "8.9 Million", icon: "fa-users" },
+        { label: "Languages", value: "DE, FR, IT", icon: "fa-language" },
+        { label: "Min Wage", value: "CHF 24 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Sept & Feb", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "6 Months", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "CHF 88", icon: "fa-passport" },
+        { label: "GDP Per Capita", value: "$92,980+", icon: "fa-chart-line" },
+        { label: "Employment Rate", value: "67.70%", icon: "fa-briefcase" },
+        { label: "Land Area", value: "41,285 km²", icon: "fa-map" },
+    ];
 
     return (
         <div className="switzerland-page">
@@ -13,49 +28,7 @@ const Switzerland = () => {
                 backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "CHF (Swiss Franc)", icon: "fa-coins" },
-                        { label: "Population", value: "8.92 Million", icon: "fa-users" },
-                        { label: "Languages", value: "German, French, Italian", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "CHF 24.32/hr", icon: "fa-wallet" },
-                        { label: "Cantons", value: "26", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "$92,980 – $98,800", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "67.70%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "41,285 km²", icon: "fa-map" },
-                        { label: "Neighbouring Countries", value: "France, Germany, Austria, Italy", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

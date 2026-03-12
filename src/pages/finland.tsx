@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Finland = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Helsinki", icon: "fa-city" },
+        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
+        { label: "Population", value: "5.6 Million", icon: "fa-users" },
+        { label: "Languages", value: "Finnine / Swedish", icon: "fa-language" },
+        { label: "Min Wage", value: "Trade Specific", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Sept & Jan", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "2 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "€350 (Student)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="finland-page">
@@ -13,49 +25,9 @@ const Finland = () => {
                 backgroundImage="https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
-                        { label: "Population", value: "55.6 Lakhs", icon: "fa-users" },
-                        { label: "Languages", value: "Finnish & Swedish", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Min Wage", value: "No Minimum", icon: "fa-wallet" },
-                        { label: "Regions", value: "19 + 70 Sub", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "$45,939.29", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "78.20%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "338,485 km²", icon: "fa-map" },
-                        { label: "Neighbouring Countries", value: "Norway, Sweden, Russia", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

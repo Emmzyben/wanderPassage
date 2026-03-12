@@ -20,7 +20,7 @@
 .service-box-items {
     margin-top: 30px;
     background-color: $white;
-    padding: 35px 30px;
+    padding: 25px 20px;
     position: relative;
     z-index: 9;
 
@@ -67,8 +67,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             content: "";
-            width: 80px;
-            height: 80px;
+            width: 65px;
+            height: 65px;
             background-repeat: no-repeat;
             background-size: cover;
             background-image: url(/img/service/shape.png);
@@ -233,10 +233,10 @@
 
         .theme-btn-2 {
             border: 1px solid $border-color;
-            padding: 20px 30px;
+            padding: 12px 25px;
             border-radius: 100px;
             line-height: 1;
-            margin-top: 30px;
+            margin-top: 15px;
             color: $header-color;
 
             &:hover {
@@ -322,7 +322,7 @@
     }
 
     .service-image {
-        height: 250px;
+        height: 200px;
         img {
             @include imgw;
             object-fit: cover;
@@ -330,7 +330,7 @@
     }
 
     .service-content {
-        padding: 25px 20px;
+        padding: 15px 15px;
         position: relative;
         z-index: 9;
         display: flex;
@@ -338,14 +338,14 @@
         flex-grow: 1;
 
         .icon {
-            width: 70px;
-            height: 70px;
-            line-height: 65px;
+            width: 55px;
+            height: 55px;
+            line-height: 50px;
             text-align: center;
             border-radius: 8px;
             background-color: $theme-color;
-            margin-bottom: 30px;
-            margin-top: -70px;
+            margin-bottom: 20px;
+            margin-top: -45px;
             -webkit-transition: all 0.4s ease-in-out;
             transition: all 0.4s ease-in-out;
             -webkit-transition: -webkit-transform 500ms ease;
@@ -358,8 +358,9 @@
         }
 
         h4 {
+            font-size: 19px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
 
             a {
                 &:hover {

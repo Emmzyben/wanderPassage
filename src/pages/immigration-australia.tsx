@@ -1,7 +1,26 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 import { useState } from "react";
 
-const programs = [
+interface Program {
+    icon: string;
+    name: string;
+    badge: string;
+    desc: string;
+    highlights: string[];
+}
+
+interface PointsFactor {
+    factor: string;
+    max: number;
+}
+
+interface FAQ {
+    q: string;
+    a: string;
+}
+
+const programs: Program[] = [
     {
         icon: "fa-star",
         name: "Skilled Independent Visa (Subclass 189)",
@@ -25,7 +44,7 @@ const programs = [
     },
 ];
 
-const pointsGrid = [
+const pointsGrid: PointsFactor[] = [
     { factor: "Age", max: 30 },
     { factor: "Education", max: 20 },
     { factor: "Australian Work Experience", max: 20 },
@@ -45,13 +64,24 @@ const pointsGrid = [
 const AustraliaImmigration = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-    const faqs = [
+    const faqs: FAQ[] = [
         { q: "What is the minimum points score required for Australian PR?", a: "You need a minimum of 65 points to be eligible to submit an Expression of Interest (EOI) through SkillSelect. However, higher-scoring candidates are invited first, and recent invitation rounds have typically required 80–100+ points depending on the occupation." },
         { q: "How long does the Australian PR process take?", a: "Processing times vary by visa subclass. Subclass 189 and 190 applications are typically processed within 6–12 months from the date the visa application is lodged (after receiving an invitation to apply)." },
         { q: "Can I include my family in my PR application?", a: "Yes. You can include your spouse or de facto partner and dependent children in your PR application. All family members included will also receive permanent residency." },
         { q: "What is SkillSelect?", a: "SkillSelect is Australia's online immigration management system where skilled migrants submit an Expression of Interest (EOI) and are invited to apply for a visa based on their points score. Invitation rounds are held regularly." },
         { q: "Do I need a job offer for Subclass 189?", a: "No. The Skilled Independent Visa (Subclass 189) does not require a job offer, employer sponsorship, or state nomination. It is purely points-based." },
         { q: "What English test do I need?", a: "IELTS (Academic or General), TOEFL iBT, PTE Academic, Cambridge C1 Advanced, or OET are all accepted. A score equivalent to 'Competent English' or above is required, with higher scores earning additional points." },
+    ];
+
+    const overviewItems = [
+        { label: "Currency", value: "Australian Dollar (AUD)", icon: "fa-dollar-sign" },
+        { label: "Population", value: "~9.76 Lakh (metro avg)", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Continent", value: "Australia / Oceania", icon: "fa-earth-oceania" },
+        { label: "Wage (Min)", value: "AUD 24.10/hr", icon: "fa-wallet" },
+        { label: "GDP Per Capita", value: "AUD 61,340", icon: "fa-chart-line" },
+        { label: "Employment Rate", value: "64.40%", icon: "fa-briefcase" },
+        { label: "Land Area", value: "7,692,020 km²", icon: "fa-map" },
     ];
 
     const handleOpenModal = () => {
@@ -91,49 +121,7 @@ const AustraliaImmigration = () => {
                 </div>
             </div>
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Australian Dollar (AUD)", icon: "fa-dollar-sign" },
-                        { label: "Population", value: "~9.76 Lakh (metro avg)", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "Australia / Oceania", icon: "fa-earth-oceania" },
-                        { label: "Wage (Min)", value: "AUD 24.10/hr", icon: "fa-wallet" },
-                        { label: "States", value: "8 States & Territories", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "AUD 61,340", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "64.40%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "7,692,020 km²", icon: "fa-map" },
-                        { label: "Neighbours", value: "PNG, NZ, Indonesia", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* 10 Reasons to Migrate */}
             <section className="why-study-section section-padding">

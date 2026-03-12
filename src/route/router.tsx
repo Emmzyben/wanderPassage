@@ -36,6 +36,8 @@ import Home from "@/pages/home";
 import VisaProcessing from "@/pages/visa-processing";
 import TravelAssistance from "@/pages/travel-assistance";
 import TestPreparation from "@/pages/test-preparation";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -193,6 +195,14 @@ export const router = createBrowserRouter([
             {
                 path: '/student-portal',
                 element: <StudentPortal />
+            },
+            {
+                path: '/privacy-policy',
+                element: <PrivacyPolicy />
+            },
+            {
+                path: '/terms-of-service',
+                element: <TermsOfService />
             },
         ]
     },

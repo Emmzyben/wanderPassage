@@ -1,9 +1,20 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const India = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Currency", value: "Indian Rupee (₹)", icon: "fa-indian-rupee-sign" },
+        { label: "Population", value: "141.72 Crores", icon: "fa-users" },
+        { label: "Languages", value: "Hindi & English", icon: "fa-language" },
+        { label: "Continent", value: "Southern Asia", icon: "fa-earth-asia" },
+        { label: "Wage (Min)", value: "₹178/day", icon: "fa-wallet" },
+        { label: "GDP Per Capita", value: "$2,485", icon: "fa-chart-line" },
+        { label: "Land Area", value: "3,287,263 km²", icon: "fa-map" },
+    ];
 
     return (
         <div className="india-page">
@@ -13,49 +24,7 @@ const India = () => {
                 backgroundImage="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1471&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Indian Rupee (₹)", icon: "fa-indian-rupee-sign" },
-                        { label: "Population", value: "141.72 Crores", icon: "fa-users" },
-                        { label: "Languages", value: "Hindi & English", icon: "fa-language" },
-                        { label: "Continent", value: "Southern Asia", icon: "fa-earth-asia" },
-                        { label: "Wage (Min)", value: "₹178/day", icon: "fa-wallet" },
-                        { label: "States", value: "28 States", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "$2,485", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "56.00%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "3,287,263 km²", icon: "fa-map" },
-                        { label: "Total Universities", value: "1,113+", icon: "fa-school" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

@@ -1,9 +1,24 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Hungary = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Budapest", icon: "fa-city" },
+        { label: "Currency", value: "Forint (HUF)", icon: "fa-coins" },
+        { label: "Population", value: "9.6 Million", icon: "fa-users" },
+        { label: "Language", value: "Hungarian", icon: "fa-language" },
+        { label: "Min Wage", value: "€487 / mo", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Sept & Feb", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "9 Months", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "€60 (Student)", icon: "fa-passport" },
+        { label: "GDP Per Capita", value: "$16,286.76", icon: "fa-chart-line" },
+        { label: "Employment Rate", value: "64.80%", icon: "fa-briefcase" },
+        { label: "Land Area", value: "93,030 km²", icon: "fa-map" },
+    ];
 
     return (
         <div className="hungary-page">
@@ -13,49 +28,9 @@ const Hungary = () => {
                 backgroundImage="https://images.unsplash.com/photo-1565426873118-a17ed65d74b9?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Forint (HUF)", icon: "fa-coins" },
-                        { label: "Population", value: "96.4 Lakhs", icon: "fa-users" },
-                        { label: "Language", value: "Hungarian", icon: "fa-language" },
-                        { label: "Continent", value: "Central Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "€487.10/mo", icon: "fa-wallet" },
-                        { label: "Counties", value: "19", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "$16,286.76", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "64.80%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "93,030 km²", icon: "fa-map" },
-                        { label: "Neighbouring Country", value: "Slovakia & more", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

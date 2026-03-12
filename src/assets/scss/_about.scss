@@ -286,7 +286,7 @@
 }
 
 .about-wrapper-2 {
-    margin-bottom: -30px;
+    margin-bottom: -15px;
 
     @include breakpoint (max-xxl) {
         margin-bottom: 0;
@@ -379,14 +379,14 @@
     .about-content {
         p {
             border-bottom: 1px solid $border-color;
-            padding-bottom: 35px;
+            padding-bottom: 20px;
             display: inline-block;
         }
 
         .icon-area {
             margin-top: 30px;
             @include flex;
-            gap: 65px;
+            gap: 40px;
 
             @include breakpoint (max-xl) {
                 flex-wrap: wrap;
@@ -422,12 +422,12 @@
                 gap: 16px;
                 background-color: $white;
                 box-shadow: $shadow;
-                padding: 28px 25px;
+                padding: 15px 20px;
                 border-left: 3px solid $theme-color;
 
                 .content {
                     h2 {
-                        font-size: 28px;
+                        font-size: 22px;
                         margin-bottom: 5px;
                     }
 
@@ -441,7 +441,7 @@
         .about-author {
             @include flex;
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 30px;
 
             @include breakpoint (max-xl) {
                 flex-wrap: wrap;
@@ -460,9 +460,9 @@
                 gap: 20px;
 
                 .icon {
-                    width: 48px;
-                    height: 48px;
-                    line-height: 48px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
                     text-align: center;
                     background-color: $theme-color;
                     text-align: center;
@@ -476,8 +476,8 @@
                         left: 50%;
                         right: 0;
                         bottom: 0;
-                        width: 60px;
-                        height: 60px;
+                        width: 50px;
+                        height: 50px;
                         border-radius: 50%;
                         border: 1px solid $theme-color;
                         content: "";
@@ -488,6 +488,7 @@
 
                 .content {
                     h5 {
+                        font-size: 17px;
                         font-weight: 600;
                     }
 

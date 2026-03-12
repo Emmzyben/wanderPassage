@@ -13,15 +13,15 @@
             gap: 20px;
 
             .icon-box {
-                width: 60px;
-                height: 60px;
-                line-height: 60px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
                 text-align: center;
                 background-color: #D4AF37;
                 color: $black;
                 font-weight: 800;
                 border-radius: 50%;
-                font-size: 24px;
+                font-size: 20px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -32,6 +32,7 @@
                 h5 {
                     color: $white;
                     margin-bottom: 0;
+                    font-size: 17px;
                 }
             }
         }
@@ -68,7 +69,7 @@
             bottom: 40px;
             right: -20px;
             background-color: #D4AF37;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
             box-shadow: $shadow-2;
@@ -83,6 +84,7 @@
                 color: $black;
                 font-weight: 800;
                 margin-bottom: 0;
+                font-size: 22px;
             }
 
             span {

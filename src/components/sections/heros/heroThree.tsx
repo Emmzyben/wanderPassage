@@ -70,7 +70,7 @@ const HeroThree = () => {
                             </motion.div>
                         </div>
                     </div>
-                    <div className="col-lg-5">
+                    <div className="col-lg-5 d-none d-lg-block">
                         <motion.div
                             initial={{ x: 50, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}

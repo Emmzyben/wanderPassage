@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const NewZealand = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Wellington", icon: "fa-city" },
+        { label: "Currency", value: "NZD ($)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "5.1 Million", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Min Wage", value: "$23.15 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Feb & July", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 - 3 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "NZ$375 (avg)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="new-zealand-page">
@@ -13,27 +25,7 @@ const NewZealand = () => {
                 backgroundImage="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=1471&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "NZD", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "51.2 Lakhs", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "Oceania", icon: "fa-earth-oceania" },
-                        { label: "Wage (Min)", value: "$23.15/hr", icon: "fa-wallet" },
-                        { label: "Regions", value: "16", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

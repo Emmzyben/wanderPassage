@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Singapore = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Singapore", icon: "fa-city" },
+        { label: "Currency", value: "SGD ($)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "6 Million", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Min Wage", value: "SGD 1,600 / mo", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Aug & Jan", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 Year (LTVP)", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "SGD 120 (Standard)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="singapore-page">
@@ -13,27 +25,7 @@ const Singapore = () => {
                 backgroundImage="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1452&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "SGD", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "6.04 Million", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "SE Asia", icon: "fa-earth-asia" },
-                        { label: "Wage (Min)", value: "SGD 1,600/mo", icon: "fa-wallet" },
-                        { label: "Regions", value: "5", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

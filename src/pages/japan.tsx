@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Japan = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Tokyo", icon: "fa-city" },
+        { label: "Currency", value: "Japanese Yen (¥)", icon: "fa-yen-sign" },
+        { label: "Population", value: "125 Million", icon: "fa-users" },
+        { label: "Language", value: "Japanese", icon: "fa-language" },
+        { label: "Min Wage", value: "¥1,000 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "April & Oct", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 - 2 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "¥3,000 - ¥6,000", icon: "fa-passport" },
+    ];
 
     return (
         <div className="japan-page">
@@ -13,49 +25,9 @@ const Japan = () => {
                 backgroundImage="https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1453&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Japanese Yen (JPY)", icon: "fa-yen-sign" },
-                        { label: "Population", value: "~125 Million", icon: "fa-users" },
-                        { label: "Language", value: "Japanese", icon: "fa-language" },
-                        { label: "Continent", value: "Asia", icon: "fa-earth-asia" },
-                        { label: "Wage (Min)", value: "Avg JPY 1,000/hr", icon: "fa-wallet" },
-                        { label: "Prefectures", value: "47", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2024", value: "~USD 42,000", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "~61%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "377,975 km²", icon: "fa-map" },
-                        { label: "Avg Living Cost / mo", value: "JPY 100K – 150K", icon: "fa-coins" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

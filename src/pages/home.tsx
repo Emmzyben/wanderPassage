@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <HeroThree />
       <AboutThree />
-      <PartnersOne className="pt-0" />
+      <PartnersOne className="mt-80 mb-80 border-top" />
       <ServicesThree />
       <NewsLetterTwo />
       <ProjectsThree />

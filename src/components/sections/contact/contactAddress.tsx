@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const ContactAddress = () => {
     return (
-        <div className="contact-left-items">
+        <div className="contact-left-items card shadow-sm border-0 p-4 h-100">
             <div className="contact-info-area-2">
                 <div className="contact-info-items mb-4">
                     <div className="icon">

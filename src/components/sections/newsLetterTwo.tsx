@@ -18,7 +18,7 @@ const NewsLetterTwo = () => {
                                 WE ARE READY TO HELP YOU
                             </motion.span>
                             <motion.h2
-                                className="text-white mb-4"
+                                className="text-white mb-3"
                                 initial={{ y: 30, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
@@ -28,7 +28,7 @@ const NewsLetterTwo = () => {
                                 Free Counseling
                             </motion.h2>
                             <motion.p
-                                className="text-white mb-4"
+                                className="text-white mb-3"
                                 initial={{ y: 30, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}

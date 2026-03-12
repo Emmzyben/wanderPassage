@@ -148,7 +148,7 @@
 }
 
 .contact-info-area {
-    padding-top: 100px;
+    padding-top: 50px;
     @include flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
@@ -157,7 +157,7 @@
     @include breakpoint (max-xl) {
         flex-wrap: wrap;
         gap: 40px;
-        padding-top: 85px;
+        padding-top: 40px;
         justify-content: initial;
     }
 
@@ -171,7 +171,7 @@
         gap: 20px;
         justify-content: space-between;
         position: relative;
-        padding-bottom: 40px;
+        padding-bottom: 25px;
 
         @include breakpoint (max-xl) {
             flex-wrap: wrap;
@@ -185,8 +185,8 @@
 
         &:not(:last-child) {
             border-right: 1px solid rgba(255, 255, 255, 0.20);
-            padding-right: 100px;
-            height: 110px;
+            padding-right: 50px;
+            height: 75px;
 
             @include breakpoint (max-xxl) {
                 border: none;
@@ -200,9 +200,9 @@
         }
 
         .icon {
-            width: 65px;
-            height: 65px;
-            line-height: 65px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
             text-align: center;
             position: relative;
 
@@ -237,7 +237,7 @@
             }
 
             h3 {
-                font-size: 24px;
+                font-size: 19px;
                 color: $white;
 
                 @include breakpoint (max-sm) {
@@ -254,6 +254,16 @@
 
 .contact-wrapper-2 {
     .contact-left-items {
+        background-color: $white;
+        box-shadow: $shadow;
+        padding: 35px;
+        border-radius: 15px;
+        height: 100%;
+
+        @include breakpoint (max-sm) {
+            padding: 25px 20px;
+        }
+
         .contact-info-area-2 {
             padding: 0;
             background: transparent;
@@ -267,10 +277,10 @@
             .contact-info-items {
                 display: flex;
                 align-items: flex-start;
-                gap: 20px;
+                gap: 15px;
                 position: relative;
-                padding-bottom: 25px;
-                margin-bottom: 25px;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
                 border-bottom: 1px solid $border-color;
                 transition: transform 0.3s ease;
 
@@ -289,13 +299,13 @@
                 }
 
                 .icon {
-                    width: 55px;
-                    height: 55px;
-                    min-width: 55px;
-                    line-height: 55px;
+                    width: 45px;
+                    height: 45px;
+                    min-width: 45px;
+                    line-height: 45px;
                     text-align: center;
                     background: $theme-color;
-                    border-radius: 10px;
+                    border-radius: 8px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -310,7 +320,7 @@
 
                     svg,
                     i {
-                        font-size: 20px;
+                        font-size: 18px;
                         color: $white;
 
                         @include breakpoint (max-sm) {
@@ -322,7 +332,7 @@
                 .content {
                     p {
                         color: $text-color;
-                        margin-bottom: 8px;
+                        margin-bottom: 4px;
                         font-weight: 600;
                         text-transform: uppercase;
                         font-size: 12px;
@@ -334,7 +344,7 @@
                     }
 
                     h3 {
-                        font-size: 18px;
+                        font-size: 16px;
                         color: $header-color;
                         font-weight: 600;
                         line-height: 1.4;
@@ -419,16 +429,25 @@
     }
 
     .contact-content {
-        margin-left: 40px;
+        margin-left: 0;
+        background-color: $white;
+        box-shadow: $shadow;
+        padding: 35px;
+        border-radius: 15px;
+        height: 100%;
 
         @include breakpoint (max-lg) {
             margin-left: 0;
             margin-top: 40px;
         }
 
+        @include breakpoint (max-sm) {
+            padding: 25px 20px;
+        }
+
         h2 {
-            margin-bottom: 10px;
-            font-size: clamp(24px, 5vw, 36px);
+            margin-bottom: 8px;
+            font-size: clamp(22px, 4vw, 28px);
         }
 
         p {
@@ -438,7 +457,7 @@
         }
 
         .contact-form-items {
-            margin-top: 30px;
+            margin-top: 20px;
 
             .form-clt {
                 span {
@@ -455,11 +474,11 @@
                 textarea {
                     border: 1px solid $border-color;
                     color: $text-color;
-                    padding: 18px 20px;
+                    padding: 12px 15px;
                     border-radius: 5px;
 
                     @include breakpoint (max-sm) {
-                        padding: 14px 15px;
+                        padding: 10px 12px;
                     }
 
                     &::placeholder {
@@ -468,7 +487,7 @@
                 }
 
                 textarea {
-                    padding-bottom: 150px;
+                    padding-bottom: 100px;
 
                     @include breakpoint (max-sm) {
                         padding-bottom: 100px;
@@ -483,10 +502,10 @@
     .googpemap {
         iframe {
             width: 100%;
-            height: 600px;
+            height: 400px;
 
             @include breakpoint (max-sm) {
-                height: 400px;
+                height: 300px;
             }
         }
     }

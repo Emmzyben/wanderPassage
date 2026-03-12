@@ -69,9 +69,9 @@
                 border-radius: 0;
                 box-shadow: none;
                 background-color: $bg-color;
-                padding: 25px 30px 0;
+                padding: 15px 20px 0;
                 text-transform: capitalize;
-                font-size: 20px;
+                font-size: 17px;
                 border: 1px solid $border-color;
                 border: 1px solid transparent;
 
@@ -98,7 +98,7 @@
                 &.collapsed {
                     background-color: transparent;
                     border: 1px solid $border-color;
-                    padding: 25px 30px;
+                    padding: 15px 20px;
                     color: $header-color;
                 }
 
@@ -108,9 +108,7 @@
         .accordion-collapse {
 
             .accordion-body {
-                padding-right: 150px;
-                padding-left: 30px;
-                padding-top: 15px;
+                padding: 10px 20px 20px;
                 color: $text-color;
                 background-color: $bg-color;
 
@@ -148,7 +146,7 @@
             .accordion-header {
                 .accordion-button {
                     background-color: $white;
-                    font-size: 20px;
+                    font-size: 17px;
                     border: none;
                 }
             }
@@ -184,14 +182,15 @@
             bottom: 30px;
             right: 30px;
             background-color: #D4AF37;
-            padding: 30px;
+            padding: 15px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
             h3 {
                 color: $black;
                 font-weight: 800;
-                margin-bottom: 5px;
+                font-size: 22px;
+                margin-bottom: 3px;
             }
 
             span {

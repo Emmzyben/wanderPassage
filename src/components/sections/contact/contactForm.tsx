@@ -1,8 +1,8 @@
 const ContactForm = () => {
     return (
-        <div className="contact-content">
-            <h2>Get in Touch with Our Experts</h2>
-            <p>
+        <div className="contact-content card shadow-sm border-0 p-4 h-100">
+            <h2 className="mb-3">Get in Touch with Our Experts</h2>
+            <p className="mb-4">
                 Whether you're planning to study abroad or seeking migration assistance, our team is here to guide you every step of the way. Reach out to us today for personalized support.
             </p>
             <form action="contact.php" id="contact-form" method="POST" className="contact-form-items">

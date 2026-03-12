@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Australia = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Canberra", icon: "fa-city" },
+        { label: "Currency", value: "AUD ($)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "26.8 Million", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Min Wage", value: "$24.10 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Feb, July, Nov", icon: "fa-calendar-check" },
+        { label: "Post-Study Work", value: "2 - 6 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "AUD $1,600", icon: "fa-passport" },
+    ];
 
     return (
         <div className="australia-page">
@@ -13,27 +25,7 @@ const Australia = () => {
                 backgroundImage="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1530&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "AUD", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "26.8M", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "Australia", icon: "fa-earth-oceania" },
-                        { label: "Wage (Min)", value: "$24.10/hr", icon: "fa-wallet" },
-                        { label: "States", value: "8", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

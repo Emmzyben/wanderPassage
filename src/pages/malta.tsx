@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Malta = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Valletta", icon: "fa-city" },
+        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
+        { label: "Population", value: "5.3 Lakhs", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Min Wage", value: "€777.10 / mo", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Feb & Oct", icon: "fa-calendar-check" },
+        { label: "Post-Study Work", value: "1 Year", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "$72 (Schengen)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="malta-page">
@@ -13,27 +25,7 @@ const Malta = () => {
                 backgroundImage="https://images.unsplash.com/photo-1602541648578-ad8b27fb97fd?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
-                        { label: "Population", value: "5.31 Lakhs", icon: "fa-users" },
-                        { label: "Language", value: "Maltese & English", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "€777.10/mo", icon: "fa-wallet" },
-                        { label: "Districts", value: "6", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

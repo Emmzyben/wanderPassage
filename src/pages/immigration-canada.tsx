@@ -1,7 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 import { useState } from "react";
 
-const faqs = [
+interface FAQ {
+    q: string;
+    a: string;
+}
+
+interface Program {
+    icon: string;
+    name: string;
+    badge: string;
+    desc: string;
+    highlights: string[];
+}
+
+const faqs: FAQ[] = [
     { q: "Which is the popular program for PR visa?", a: "Express Entry is the most popular pathway for Canadian PR. It manages applications for the Federal Skilled Worker (FSW), Federal Skilled Trades (FST), and Canadian Experience Class (CEC) programs, using the Comprehensive Ranking System (CRS) to rank candidates." },
     { q: "How long does the Express Entry process take?", a: "Most Express Entry applications are processed within 6 months of receiving an Invitation to Apply (ITA). In many cases, processing can be completed in as little as 60–90 days from the date of submission." },
     { q: "Can I include my family in my PR application?", a: "Yes. You can include your spouse or common-law partner and dependent children in your PR application. Their details are included in your profile and they will receive PR status along with you if your application is approved." },
@@ -12,7 +26,7 @@ const faqs = [
     { q: "Is proof of funds mandatory for a Canada PR visa, or are there exemptions?", a: "Proof of funds is mandatory for most Express Entry streams. However, if you currently hold a valid job offer in Canada or are currently working in Canada and eligible under the Canadian Experience Class (CEC), the proof of funds requirement may be waived." },
 ];
 
-const programs = [
+const programs: Program[] = [
     {
         icon: "fa-rocket",
         name: "Express Entry Program",
@@ -60,6 +74,17 @@ const programs = [
 const CanadaImmigration = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+    const overviewItems = [
+        { label: "Currency", value: "Canadian Dollar (CAD)", icon: "fa-dollar-sign" },
+        { label: "Population", value: "41.3 Million", icon: "fa-users" },
+        { label: "Languages", value: "English & French", icon: "fa-language" },
+        { label: "Continent", value: "North America", icon: "fa-earth-americas" },
+        { label: "Wage (Min)", value: "$17.30 CAD/hr", icon: "fa-wallet" },
+        { label: "GDP Per Capita", value: "$45,288 CAD", icon: "fa-chart-line" },
+        { label: "Employment Rate", value: "62.40%", icon: "fa-briefcase" },
+        { label: "Land Area", value: "9.985 million km²", icon: "fa-map" },
+    ];
+
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
@@ -97,49 +122,7 @@ const CanadaImmigration = () => {
                 </div>
             </div>
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Canadian Dollar (CAD)", icon: "fa-dollar-sign" },
-                        { label: "Population", value: "41.3 Million", icon: "fa-users" },
-                        { label: "Languages", value: "English & French", icon: "fa-language" },
-                        { label: "Continent", value: "North America", icon: "fa-earth-americas" },
-                        { label: "Wage (Min)", value: "$17.30 CAD/hr", icon: "fa-wallet" },
-                        { label: "Provinces", value: "13", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "$45,288 CAD", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "62.40%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "9.985 million km²", icon: "fa-map" },
-                        { label: "Neighbouring Countries", value: "USA, Greenland, France", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* 10 Reasons to Migrate */}
             <section className="why-study-section section-padding">

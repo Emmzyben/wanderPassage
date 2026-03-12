@@ -11,10 +11,10 @@ const Contact = () => {
                 title="Contact Us"
                 backgroundImage="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&q=80&w=1920"
             />
-            <section className="contact-section fix section-padding">
+            <section className="contact-section fix section-padding ">
                 <div className="container">
                     <div className="contact-wrapper-2">
-                        <div className="row g-4 align-items-center">
+                        <div className="row g-4 align-items-stretch">
                             <div className="col-lg-6">
                                 <ContactAddress />
                             </div>

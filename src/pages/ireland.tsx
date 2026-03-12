@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Ireland = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Dublin", icon: "fa-city" },
+        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
+        { label: "Population", value: "5.1 Million", icon: "fa-users" },
+        { label: "Language", value: "English / Irish", icon: "fa-language" },
+        { label: "Min Wage", value: "€1,656 / mo", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Sept, Jan", icon: "fa-calendar-check" },
+        { label: "Post-Study Work", value: "2 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "€60 (Student)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="ireland-page">
@@ -13,27 +25,7 @@ const Ireland = () => {
                 backgroundImage="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?q=80&w=1530&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Euro (€)", icon: "fa-euro-sign" },
-                        { label: "Population", value: "5.1 Million", icon: "fa-users" },
-                        { label: "Language", value: "English / Irish", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "€1,656/mo", icon: "fa-wallet" },
-                        { label: "Provinces", value: "4", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Ireland Section */}
             <section className="why-study-section section-padding">

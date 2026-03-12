@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Usa = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Washington, D.C.", icon: "fa-city" },
+        { label: "Currency", value: "USD ($)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "333 Million", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Min Wage", value: "$7.25 - $17.50/hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Fall, Spring, Summer", icon: "fa-calendar-check" },
+        { label: "Post-Study Work", value: "1 - 3 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "$185 (F1 Visa)", icon: "fa-passport" },
+    ];
 
     return (
         <div className="usa-page">
@@ -13,27 +25,7 @@ const Usa = () => {
                 backgroundImage="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1510&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "USD", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "33.33 Cr", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "North America", icon: "fa-earth-americas" },
-                        { label: "Wage (Min)", value: "$7.25/hr", icon: "fa-wallet" },
-                        { label: "States", value: "50", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

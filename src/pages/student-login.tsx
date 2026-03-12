@@ -59,7 +59,7 @@ const StudentLogin = () => {
         <>
 
 
-            <section className="student-auth-section section-padding">
+            <section className="student-auth-section">
                 <div className="container">
                     {/* Floating shapes for visual interest */}
                     <div className="auth-bg-shapes">
@@ -284,9 +284,9 @@ const StudentLogin = () => {
                                                     onChange={e => setAgreed(e.target.checked)}
                                                 />
                                                 I agree to the{" "}
-                                                <Link to="#" className="forgot-link">Terms of Service</Link>{" "}
+                                                <Link to="/terms-of-service" className="forgot-link">Terms of Service</Link>{" "}
                                                 and{" "}
-                                                <Link to="#" className="forgot-link">Privacy Policy</Link>
+                                                <Link to="/privacy-policy" className="forgot-link">Privacy Policy</Link>
                                             </label>
 
                                             {regError && (

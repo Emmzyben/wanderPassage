@@ -1,7 +1,18 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 import { useState } from "react";
 
-const ukPointsGrid = [
+interface PointsFactor {
+    factor: string;
+    max: number;
+}
+
+interface FAQ {
+    q: string;
+    a: string;
+}
+
+const ukPointsGrid: PointsFactor[] = [
     { factor: "Job offer from an approved sponsor", max: 20 },
     { factor: "Job at an appropriate skill level (RQF Level 3+)", max: 20 },
     { factor: "Salary of at least £26,200 per year", max: 20 },
@@ -12,13 +23,24 @@ const ukPointsGrid = [
 const UkImmigration = () => {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-    const faqs = [
+    const faqs: FAQ[] = [
         { q: "What is the minimum salary for a UK Skilled Worker Visa?", a: "The minimum salary threshold is £26,200 per year or £10.75 per hour (whichever is higher). However, certain roles on the Shortage Occupation List may have a lower threshold of £20,960." },
         { q: "How long is the UK Skilled Worker Visa valid?", a: "The visa is granted for up to 5 years. After 5 continuous years in the UK on this visa, you may be eligible to apply for Indefinite Leave to Remain (ILR), also known as settled status." },
         { q: "Can I bring my family to the UK?", a: "Yes. You can bring your spouse or partner and children under 18 as dependants. They will be permitted to live, work, and study in the UK for the duration of your visa." },
         { q: "What is a Certificate of Sponsorship (CoS)?", a: "A CoS is a unique reference number assigned to you by your UK employer (who must hold a valid Sponsor Licence). It contains details about your job, salary, and start date, and is required as part of your visa application." },
         { q: "Do I need to take an English language test?", a: "Yes, in most cases. You must demonstrate English proficiency at B1 level or above on the CEFR scale. Accepted tests include IELTS, TOEFL, and others. Citizens of majority English-speaking countries or those with degrees taught in English may be exempt." },
         { q: "Can I change jobs on a Skilled Worker Visa?", a: "Yes, but you must get a new Certificate of Sponsorship from your new employer and in most cases update your visa. You can also take on additional jobs (with restrictions) or do voluntary work." },
+    ];
+
+    const overviewItems = [
+        { label: "Currency", value: "£ Sterling Pound (GBP)", icon: "fa-sterling-sign" },
+        { label: "Population", value: "69 Million", icon: "fa-users" },
+        { label: "Language", value: "English", icon: "fa-language" },
+        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
+        { label: "Wage (Min)", value: "£8.60 GBP/hr", icon: "fa-wallet" },
+        { label: "GDP Per Capita", value: "£33,271 GBP", icon: "fa-chart-line" },
+        { label: "Employment Rate", value: "74.50%", icon: "fa-briefcase" },
+        { label: "Land Area", value: "244,376 km²", icon: "fa-map" },
     ];
 
     const handleOpenModal = () => {
@@ -58,49 +80,7 @@ const UkImmigration = () => {
                 </div>
             </div>
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "£ Sterling Pound (GBP)", icon: "fa-sterling-sign" },
-                        { label: "Population", value: "69 Million", icon: "fa-users" },
-                        { label: "Language", value: "English", icon: "fa-language" },
-                        { label: "Continent", value: "Europe", icon: "fa-earth-europe" },
-                        { label: "Wage (Min)", value: "£8.60 GBP/hr", icon: "fa-wallet" },
-                        { label: "Nations", value: "England, Wales, Scotland, NI", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2023", value: "£33,271 GBP", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "74.50%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "244,376 km²", icon: "fa-map" },
-                        { label: "Neighbouring Country", value: "Ireland", icon: "fa-globe" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* 8 Reasons Section */}
             <section className="why-study-section section-padding">

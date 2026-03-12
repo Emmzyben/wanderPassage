@@ -194,10 +194,10 @@ const Footer = () => {
                         </p>
                         <ul className="footer-menu wow slideRight" data-delay=".5">
                             <li>
-                                <Link to="contact">Terms &amp; Condition</Link>
+                                <Link to="/terms-of-service">Terms of Service</Link>
                             </li>
                             <li>
-                                <Link to="contact">Privacy Policy</Link>
+                                <Link to="/privacy-policy">Privacy Policy</Link>
                             </li>
                         </ul>
                     </div>

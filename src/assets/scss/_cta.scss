@@ -223,21 +223,21 @@
             }
         }
         h2 {
-            font-size: 42px;
+            font-size: 32px;
             @include breakpoint (max-lg) {
-                font-size: 36px;
+                font-size: 28px;
             }
             @include breakpoint (max-md) {
-                font-size: 32px;
+                font-size: 26px;
             }
             @include breakpoint (max-sm) {
-                font-size: 28px;
+                font-size: 24px;
             }
         }
         p {
-            font-size: 18px;
+            font-size: 16px;
             @include breakpoint (max-md) {
-                font-size: 16px;
+                font-size: 15px;
             }
         }
 
@@ -259,7 +259,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 20px;
-            border: 10px solid rgba(255, 255, 255, 0.1);
+            border: 6px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
     }

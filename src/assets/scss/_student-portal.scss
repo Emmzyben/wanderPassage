@@ -60,7 +60,10 @@
 
 .student-auth-section {
     background: linear-gradient(160deg, #f0f4fb 0%, #e8eef7 50%, #f5f0ff 100%);
-    min-height: 80vh;
+    padding: 10px 0 30px;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
 
@@ -172,10 +175,14 @@
         width: 100%;
         max-width: 480px;
         margin: 0 auto;
-        padding: 30px 40px;
+        padding: 20px 30px;
 
         @media (max-width: 600px) {
             padding: 20px 15px;
+        }
+
+        @media (max-height: 800px) {
+            padding: 15px 25px;
         }
     }
 }
@@ -186,13 +193,13 @@
     background: var(--bg, #f3f7fb);
     border-radius: 14px;
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     gap: 4px;
 
     .auth-tab-btn {
         flex: 1;
-        padding: 10px 14px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 13px;
         font-weight: 700;
         color: var(--text, #585858);
         background: transparent;
@@ -224,10 +231,10 @@
 
 // Form welcome heading
 .form-welcome {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     h3 {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 800;
         color: var(--header, #232434);
         margin-bottom: 6px;
@@ -235,9 +242,13 @@
     }
 
     p {
-        font-size: 14px;
+        font-size: 13px;
         color: var(--text, #585858);
         margin: 0;
+
+        @media (max-height: 800px) {
+            display: none;
+        }
     }
 }
 
@@ -248,7 +259,7 @@
     form {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
 }
 
@@ -265,10 +276,10 @@
 .form-group-auth {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
 
     label {
-        font-size: 12.5px;
+        font-size: 11px;
         font-weight: 700;
         color: var(--header, #232434);
         display: flex;
@@ -285,10 +296,10 @@
 
     input {
         width: 100%;
-        padding: 10px 16px;
-        border: 2px solid #e8eef5;
-        border-radius: 12px;
-        font-size: 14px;
+        padding: 6px 12px;
+        border: 1px solid #ebf1f9;
+        border-radius: 10px;
+        font-size: 13px;
         color: var(--header, #232434);
         background: #f9fbff;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -302,7 +313,7 @@
 
         &:focus {
             border-color: var(--theme, #3a3086);
-            box-shadow: 0 0 0 4px rgba(10, 58, 134, 0.1);
+            box-shadow: 0 0 0 2px rgba(10, 58, 134, 0.08);
             background: #fff;
             transform: translateY(-1px);
         }
@@ -377,7 +388,8 @@
     font-size: 12px;
     color: #7a8599;
     background: linear-gradient(135deg, #f0f4ff 0%, #f0fdf4 100%);
-    padding: 8px 12px;
+    padding: 6px 15px;
+    margin-top: 10px;
     border-radius: 10px;
     display: flex;
     gap: 8px;
@@ -395,8 +407,8 @@
     border: 2px solid #fca5a5;
     color: #dc2626;
     border-radius: 12px;
-    padding: 12px 16px;
-    font-size: 13px;
+    padding: 10px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -406,7 +418,7 @@
 
 .auth-submit-btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background: linear-gradient(135deg, #3a3086 0%, #1a5fc2 50%, #1a6bcc 100%);
     background-size: 200% 200%;
     color: #fff;
@@ -453,7 +465,7 @@
 
 .auth-divider {
     text-align: center;
-    margin: 15px 0 10px;
+    margin: 10px 0 8px;
     position: relative;
     color: #c8cdd5;
     font-size: 13px;
@@ -515,10 +527,10 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 12px;
+    font-size: 11px;
     color: #9aa3b0;
-    margin-top: 20px;
-    padding: 10px 15px;
+    margin-top: 15px;
+    padding: 8px 12px;
     background: linear-gradient(135deg, #f0fdf4, #f0f4ff);
     border-radius: 12px;
     border: 1px solid #e0e7ee;
@@ -526,6 +538,10 @@
     i {
         color: #22c55e;
         font-size: 15px;
+    }
+
+    @media (max-height: 850px) {
+        display: none;
     }
 }
 

@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Canada = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Ottawa", icon: "fa-city" },
+        { label: "Currency", value: "CAD ($)", icon: "fa-money-bill-transfer" },
+        { label: "Population", value: "41.3 Million", icon: "fa-users" },
+        { label: "Language", value: "English & French", icon: "fa-language" },
+        { label: "Min Wage", value: "$15.00 - $17.40/hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "Fall, Winter, Summer", icon: "fa-calendar-check" },
+        { label: "Post-Study Work", value: "Up to 3 Years", icon: "fa-briefcase" },
+        { label: "Work Hours", value: "24 hrs / week", icon: "fa-clock" },
+    ];
 
     return (
         <div className="canada-page">
@@ -13,27 +25,7 @@ const Canada = () => {
                 backgroundImage="https://images.unsplash.com/photo-1519832979-6fa6e479498e?q=80&w=1530&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "CAD", icon: "fa-money-bill-transfer" },
-                        { label: "Population", value: "41.3M", icon: "fa-users" },
-                        { label: "Language", value: "EN / FR", icon: "fa-language" },
-                        { label: "Continent", value: "North America", icon: "fa-earth-americas" },
-                        { label: "Wage (Min)", value: "$17.30/hr", icon: "fa-wallet" },
-                        { label: "Provinces", value: "13", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

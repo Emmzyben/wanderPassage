@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const SouthKorea = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Seoul", icon: "fa-city" },
+        { label: "Currency", value: "South Korean Won (₩)", icon: "fa-coins" },
+        { label: "Population", value: "51 Million", icon: "fa-users" },
+        { label: "Language", value: "Korean", icon: "fa-language" },
+        { label: "Min Wage", value: "₩9,860 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "March & Sept", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 - 2 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "₩50k - ₩90k", icon: "fa-passport" },
+    ];
 
     return (
         <div className="south-korea-page">
@@ -13,49 +25,9 @@ const SouthKorea = () => {
                 backgroundImage="https://images.unsplash.com/photo-1538485399081-7191377e8241?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "South Korean Won (KRW)", icon: "fa-coins" },
-                        { label: "Population", value: "~51 Million", icon: "fa-users" },
-                        { label: "Language", value: "Korean", icon: "fa-language" },
-                        { label: "Continent", value: "Asia", icon: "fa-earth-asia" },
-                        { label: "Wage (Min)", value: "KRW 9,860/hr", icon: "fa-wallet" },
-                        { label: "Divisions", value: "9 Provinces + 7 Cities", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2024", value: "~USD 35,000", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "~63%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "100,210 km²", icon: "fa-map" },
-                        { label: "Avg Living Cost / mo", value: "KRW 900K – 1.3M", icon: "fa-coins" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">

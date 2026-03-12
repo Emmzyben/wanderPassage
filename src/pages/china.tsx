@@ -1,9 +1,21 @@
 import PageTitle from "@/components/sections/pageTitle";
+import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const China = () => {
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
+
+    const overviewItems = [
+        { label: "Capital", value: "Beijing", icon: "fa-city" },
+        { label: "Currency", value: "CNY (¥)", icon: "fa-yen-sign" },
+        { label: "Population", value: "1.4 Billion", icon: "fa-users" },
+        { label: "Language", value: "Mandarin", icon: "fa-language" },
+        { label: "Min Wage", value: "CNY 22 - 27 / hr", icon: "fa-wallet" },
+        { label: "Main Intakes", value: "March & Sept", icon: "fa-calendar-check" },
+        { label: "Post-Study", value: "1 - 2 Years", icon: "fa-briefcase" },
+        { label: "Visa Fee", value: "₹4,000 - ₹8,000", icon: "fa-passport" },
+    ];
 
     return (
         <div className="china-page">
@@ -13,49 +25,9 @@ const China = () => {
                 backgroundImage="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1470&auto=format&fit=crop"
             />
 
-            {/* Overview Bar */}
-            <div className="container">
-                <div className="overview-bar">
-                    {[
-                        { label: "Currency", value: "Chinese Yuan (CNY)", icon: "fa-yen-sign" },
-                        { label: "Population", value: "~1.4 Billion", icon: "fa-users" },
-                        { label: "Language", value: "Mandarin Chinese", icon: "fa-language" },
-                        { label: "Continent", value: "Asia", icon: "fa-earth-asia" },
-                        { label: "Wage (Min)", value: "CNY 2,200–2,500/mo", icon: "fa-wallet" },
-                        { label: "Provinces", value: "23 + 5 AR + 4 Mun", icon: "fa-landmark" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="overview-item">
-                            <i className={`fa-solid ${item.icon}`}></i>
-                            <div className="details">
-                                <span>{item.label}</span>
-                                <strong>{item.value}</strong>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <OverviewBar items={overviewItems} />
 
-            {/* Key Stats Strip */}
-            <div className="container">
-                <div className="row g-3 mb-5">
-                    {[
-                        { label: "Per Capita Income 2024", value: "~USD 14,000", icon: "fa-chart-line" },
-                        { label: "Employment Rate 2024", value: "~66%", icon: "fa-briefcase" },
-                        { label: "Land Area", value: "9,596,961 km²", icon: "fa-map" },
-                        { label: "Avg Living Cost / mo", value: "CNY 2,500 – 4,000", icon: "fa-coins" },
-                    ].map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-6">
-                            <div className="stat-strip-card">
-                                <i className={`fa-solid ${item.icon}`}></i>
-                                <div>
-                                    <span>{item.label}</span>
-                                    <strong>{item.value}</strong>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">
