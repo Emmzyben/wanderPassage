@@ -1,4 +1,4 @@
-.uk-page {
+﻿.uk-page {
     @extend .country-study-page;
 
     // UK navy/union-jack blue accent
@@ -7,10 +7,19 @@
     --uk-navy: #0d2b6b;
 
     // -------------------------------------------------------
-    // Stat card — UK navy
+    // Stat card - UK navy
     // -------------------------------------------------------
     .stat-card-premium {
         background: var(--accent-gradient) !important;
+        color: #fff !important;
+
+        h4 {
+            color: #fff !important;
+        }
+
+        p {
+            color: #fff !important;
+        }
     }
 
     // -------------------------------------------------------

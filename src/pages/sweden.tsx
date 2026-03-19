@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Sweden = () => {
@@ -39,7 +40,7 @@ const Sweden = () => {
                             { id: "01", title: "High-Quality Education", desc: "Sweden is globally renowned for its innovative, research-driven academic programmes offering real-world relevance and academic rigour." },
                             { id: "02", title: "English Proficiency", desc: "A vast number of courses are delivered in English, making Swedish universities highly accessible to international students worldwide." },
                             { id: "03", title: "Cultural Diversity", desc: "A welcoming, inclusive environment with a vibrant multicultural scene that enriches student life beyond the classroom." },
-                            { id: "04", title: "Strong Economy", desc: "Sweden's robust economy is home to global giants like IKEA, Spotify, and Volvo — creating outstanding internship and career opportunities." },
+                            { id: "04", title: "Strong Economy", desc: "Sweden's robust economy is home to global giants like IKEA, Spotify, and Volvo - creating outstanding internship and career opportunities." },
                             { id: "05", title: "Sustainability Focus", desc: "A deep national commitment to sustainability and environmental responsibility runs through education, industry, and everyday life." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
@@ -268,82 +269,80 @@ const Sweden = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+            {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                        {[
+                            { label: "Accommodation", value: "SEK 10,000 – 20,000 / mo", icon: "fa-house" },
+                            { label: "Food", value: "€400 – €600 / mo", icon: "fa-utensils" },
+                            { label: "Internet & Mobile", value: "€25 – €60 / mo", icon: "fa-wifi" },
+                            { label: "Transport (Public)", value: "€10 – €20 / mo", icon: "fa-bus" },
+                        ].map((item, idx) => (
+                            <div key={idx} className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid ${item.icon}`}></i></div>
+                                    <h5>{item.label}</h5>
+                                    <p>{item.value}</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "SEK 10,000 – 20,000 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "€400 – €600 / mo", icon: "fa-utensils" },
-                                    { label: "Internet & Mobile", value: "€25 – €60 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "€10 – €20 / mo", icon: "fa-bus" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                        ))}
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Proof of Funds Required</span>
+                        <strong>SEK 8,370/mo (~€800) · SEK 100,440/yr (~€9,600)</strong>
+                    </div>
+                    <div className="row g-3 mt-3">
+                        {[
+                            { label: "Working Hours", value: "40 hrs / week", icon: "fa-clock" },
+                            { label: "Post-Study Work", value: "Up to 12 Months", icon: "fa-briefcase" },
+                            { label: "PR Possibilities", value: "Yes (after residency)", icon: "fa-id-card" },
+                        ].map((item, idx) => (
+                            <div key={idx} className="col-lg-4 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid ${item.icon}`}></i></div>
+                                    <h5>{item.label}</h5>
+                                    <p>{item.value}</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Proof of Funds Required:</span>
-                                <h3 className="mb-0 mt-2 text-white">SEK 8,370/mo (~€800) · SEK 100,440/yr (~€9,600)</h3>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Visa Requirements Section */}
+            <section className="visa-section section-padding">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Sweden</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                        {[
+                            { icon: "fa-shield-halved", label: "Visa Fees", value: "~SEK 1,500 (€140 / $150)" },
+                            { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "2 – 4 Months" },
+                            { icon: "fa-umbrella", label: "Travel Insurance", value: "€50 – €150 / mo" },
+                            { icon: "fa-heart-pulse", label: "Health Insurance", value: "€50 – €150 / mo" },
+                            { icon: "fa-ticket", label: "Flight Cost", value: "€600 – €1,200" },
+                            { icon: "fa-piggy-bank", label: "Proof of Funds", value: "SEK 8,370 / mo min" },
+                            { icon: "fa-passport", label: "Identity Proof", value: "Passport + Nat. ID" },
+                        ].map((item, idx) => (
+                            <div key={idx} className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid ${item.icon}`}></i>
+                                    <h5>{item.label}</h5>
+                                    <p>{item.value}</p>
+                                </div>
                             </div>
-                            <div className="row g-3 mt-2">
-                                {[
-                                    { label: "Working Hours", value: "40 hrs / week", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "Up to 12 Months", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "Yes (after residency)", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '13px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '14px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Sweden</span>
-                                <h2 className="text-white">Visa Requirements</h2>
-                            </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "~SEK 1,500 (€140 / $150)" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "2 – 4 Months" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "€50 – €150/mo (SEK 500–1,500)" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "€50 – €150/mo (SEK 500–1,500)" },
-                                        { icon: "fa-ticket", label: "Flight Cost", value: "€600 – €1,200 (~$650–$1,300)" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "SEK 8,370/mo min — Bank statements, scholarship/sponsor letter" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport, National ID Card, Birth Certificate" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Sweden?</h4>
-                                <p>Book your FREE 30 mins consultation with our Sweden experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
-                            </div>
-                        </div>
+                        ))}
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Ready to apply to Sweden? Get expert guidance today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK A FREE CONSULTATION</button>
                     </div>
                 </div>
             </section>
@@ -354,8 +353,11 @@ const Sweden = () => {
                     <div className="cta-banner-modern">
                         <div className="cta-content">
                             <h2>Your Nordic Future <br /> Starts in Sweden</h2>
-                            <p>Study in a country that leads the world in innovation, sustainability, and quality of life. Our experts will help you navigate every step — from application to arrival.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <p>Study in a country that leads the world in innovation, sustainability, and quality of life. Our experts will help you navigate every step - from application to arrival.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

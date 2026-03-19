@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Italy = () => {
@@ -36,10 +37,10 @@ const Italy = () => {
                     </div>
                     <div className="row g-4">
                         {[
-                            { id: "01", title: "Experience Italian Culture", desc: "Immerse yourself in one of the world's oldest and richest cultures — art, architecture, music, and history at every corner." },
+                            { id: "01", title: "Experience Italian Culture", desc: "Immerse yourself in one of the world's oldest and richest cultures - art, architecture, music, and history at every corner." },
                             { id: "02", title: "High-Quality Education", desc: "Italy is home to some of the world's oldest universities, offering globally recognized degrees across all disciplines." },
                             { id: "03", title: "Diverse Programme Choices", desc: "From Design and Business to Technology and Medicine, Italy offers an enormous variety of programmes for every passion." },
-                            { id: "04", title: "Authentic Italian Cuisine", desc: "Enjoy world-famous food — pizza, pasta, gelato — as part of a lifestyle that nourishes both body and mind." },
+                            { id: "04", title: "Authentic Italian Cuisine", desc: "Enjoy world-famous food - pizza, pasta, gelato - as part of a lifestyle that nourishes both body and mind." },
                             { id: "05", title: "Beautiful Landscapes", desc: "From the Amalfi Coast to the Dolomites and Tuscan hills, Italy offers stunning natural beauty beyond the classroom." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
@@ -262,95 +263,156 @@ const Italy = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>€200 – €600 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "€200 – €600 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "€200 – €400 / mo", icon: "fa-utensils" },
-                                    { label: "Internet & Mobile", value: "€20 – €40 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "€2.50 – €3.00 / ride", icon: "fa-bus" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>€200 – €400 / mo</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Total Estimated Average:</span>
-                                <h3 className="mb-0 mt-2 text-white">€3,800 – €5,500 / year</h3>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet & Mobile</h5>
+                                    <p>€20 – €40 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3 mt-2">
-                                {[
-                                    { label: "Working Hours", value: "8 hrs / day", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "1 Year Permit", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "Yes (after study)", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '13px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '14px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport (Public)</h5>
+                                    <p>€2.50 – €3.00 / ride</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Italy</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>8 hrs / day</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "INR 8,270" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "15 Days" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "Mandatory" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "Required" },
-                                        { icon: "fa-ticket", label: "Flight Cost (from India)", value: "INR 50,000 – 60,000" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "Living Expenses + Bank Statement" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport Required" },
-                                        { icon: "fa-file-lines", label: "Invitation Letter", value: "University Admission Letter" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>1 Year Permit</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Italy?</h4>
-                                <p>Book your FREE 30 mins consultation session with our Italy experts.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR Possibilities</h5>
+                                    <p>Yes (after study)</p>
+                                </div>
                             </div>
-                        </div>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Total Estimated Average:</span>
+                        <strong>€3,800 – €5,500 / year</strong>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Italy</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>INR 8,270</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>15 Days</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-umbrella`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Mandatory</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>Required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>INR 50,000 – 60,000</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Living Expenses + Bank Statement</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-passport`}></i>
+                                    <h5>Identity Proof</h5>
+                                    <p>Valid Passport Required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-file-lines`}></i>
+                                    <h5>Invitation Letter</h5>
+                                    <p>University Admission Letter</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation session with our Italy experts.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
                 <div className="container">
                     <div className="cta-banner-modern">
                         <div className="cta-content">
-                            <h2>La Dolce Vita Awaits — <br /> Start Your Italian Journey</h2>
+                            <h2>La Dolce Vita Awaits - <br /> Start Your Italian Journey</h2>
                             <p>Study at one of Europe's most historic universities, surrounded by art, culture, and cuisine. Our experts will guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

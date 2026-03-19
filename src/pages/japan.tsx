@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Japan = () => {
@@ -60,7 +61,7 @@ const Japan = () => {
             <div className="container">
                 <div className="visual-interstitial" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1472&auto=format&fit=crop")' }}>
                     <div className="content">
-                        <h3>Cherry Blossoms, Robotics & World-Class Research — Welcome to Japan</h3>
+                        <h3>Cherry Blossoms, Robotics & World-Class Research - Welcome to Japan</h3>
                     </div>
                 </div>
             </div>
@@ -276,100 +277,151 @@ const Japan = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
-                            </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "JPY 30,000 – 80,000 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "~JPY 30,000 / mo", icon: "fa-utensils" },
-                                    { label: "Internet & Mobile", value: "JPY 4,000 – 6,000 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "JPY 200 – 400 per 10 km", icon: "fa-bus" },
-                                    { label: "Gas & Electricity", value: "JPY 10,000 – 12,000 / mo", icon: "fa-bolt" },
-                                    { label: "Haircut", value: "JPY 2,000 – 4,000", icon: "fa-scissors" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Average Total Living Cost</span>
-                                <h3 className="mb-0 mt-2 text-white">JPY 100,000 – 150,000 / month</h3>
-                            </div>
-                            <div className="row g-3 mt-3">
-                                {[
-                                    { label: "Working Hours", value: "28 hrs / week (international students)", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "1 – 3 Years (job + sponsor based)", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "Long-term residency via work exp.", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '22px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '12px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '12px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-4 p-4" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <h6 className="text-white mb-2" style={{ fontSize: '13px', opacity: 0.7 }}>Key Employment Sectors in Japan</h6>
-                                <div className="row g-2">
-                                    {["IT & Technology", "Robotics & Engineering", "Manufacturing", "Hospitality & Tourism", "Language Teaching", "Research & Healthcare"].map((sector, i) => (
-                                        <div key={i} className="col-sm-6">
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <i className="fa-solid fa-circle-check" style={{ color: 'var(--theme)', fontSize: '12px', flexShrink: 0 }}></i>
-                                                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)' }}>{sector}</span>
-                                            </div>
-                                        </div>
-                                    ))}
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>JPY 30,000 – 80,000 / mo</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Japan</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>~JPY 30,000 / mo</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "JPY 3,000 – 6,000 (varies by type & nationality)" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "2 – 8 Weeks" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "Not mandatory, but recommended" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "NHI mandatory — JPY 20,000–30,000 / year" },
-                                        { icon: "fa-ticket", label: "Flight (from India)", value: "INR 25,000 – 45,000 (one-way)" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "Min JPY 1,000,000 – 2,000,000 (tuition + living)" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport required" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet & Mobile</h5>
+                                    <p>JPY 4,000 – 6,000 / mo</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Japan?</h4>
-                                <p>Book your FREE 30 mins consultation with our Japan experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport (Public)</h5>
+                                    <p>JPY 200 – 400 per 10 km</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                    <h5>Gas & Electricity</h5>
+                                    <p>JPY 10,000 – 12,000 / mo</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                    <h5>Haircut</h5>
+                                    <p>JPY 2,000 – 4,000</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>28 hrs / week (international students)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>1 – 3 Years (job + sponsor based)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR Possibilities</h5>
+                                    <p>Long-term residency via work exp.</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Average Total Living Cost</span>
+                        <strong>JPY 100,000 – 150,000 / month</strong>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Japan</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>JPY 3,000 – 6,000 (varies by type & nationality)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>2 – 8 Weeks</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-umbrella`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Not mandatory, but recommended</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>NHI mandatory - JPY 20,000–30,000 / year</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight (from India)</h5>
+                                    <p>INR 25,000 – 45,000 (one-way)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Min JPY 1,000,000 – 2,000,000 (tuition + living)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-passport`}></i>
+                                    <h5>Identity Proof</h5>
+                                    <p>Valid Passport required</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation with our Japan experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
@@ -377,8 +429,11 @@ const Japan = () => {
                     <div className="cta-banner-modern">
                         <div className="cta-content">
                             <h2>From Cherry Blossoms to <br /> a Brilliant Career in Japan</h2>
-                            <p>Study in one of Asia's most respected academic destinations — a nation that fuses deep tradition with futuristic innovation. MEXT scholarships, world-class research labs, and career opportunities await. Our experts will guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <p>Study in one of Asia's most respected academic destinations - a nation that fuses deep tradition with futuristic innovation. MEXT scholarships, world-class research labs, and career opportunities await. Our experts will guide you every step of the way.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1453&auto=format&fit=crop")' }}></div>
                     </div>

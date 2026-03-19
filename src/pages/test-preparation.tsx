@@ -1,88 +1,179 @@
-import PageTitle from "@/components/sections/pageTitle";
-import ServiceSidebar from "@/components/sections/services/serviceSidebar";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+const tests = [
+    { name: "IELTS", full: "International English Language Testing System", desc: "The world's most widely accepted English test for study, work and migration. Required by universities in the UK, Australia, Canada, Ireland and more.", target: "Band 6.0 – 8.0+", duration: "2 hrs 45 mins" },
+    { name: "TOEFL", full: "Test of English as a Foreign Language", desc: "Primarily accepted in the USA and Canada. Measures reading, listening, speaking and writing ability at university level.", target: "Score 80 – 110+", duration: "About 3 hours" },
+    { name: "PTE", full: "Pearson Test of English Academic", desc: "A computer-based English test with fast results (within 48 hours). Accepted by universities and immigration authorities across 90+ countries.", target: "Score 58 – 79+", duration: "2 hrs 15 mins" },
+    { name: "GRE", full: "Graduate Record Examinations", desc: "Required by most top graduate programmes worldwide. Tests verbal reasoning, quantitative reasoning and analytical writing.", target: "Score 310 – 330+", duration: "3 hrs 45 mins" },
+    { name: "GMAT", full: "Graduate Management Admission Test", desc: "The standard test for MBA and business school admissions globally. Tests data insights, quantitative and verbal reasoning.", target: "Score 650 – 730+", duration: "2 hrs 15 mins" },
+    { name: "SAT / ACT", full: "US Undergraduate Admissions Tests", desc: "Required for undergraduate admissions at most US universities. SAT tests math and evidence-based reading; ACT tests English, math, reading and science.", target: "SAT 1200+ / ACT 27+", duration: "3 – 3.5 hours" },
+];
+
+const faqs = [
+    { q: "How long does it take to prepare for IELTS?", a: "Most students need 4–12 weeks of dedicated preparation depending on their current level. Our structured programmes are designed to show measurable improvement within 8 weeks." },
+    { q: "Can I take the test online?", a: "Yes. IELTS, PTE, TOEFL and GRE all offer online at-home testing options. We help you set up your test environment and practice under real exam conditions." },
+    { q: "What is the average score improvement with your coaching?", a: "Students on our programme typically improve by 1.0–1.5 IELTS bands in 8 weeks, or 20–40 points on TOEFL/GRE. Results depend on starting level and consistency." },
+    { q: "Do you offer group or one-to-one classes?", a: "Both. Group classes (max 8 students) are cost-effective and collaborative; private one-to-one sessions offer maximum personalisation and flexible scheduling." },
+];
 
 const TestPreparation = () => {
+    const [openFaq, setOpenFaq] = useState<number | null>(0);
+
     const handleOpenModal = () => {
         window.dispatchEvent(new CustomEvent('toggle-consultation-modal'));
     };
 
-    const tests = [
-        { name: "IELTS", full: "International English Language Testing System", desc: "The world's most popular English language proficiency test for higher education and global migration." },
-        { name: "TOEFL", full: "Test of English as a Foreign Language", desc: "Measures your ability to use and understand English at the university level, primarily in the USA and Canada." },
-        { name: "PTE", full: "Pearson Test of English", desc: "A computer-based English language test focused on real-life English used in academic surroundings." },
-        { name: "GRE / GMAT", full: "Graduate Records / Management Admission Test", desc: "Essential for admission to top graduate and business schools worldwide." }
-    ];
-
     return (
-        <div className="service-details-page-custom test-prep-page">
-            <PageTitle title="Test Preparation" currentPage="Test Prep" backgroundImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop" />
+        <div className="canada-immigration-page test-prep-page">
+            <PageTitle
+                title="Test Preparation"
+                currentPage="Test Preparation"
+                backgroundImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop"
+            />
 
-            <section className="service-details-section section-padding">
+            {/* Intro Banner */}
+            <div className="container">
+                <div className="immig-intro-banner">
+                    <div className="immig-intro-content">
+                        <span className="sub-title">Score High, Study Anywhere</span>
+                        <h2>Expert Test Preparation Coaching</h2>
+                        <p>Standardised tests are often the first major hurdle in your study abroad journey. Our certified trainers provide personalised coaching - combining strategy, time management and intensive practice - to help you hit your target score on the first attempt.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">ENROL IN A COURSE</button>
+                    </div>
+                    <div className="immig-intro-stats">
+                        {[
+                            { value: "+1.5", label: "Avg. IELTS Band Gain" },
+                            { value: "8 Wks", label: "Core Programme" },
+                            { value: "500+", label: "Students Coached" },
+                            { value: "6", label: "Tests Covered" },
+                        ].map((s, i) => (
+                            <div key={i} className="intro-stat-item">
+                                <h3>{s.value}</h3>
+                                <span>{s.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Tests We Cover */}
+            <section className="why-study-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-4 order-2 order-lg-1">
-                            <ServiceSidebar />
-
-                            <div className="test-score-calculator mt-4 bg-light p-4 rounded-4">
-                                <h4 className="mb-3">What's your score?</h4>
-                                <p className="small mb-4">Try our free 15-minute diagnostic test to see where you stand.</p>
-                                <button className="theme-btn w-100">START FREE TEST</button>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-8 order-1 order-lg-2">
-                            <div className="service-details-content">
-                                <div className="main-image mb-4">
-                                    <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=1467&auto=format&fit=crop" alt="Test Preparation" className="rounded-4" />
-                                </div>
-
-                                <h3 className="mb-3">Score High with Expert Coaching</h3>
-                                <p>Standardized tests are often the first major hurdle in your study abroad journey. Achieving a top score requires more than just language skills; it requires strategy, time management, and deep familiarity with the test format. At WanderPassage, our certified trainers provide personalized coaching to help you unlock your full potential and secure your place in globally ranked institutions.</p>
-
-                                <div className="test-grid mt-5">
-                                    <div className="row g-4">
-                                        {tests.map((t, i) => (
-                                            <div key={i} className="col-md-6">
-                                                <div className="test-card">
-                                                    <div className="badge">{t.name}</div>
-                                                    <h5>{t.full}</h5>
-                                                    <p>{t.desc}</p>
-                                                    <button className="learn-more">Course Details <i className="fa-solid fa-arrow-right"></i></button>
-                                                </div>
-                                            </div>
-                                        ))}
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Tests We Cover</span>
+                        <h2>Examinations We Prepare You For</h2>
+                    </div>
+                    <div className="row g-4">
+                        {tests.map((t, i) => (
+                            <div key={i} className="col-lg-4 col-md-6">
+                                <div className="program-card">
+                                    <div className="program-card-top">
+                                        <div className="prog-icon"><i className="fa-solid fa-graduation-cap"></i></div>
+                                        <span className="prog-badge">{t.name}</span>
                                     </div>
-                                </div>
-
-                                <div className="coaching-features mt-5">
-                                    <h3 className="mb-4">Why Train With Us?</h3>
-                                    <div className="row g-4">
-                                        {[
-                                            { icon: "fa-person-chalkboard", title: "Expert Tutors", desc: "Our trainers are certified professionals with years of experience in test delivery." },
-                                            { icon: "fa-book-open", title: "Proprietary Material", desc: "Access exclusive study guides and practice banks updated for latest test formats." },
-                                            { icon: "fa-laptop", title: "Mock Tests", desc: "Regular computer-based mock tests in real exam environments with detailed feedback." },
-                                            { icon: "fa-user-clock", title: "Flexible Batches", desc: "Morning, evening, and weekend batches available to suit your schedule." }
-                                        ].map((f, i) => (
-                                            <div key={i} className="col-sm-6">
-                                                <div className="feature-small">
-                                                    <i className={`fa-solid ${f.icon}`}></i>
-                                                    <div>
-                                                        <h6>{f.title}</h6>
-                                                        <p>{f.desc}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="success-banner mt-5 p-5 rounded-4 text-center">
-                                    <h2>Average Score Improvement: +1.5 Bands in 8 Weeks</h2>
-                                    <p className="mt-2">Join our results-driven coaching program and hit your target score in the first attempt.</p>
-                                    <button onClick={handleOpenModal} className="theme-btn mt-3">ENROLL NOW</button>
+                                    <h4>{t.full}</h4>
+                                    <p>{t.desc}</p>
+                                    <ul className="prog-highlights">
+                                        <li><i className="fa-solid fa-arrow-right"></i><span>Target: {t.target}</span></li>
+                                        <li><i className="fa-solid fa-arrow-right"></i><span>Duration: {t.duration}</span></li>
+                                    </ul>
+                                    <button onClick={handleOpenModal} className="prog-cta-btn">Enrol Now <i className="fa-solid fa-arrow-right"></i></button>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Train With Us */}
+            <section className="institutions-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Our Advantage</span>
+                        <h2>Why Train With WanderPassage?</h2>
+                    </div>
+                    <div className="edu-stats-row">
+                        {[
+                            { icon: "fa-person-chalkboard", value: "Certified", label: "Expert Tutors" },
+                            { icon: "fa-book-open", value: "Exclusive", label: "Study Materials" },
+                            { icon: "fa-laptop", value: "Weekly", label: "Mock Tests" },
+                            { icon: "fa-user-clock", value: "Flexible", label: "Batch Times" },
+                        ].map((s, i) => (
+                            <div key={i} className="edu-stat-pill">
+                                <div className="pill-icon"><i className={`fa-solid ${s.icon}`}></i></div>
+                                <div className="pill-text">
+                                    <strong>{s.value}</strong>
+                                    <span>{s.label}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="custom-table-wrapper mt-4">
+                        <div className="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr><th>Programme</th><th>Duration</th><th>Format</th><th>Includes</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>IELTS Intensive</td><td>8 Weeks</td><td>Group (max 8) or 1-to-1</td><td>Mock tests, speaking sessions, band prediction report</td></tr>
+                                    <tr><td>TOEFL Complete</td><td>6 Weeks</td><td>Online or In-person</td><td>Section-by-section coaching, timed practice sets</td></tr>
+                                    <tr><td>PTE Fast-Track</td><td>4 Weeks</td><td>Online</td><td>AI-scored mock tests, templates, PTE scoring logic</td></tr>
+                                    <tr><td>GRE / GMAT Prep</td><td>10 Weeks</td><td>1-to-1</td><td>Quant strategy, verbal reasoning, official test packs</td></tr>
+                                    <tr><td>Weekend Bootcamp</td><td>2 Weekends</td><td>Group</td><td>Crash revision for test-takers needing a final boost</td></tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="faq-section section-padding">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Got Questions?</span>
+                        <h2>Test Prep FAQs</h2>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <div className="immig-faq-list">
+                                {faqs.map((faq, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`immig-faq-item ${openFaq === idx ? 'open' : ''}`}
+                                        onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                                    >
+                                        <div className="faq-question">
+                                            <span>{faq.q}</span>
+                                            <i className={`fa-solid ${openFaq === idx ? 'fa-minus' : 'fa-plus'}`}></i>
+                                        </div>
+                                        {openFaq === idx && (
+                                            <div className="faq-answer"><p>{faq.a}</p></div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="cta-section section-padding">
+                <div className="container">
+                    <div className="cta-banner-modern">
+                        <div className="cta-content">
+                            <h2>Average Score Improvement: <br /> +1.5 Bands in 8 Weeks</h2>
+                            <p>Join our results-driven coaching programme and hit your target score on the first attempt. Enrol today and get a free diagnostic assessment worth ₦15,000.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">ENROL NOW</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
+                        </div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=1467&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

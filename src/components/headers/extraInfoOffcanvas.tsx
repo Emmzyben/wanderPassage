@@ -21,7 +21,7 @@ const ExtraInfoOffcanvas = () => {
                             <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                                 <div className="offcanvas__logo">
                                     <Link to="/">
-                                        <img src="/img/logo/logo.jpeg" alt="logo-img" />
+                                        <img src="/img/logo/logo.jpeg" alt="logo-img" style={{ width: 100 }} />
                                     </Link>
                                 </div>
                                 <div className="offcanvas__close">
@@ -30,7 +30,7 @@ const ExtraInfoOffcanvas = () => {
                                     </button>
                                 </div>
                             </div>
-                            <MobileMenuList />
+                            <MobileMenuList onClose={toggleOffcanvas} />
                             <p className="text d-none d-lg-block">
                                 Wander Passage Travels and Tours is your trusted partner for global education and migration, providing expert guidance from Nigeria to the world.
                             </p>

@@ -7,10 +7,12 @@ interface ConsultationModalProps {
 
 const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
     const [isAnimating, setIsAnimating] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
             setIsAnimating(true);
+            setSubmitted(false);
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'unset';
@@ -20,64 +22,101 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
 
     if (!isOpen && !isAnimating) return null;
 
-    return (
-        <div className={`consultation-modal-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
-            <div className={`consultation-modal-content ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
-                <button className="close-modal-btn" onClick={onClose}>
-                    <i className="fa-solid fa-xmark"></i>
-                </button>
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubmitted(true);
+        setTimeout(() => onClose(), 2000);
+    };
 
-                <div className="modal-header-banner">
-                    <div className="modal-title-wrap">
-                        <h3>Book a Consultation</h3>
-                        <p>Speak with our experts and start your journey today.</p>
+    return (
+        <div className={`cm-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
+            <div className={`cm-box ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
+
+                {/* Header */}
+                <div className="cm-header">
+                    <div>
+                        <h3>Book a Free Consultation</h3>
+                        <p>Our experts will get back to you within 24 hours.</p>
                     </div>
+                    <button className="cm-close" onClick={onClose} aria-label="Close">
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
 
-                <div className="modal-body-content">
-                    <form onSubmit={(e) => { e.preventDefault(); alert('Booking request sent! We will contact you soon.'); onClose(); }}>
-                        <div className="form-group-row">
-                            <div className="input-field-wrap">
-                                <label>First Name</label>
-                                <input type="text" placeholder="John" required />
+                {/* Body */}
+                <div className="cm-body">
+                    {submitted ? (
+                        <div className="cm-success">
+                            <i className="fa-solid fa-circle-check"></i>
+                            <h4>Request Sent!</h4>
+                            <p>We'll reach out to you within 24 hours.</p>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit}>
+                            <div className="cm-row">
+                                <div className="cm-field">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="John Doe" required />
+                                </div>
+                                <div className="cm-field">
+                                    <label>Phone Number</label>
+                                    <input type="tel" placeholder="+234 800 000 0000" required />
+                                </div>
                             </div>
-                            <div className="input-field-wrap">
-                                <label>Last Name</label>
-                                <input type="text" placeholder="Doe" required />
+
+                            <div className="cm-field">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="john@example.com" required />
                             </div>
-                        </div>
 
-                        <div className="input-field-wrap">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="john@example.com" required />
-                        </div>
+                            <div className="cm-field">
+                                <label>Service of Interest</label>
+                                <select required>
+                                    <option value="">Select a service</option>
+                                    <option value="study-abroad">Study Abroad</option>
+                                    <option value="visa">Visa Processing</option>
+                                    <option value="immigration">Immigration (PR / Work Visa)</option>
+                                    <option value="test-prep">Test Preparation</option>
+                                    <option value="travel">Travel & Accommodation</option>
+                                </select>
+                            </div>
 
-                        <div className="input-field-wrap">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="+1 (555) 000-0000" required />
-                        </div>
+                            <div className="cm-row">
+                                <div className="cm-field">
+                                    <label>Preferred Date</label>
+                                    <input
+                                        type="date"
+                                        min={new Date().toISOString().split('T')[0]}
+                                        required
+                                    />
+                                </div>
+                                <div className="cm-field">
+                                    <label>Preferred Time</label>
+                                    <select required>
+                                        <option value="">Select time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                        <div className="input-field-wrap">
-                            <label>Consultation Type</label>
-                            <select required>
-                                <option value="">Select Service</option>
-                                <option value="study-abroad">Study Abroad</option>
-                                <option value="visa-assistance">Visa Assistance</option>
-                                <option value="career-counseling">Career Counseling</option>
-                                <option value="travel-booking">Flight & Travel Booking</option>
-                            </select>
-                        </div>
+                            <div className="cm-field">
+                                <label>Message <span>(optional)</span></label>
+                                <textarea placeholder="Tell us about your goals..." rows={2}></textarea>
+                            </div>
 
-                        <div className="input-field-wrap">
-                            <label>Preferred Date & Time</label>
-                            <input type="datetime-local" required />
-                        </div>
-
-                        <button type="submit" className="submit-btn">
-                            <span>Confirm Booking</span>
-                            <i className="fa-solid fa-calendar-check"></i>
-                        </button>
-                    </form>
+                            <button type="submit" className="cm-submit">
+                                Send Request <i className="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Switzerland = () => {
@@ -39,10 +40,10 @@ const Switzerland = () => {
                     </div>
                     <div className="row g-4">
                         {[
-                            { id: "01", title: "Quality Education", desc: "Switzerland hosts some of the world's top-ranked universities — ETH Zurich, EPFL, and others — known for cutting-edge research and academic excellence." },
+                            { id: "01", title: "Quality Education", desc: "Switzerland hosts some of the world's top-ranked universities - ETH Zurich, EPFL, and others - known for cutting-edge research and academic excellence." },
                             { id: "02", title: "Cultural Diversity", desc: "With four national languages and a rich multicultural society, Switzerland offers a uniquely diverse and inclusive environment for international students." },
-                            { id: "03", title: "High Living Standard", desc: "Among the highest quality of life globally — clean cities, efficient public services, safety, and excellent healthcare make student life comfortable." },
-                            { id: "04", title: "The Rest of Europe at Your Doorstep", desc: "Ideally located at the heart of Europe, surrounded by France, Germany, Austria, and Italy — weekend travels have never been easier." },
+                            { id: "03", title: "High Living Standard", desc: "Among the highest quality of life globally - clean cities, efficient public services, safety, and excellent healthcare make student life comfortable." },
+                            { id: "04", title: "The Rest of Europe at Your Doorstep", desc: "Ideally located at the heart of Europe, surrounded by France, Germany, Austria, and Italy - weekend travels have never been easier." },
                             { id: "05", title: "A Safe Place to Live", desc: "Switzerland is consistently ranked among the safest countries in the world, giving students and their families complete peace of mind." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
@@ -61,7 +62,7 @@ const Switzerland = () => {
             <div className="container">
                 <div className="visual-interstitial" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=1470&auto=format&fit=crop")' }}>
                     <div className="content">
-                        <h3>Study at the Heart of Europe — Where Alps Meet Academia</h3>
+                        <h3>Study at the Heart of Europe - Where Alps Meet Academia</h3>
                     </div>
                 </div>
             </div>
@@ -272,97 +273,154 @@ const Switzerland = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
-                            </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "€370 – €740 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "CHF 300 – 500 / mo", icon: "fa-utensils" },
-                                    { label: "Internet & Mobile", value: "€50 – €100 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "CHF 90 – 200 / mo", icon: "fa-bus" },
-                                    { label: "Gas & Electricity", value: "€30 – €60 / mo", icon: "fa-bolt" },
-                                    { label: "Haircut", value: "~€43", icon: "fa-scissors" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="row g-3 mt-3">
-                                {[
-                                    { label: "Working Hours", value: "8 hrs / day", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "6 Months", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "Yes (multiple routes)", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '13px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '14px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-4 p-4" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <h6 className="text-white mb-2" style={{ fontSize: '13px', opacity: 0.7 }}>PR Pathways</h6>
-                                <div className="row g-2">
-                                    {["Long-term Residency", "Family Reunification", "Highly Skilled Workers", "Self-Employment", "Swiss Naturalisation", "Investment Route"].map((path, i) => (
-                                        <div key={i} className="col-sm-6">
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <i className="fa-solid fa-circle-check" style={{ color: 'var(--theme)', fontSize: '12px', flexShrink: 0 }}></i>
-                                                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)' }}>{path}</span>
-                                            </div>
-                                        </div>
-                                    ))}
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>€370 – €740 / mo</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Switzerland</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>CHF 300 – 500 / mo</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "₹7,000" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "15 Working Days" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "Required" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "Required" },
-                                        { icon: "fa-ticket", label: "Flight Cost (from India)", value: "~₹61,424" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "Bank Statement required" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport required" },
-                                        { icon: "fa-file-lines", label: "Invitation Letter", value: "Required (University Letter)" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet & Mobile</h5>
+                                    <p>€50 – €100 / mo</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Switzerland?</h4>
-                                <p>Book your FREE 30 mins consultation with our Switzerland experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport (Public)</h5>
+                                    <p>CHF 90 – 200 / mo</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                    <h5>Gas & Electricity</h5>
+                                    <p>€30 – €60 / mo</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                    <h5>Haircut</h5>
+                                    <p>~€43</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>8 hrs / day</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>6 Months</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR Possibilities</h5>
+                                    <p>Yes (multiple routes)</p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Switzerland</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>₹7,000</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>15 Working Days</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-umbrella`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>Required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>~₹61,424</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Bank Statement required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-passport`}></i>
+                                    <h5>Identity Proof</h5>
+                                    <p>Valid Passport required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-file-lines`}></i>
+                                    <h5>Invitation Letter</h5>
+                                    <p>Required (University Letter)</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation with our Switzerland experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
@@ -370,8 +428,11 @@ const Switzerland = () => {
                     <div className="cta-banner-modern">
                         <div className="cta-content">
                             <h2>Where the Alps Meet <br /> Academic Excellence</h2>
-                            <p>Study in one of the world's most prestigious destinations — a multilingual country at the heart of Europe with globally ranked universities and an unmatched quality of life. Our experts will guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <p>Study in one of the world's most prestigious destinations - a multilingual country at the heart of Europe with globally ranked universities and an unmatched quality of life. Our experts will guide you every step of the way.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

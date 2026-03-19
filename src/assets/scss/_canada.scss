@@ -1,4 +1,4 @@
-.canada-page {
+﻿.canada-page {
     @extend .country-study-page;
 
     // Canada-specific accent for the stat card gradient (maple red tone)
@@ -93,7 +93,7 @@
         }
     }
 
-    // Fees Section — reuse shared table styles, no overrides needed
+    // Fees Section - reuse shared table styles, no overrides needed
     .fees-section {
         .custom-table-wrapper {
             max-width: 900px;

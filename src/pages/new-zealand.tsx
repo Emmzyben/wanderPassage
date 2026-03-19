@@ -1,4 +1,5 @@
 import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const NewZealand = () => {
@@ -258,84 +259,130 @@ const NewZealand = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>NZ$100 – $700 / week</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "NZ$100 – $700 / week", icon: "fa-house" },
-                                    { label: "Food", value: "NZ$600 – $800 / mo", icon: "fa-utensils" },
-                                    { label: "Internet", value: "NZ$80 – $100 / mo", icon: "fa-wifi" },
-                                    { label: "Transport", value: "NZ$80 – $100 / mo", icon: "fa-bus" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>NZ$600 – $800 / mo</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Total Estimated Average:</span>
-                                <h3 className="mb-0 mt-2 text-white">NZD 1,700 – NZD 2,500+ / month</h3>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet</h5>
+                                    <p>NZ$80 – $100 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3 mt-2">
-                                {[
-                                    { label: "Working Hours", value: "8 Hours / day", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "PR Access Post-Study", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "After 2 Yrs Residency", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '13px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '14px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport</h5>
+                                    <p>NZ$80 – $100 / mo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to New Zealand</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>8 Hours / day</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "NZ$246 online / INR 13,000 + VFS fees offline" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "8 – 10 Weeks" },
-                                        { icon: "fa-plane", label: "Travel Insurance", value: "Not Mandatory for Indians" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "Varies – ₹1,500 to ₹5,000+" },
-                                        { icon: "fa-ticket", label: "Flight Cost (from India)", value: "~₹62,553" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "3+ months bank transaction history" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>PR Access Post-Study</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to New Zealand?</h4>
-                                <p>Book your FREE 30 mins consultation session with our NZ experts.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR Possibilities</h5>
+                                    <p>After 2 Yrs Residency</p>
+                                </div>
                             </div>
-                        </div>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Total Estimated Average:</span>
+                        <strong>NZD 1,700 – NZD 2,500+ / month</strong>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to New Zealand</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>NZ$246 online / INR 13,000 + VFS fees offline</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>8 – 10 Weeks</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-plane`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Not Mandatory for Indians</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>Varies – ₹1,500 to ₹5,000+</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>~₹62,553</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>3+ months bank transaction history</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation session with our NZ experts.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
@@ -344,7 +391,10 @@ const NewZealand = () => {
                         <div className="cta-content">
                             <h2>Your New Zealand Journey <br /> Starts Now</h2>
                             <p>Discover globally recognised qualifications, a welcoming culture, and an unmatched natural environment. Our experts will guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=1471&auto=format&fit=crop")' }}></div>
                     </div>

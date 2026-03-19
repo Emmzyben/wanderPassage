@@ -18,7 +18,7 @@ const HeaderThree = () => {
                             <div className="header-left">
                                 <div className="logo">
                                     <Link to="/" className="header-logo">
-                                        <img src="/img/logo/logo.jpeg" alt="logo-img" width={100} height={100} />
+                                        <img src="/img/logo/logo.jpeg" alt="logo-img" width={70} height={70} />
                                     </Link>
                                 </div>
                             </div>

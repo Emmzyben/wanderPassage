@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Hungary = () => {
@@ -63,7 +64,7 @@ const Hungary = () => {
             <div className="container">
                 <div className="visual-interstitial" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1520175023058-9b8c4e3a35b7?q=80&w=1470&auto=format&fit=crop")' }}>
                     <div className="content">
-                        <h3>Budapest — The Pearl of the Danube & Your Academic Home</h3>
+                        <h3>Budapest - The Pearl of the Danube & Your Academic Home</h3>
                     </div>
                 </div>
             </div>
@@ -264,112 +265,159 @@ const Hungary = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
-                            </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "~€624 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "€115 – €150 / mo", icon: "fa-utensils" },
-                                    { label: "Internet & Mobile", value: "€15 – €25 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "€10 – €11 / mo", icon: "fa-bus" },
-                                    { label: "Gas & Electricity", value: "€28.5 per 100 kWh", icon: "fa-bolt" },
-                                    { label: "Haircut", value: "~€12", icon: "fa-scissors" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="row g-3 mt-3">
-                                {[
-                                    { label: "Working Hours", value: "24 hrs/wk (term) · 90 days/yr (off-term)", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "Study-to-Work Permit", icon: "fa-briefcase" },
-                                    { label: "PR After", value: "3 Years Temp Residency", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '12px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '13px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-4 p-4" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <h6 className="text-white mb-2" style={{ fontSize: '13px', opacity: 0.7 }}>PR Pathways Available</h6>
-                                <div className="row g-2">
-                                    {[
-                                        "Temporary Residency (3 yrs → PR)",
-                                        "Employee of Hungarian Company",
-                                        "Entrepreneur / Self-Employment",
-                                        "Digital Nomad Visa",
-                                        "Hungary Golden Visa (€250K+)",
-                                        "Family Reunification",
-                                    ].map((path, i) => (
-                                        <div key={i} className="col-sm-6">
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                                <i className="fa-solid fa-circle-check" style={{ color: 'var(--theme)', fontSize: '12px', flexShrink: 0 }}></i>
-                                                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)' }}>{path}</span>
-                                            </div>
-                                        </div>
-                                    ))}
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>~€624 / mo</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Hungary</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>€115 – €150 / mo</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "€60 (Schengen student visa)" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "~1 month (up to 60 days — apply early)" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "Mandatory for Schengen short-stay — €0.99/day" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "GHIC or EHIC required" },
-                                        { icon: "fa-ticket", label: "Flight Cost (from India)", value: "~₹73,850" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "Bank statements (last 3 months), min. ending balance $1,000 USD" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport required" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet & Mobile</h5>
+                                    <p>€15 – €25 / mo</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Hungary?</h4>
-                                <p>Book your FREE 30 mins consultation with our Hungary experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport (Public)</h5>
+                                    <p>€10 – €11 / mo</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                    <h5>Gas & Electricity</h5>
+                                    <p>€28.5 per 100 kWh</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                    <h5>Haircut</h5>
+                                    <p>~€12</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>24 hrs/wk (term) · 90 days/yr (off-term)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>Study-to-Work Permit</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR After</h5>
+                                    <p>3 Years Temp Residency</p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Hungary</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>€60 (Schengen student visa)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>~1 month (up to 60 days - apply early)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-umbrella`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Mandatory for Schengen short-stay - €0.99/day</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>GHIC or EHIC required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>~₹73,850</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Bank statements (last 3 months), min. ending balance $1,000 USD</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-passport`}></i>
+                                    <h5>Identity Proof</h5>
+                                    <p>Valid Passport required</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation with our Hungary experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
                 <div className="container">
                     <div className="cta-banner-modern">
                         <div className="cta-content">
-                            <h2>Budapest Beckons — <br /> Begin Your Hungarian Journey</h2>
-                            <p>Study in the Pearl of the Danube — a city where centuries of history meet world-class academia. Our experts will guide you every step of the way, from application to arrival.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <h2>Budapest Beckons - <br /> Begin Your Hungarian Journey</h2>
+                            <p>Study in the Pearl of the Danube - a city where centuries of history meet world-class academia. Our experts will guide you every step of the way, from application to arrival.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1565426873118-a17ed65d74b9?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

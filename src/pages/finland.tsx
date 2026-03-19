@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Finland = () => {
@@ -38,11 +39,11 @@ const Finland = () => {
                     </div>
                     <div className="row g-4">
                         {[
-                            { id: "01", title: "World-Class Education System", desc: "Finland's education system is internationally acclaimed — consistently ranked among the world's best for innovation, quality, and student outcomes." },
+                            { id: "01", title: "World-Class Education System", desc: "Finland's education system is internationally acclaimed - consistently ranked among the world's best for innovation, quality, and student outcomes." },
                             { id: "02", title: "Affordable Tuition Fees", desc: "Public universities in Finland charge relatively low tuition for international students, with generous scholarships to reduce costs further." },
-                            { id: "03", title: "Equality and Freedom", desc: "Finland is a global leader in equality, academic freedom, and student wellbeing — a society that genuinely values every individual." },
+                            { id: "03", title: "Equality and Freedom", desc: "Finland is a global leader in equality, academic freedom, and student wellbeing - a society that genuinely values every individual." },
                             { id: "04", title: "High Standard of Living", desc: "Ranked among the happiest countries on Earth, Finland offers safety, clean air, excellent public services, and an outstanding quality of life." },
-                            { id: "05", title: "Otherworldly Travel Destinations", desc: "From the Northern Lights in Lapland to thousands of pristine lakes and forests — Finland's natural beauty is unlike anywhere else in the world." },
+                            { id: "05", title: "Otherworldly Travel Destinations", desc: "From the Northern Lights in Lapland to thousands of pristine lakes and forests - Finland's natural beauty is unlike anywhere else in the world." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
                                 <div className="reason-card-modern">
@@ -60,7 +61,7 @@ const Finland = () => {
             <div className="container">
                 <div className="visual-interstitial" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1531685250784-7569952593d2?q=80&w=1374&auto=format&fit=crop")' }}>
                     <div className="content">
-                        <h3>Land of the Midnight Sun — Where Education Meets Wonder</h3>
+                        <h3>Land of the Midnight Sun - Where Education Meets Wonder</h3>
                     </div>
                 </div>
             </div>
@@ -265,84 +266,154 @@ const Finland = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>€250 – €600 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "€250 – €600 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "From €2.24 per meal", icon: "fa-utensils" },
-                                    { label: "Gas & Electricity", value: "~€100 / mo", icon: "fa-bolt" },
-                                    { label: "Transport", value: "€60 – €2,700 / yr (zone-based)", icon: "fa-bus" },
-                                    { label: "Haircut", value: "~€30", icon: "fa-scissors" },
-                                    { label: "Proof of Funds", value: "Min €6,720 in bank", icon: "fa-piggy-bank" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>From €2.24 per meal</p>
+                                </div>
                             </div>
-                            <div className="row g-3 mt-3">
-                                {[
-                                    { label: "Working Hours", value: "8 hrs / day", icon: "fa-clock" },
-                                    { label: "Post-Study Work", value: "2 Years", icon: "fa-briefcase" },
-                                    { label: "PR After", value: "4 Years Continuous Residence (A-Permit)", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '12px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '13px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                    <h5>Gas & Electricity</h5>
+                                    <p>~€100 / mo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Finland</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport</h5>
+                                    <p>€60 – €2,700 / yr (zone-based)</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "€350" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "2 – 3 Months (apply early)" },
-                                        { icon: "fa-umbrella", label: "Travel Insurance", value: "Minimum €30,000 coverage required" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "Min €30,000 medical + €100,000 cover required" },
-                                        { icon: "fa-ticket", label: "Flight Cost (from India)", value: "From ₹48,887" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "Bank statement showing min €6,720 balance" },
-                                        { icon: "fa-passport", label: "Identity Proof", value: "Valid Passport required" },
-                                        { icon: "fa-file-lines", label: "Invitation Letter", value: "University Admission Letter required" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                    <h5>Haircut</h5>
+                                    <p>~€30</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Finland?</h4>
-                                <p>Book your FREE 30 mins consultation with our Finland experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-piggy-bank`}></i></div>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Min €6,720 in bank</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>8 hrs / day</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Work</h5>
+                                    <p>2 Years</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR After</h5>
+                                    <p>4 Years Continuous Residence (A-Permit)</p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Finland</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>€350</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>2 – 3 Months (apply early)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-umbrella`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Minimum €30,000 coverage required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>Min €30,000 medical + €100,000 cover required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-ticket`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>From ₹48,887</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>Bank statement showing min €6,720 balance</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-passport`}></i>
+                                    <h5>Identity Proof</h5>
+                                    <p>Valid Passport required</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-file-lines`}></i>
+                                    <h5>Invitation Letter</h5>
+                                    <p>University Admission Letter required</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins consultation with our Finland experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
@@ -350,8 +421,11 @@ const Finland = () => {
                     <div className="cta-banner-modern">
                         <div className="cta-content">
                             <h2>Chase the Northern Lights <br /> & Your Degree in Finland</h2>
-                            <p>Study in the world's happiest country — where education is world-class, nature is extraordinary, and your future is limitless. Our experts are ready to make it happen for you.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <p>Study in the world's happiest country - where education is world-class, nature is extraordinary, and your future is limitless. Our experts are ready to make it happen for you.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

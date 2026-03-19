@@ -41,10 +41,7 @@ const migrationServices = [
 ];
 
 const studentServices = [
-    { text: "Education Loan", link: "/student-services/loan" },
-    { text: "Forex Card", link: "/student-services/forex" },
-    { text: "Health Insurance", link: "/student-services/insurance" },
-    { text: "Accomodation", link: "/student-services/accommodation" },
+    { text: "Accommodation", link: "/student-services/accommodation" },
     { text: "Student Visa", link: "/student-services/visa" },
 ];
 

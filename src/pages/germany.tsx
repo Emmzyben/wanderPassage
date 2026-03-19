@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Germany = () => {
@@ -40,7 +41,7 @@ const Germany = () => {
                             { id: "02", title: "World-Class Education", desc: "Globally recognized degrees with a strong focus on research and innovation across diverse disciplines." },
                             { id: "03", title: "Excellent Job Opportunities", desc: "High demand for skilled graduates with an 18-month post-study work visa to launch your career." },
                             { id: "04", title: "Pathway to PR & EU Access", desc: "Easy route to permanent residency in just 33 months and job opportunities across the entire EU." },
-                            { id: "05", title: "Affordable Living & Work Rights", desc: "Low cost of living with part-time work options — up to 20 hours/week during semesters." },
+                            { id: "05", title: "Affordable Living & Work Rights", desc: "Low cost of living with part-time work options - up to 20 hours/week during semesters." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
                                 <div className="reason-card-modern">
@@ -285,84 +286,130 @@ const Germany = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>€300 – €600 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "€300 – €600 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "€150 – €300 / mo", icon: "fa-utensils" },
-                                    { label: "Internet", value: "€20 – €40 / mo", icon: "fa-wifi" },
-                                    { label: "Transport", value: "€50 – €100 / mo", icon: "fa-bus" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>€150 – €300 / mo</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Total Estimated Average:</span>
-                                <h3 className="mb-0 mt-2 text-white">€800 – €1,200 / month</h3>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet</h5>
+                                    <p>€20 – €40 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3 mt-2">
-                                {[
-                                    { label: "Working Hours", value: "20 hrs/week (semester)", icon: "fa-clock" },
-                                    { label: "Post-Study Permit", value: "18 Months", icon: "fa-briefcase" },
-                                    { label: "PR Possibilities", value: "33 months (Blue Card)", icon: "fa-id-card" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-4">
-                                        <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px', textAlign: 'center', color: '#fff' }}>
-                                            <i className={`fa-solid ${item.icon}`} style={{ fontSize: '24px', marginBottom: '10px', display: 'block', color: 'var(--theme)' }}></i>
-                                            <strong style={{ fontSize: '13px', display: 'block' }}>{item.label}</strong>
-                                            <p style={{ fontSize: '14px', margin: 0, opacity: 0.7 }}>{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport</h5>
+                                    <p>€50 – €100 / mo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Germany</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                    <h5>Working Hours</h5>
+                                    <p>20 hrs/week (semester)</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    {[
-                                        { icon: "fa-shield-halved", label: "Visa Fees", value: "€75" },
-                                        { icon: "fa-clock-rotate-left", label: "Decision Duration", value: "4–12 Weeks" },
-                                        { icon: "fa-heart-pulse", label: "Health Insurance", value: "€130 – €150 / mo" },
-                                        { icon: "fa-plane", label: "Flight Cost (from India)", value: "~€600 – €700" },
-                                        { icon: "fa-piggy-bank", label: "Proof of Funds", value: "€11,904 (Blocked Account)" },
-                                        { icon: "fa-file-lines", label: "Key Documents", value: "Passport, Admission Letter, SOP, Transcripts" },
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                            <i className={`fa-solid ${item.icon}`}></i>
-                                            <span><strong>{item.label}:</strong> {item.value}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                    <h5>Post-Study Permit</h5>
+                                    <p>18 Months</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Apply to Germany?</h4>
-                                <p>Book your FREE 30 mins session with our Germany experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                    <h5>PR Possibilities</h5>
+                                    <p>33 months (Blue Card)</p>
+                                </div>
                             </div>
-                        </div>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Total Estimated Average:</span>
+                        <strong>€800 – €1,200 / month</strong>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to Germany</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>€75</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision Duration</h5>
+                                    <p>4–12 Weeks</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Health Insurance</h5>
+                                    <p>€130 – €150 / mo</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-plane`}></i>
+                                    <h5>Flight Cost (from India)</h5>
+                                    <p>~€600 – €700</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-piggy-bank`}></i>
+                                    <h5>Proof of Funds</h5>
+                                    <p>€11,904 (Blocked Account)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-file-lines`}></i>
+                                    <h5>Key Documents</h5>
+                                    <p>Passport, Admission Letter, SOP, Transcripts</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins session with our Germany experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* Best Universities Deep Dive */}
             <section className="universities-section section-padding">
@@ -424,7 +471,7 @@ const Germany = () => {
                                         <td>April</td>
                                     </tr>
                                     <tr>
-                                        <td>Winter (October) — Primary</td>
+                                        <td>Winter (October) - Primary</td>
                                         <td>May – July</td>
                                         <td>October</td>
                                     </tr>
@@ -441,8 +488,11 @@ const Germany = () => {
                     <div className="cta-banner-modern">
                         <div className="cta-content">
                             <h2>Your German Dream <br /> Starts Today</h2>
-                            <p>Get free tuition at world-class universities. Let our Germany experts guide you through every step — from university selection to visa approval.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <p>Get free tuition at world-class universities. Let our Germany experts guide you through every step - from university selection to visa approval.</p>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

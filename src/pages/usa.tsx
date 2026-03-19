@@ -1,5 +1,6 @@
 import PageTitle from "@/components/sections/pageTitle";
 import OverviewBar from "@/components/sections/country/OverviewBar";
+import { Link } from "react-router-dom";
 
 const Usa = () => {
     const handleOpenModal = () => {
@@ -174,69 +175,90 @@ const Usa = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+            {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Financial Planning</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>$1,000 - 1,500 /mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "$1,000 - 1,500 /mo", icon: "fa-house" },
-                                    { label: "Food", value: "$150 - 200 /mo", icon: "fa-utensils" },
-                                    { label: "Internet", value: "$30 - 40 /mo", icon: "fa-wifi" },
-                                    { label: "Transport", value: "$45 - 100 /mo", icon: "fa-bus" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>$150 - 200 /mo</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">PR Possibilities:</span>
-                                <h3 className="mb-0 mt-2 text-white">After 5 Years on Work Permit</h3>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Internet</h5>
+                                    <p>$30 - 40 /mo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to USA</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport</h5>
+                                    <p>$45 - 100 /mo</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-shield-halved"></i>
-                                        <span><strong>Visa Fees:</strong> $185 (F1 Visa)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-clock-rotate-left"></i>
-                                        <span><strong>Decision:</strong> Typically 8 Days</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-heart-pulse"></i>
-                                        <span><strong>Insurance:</strong> Health Optional (Not Required)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-briefcase"></i>
-                                        <span><strong>Post-Study:</strong> 2 Years Work Permit</span>
-                                    </li>
-                                </ul>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>PR Possibilities:</span>
+                        <strong>After 5 Years on Work Permit</strong>
+                    </div>
+                </div>
+            </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Gateway to USA</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>$185 (F1 Visa)</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Start?</h4>
-                                <p>Book your FREE 30 mins session with our experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Decision</h5>
+                                    <p>Typically 8 Days</p>
+                                </div>
                             </div>
-                        </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Insurance</h5>
+                                    <p>Health Optional (Not Required)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-briefcase`}></i>
+                                    <h5>Post-Study</h5>
+                                    <p>2 Years Work Permit</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30 mins session with our experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
                     </div>
                 </div>
             </section>
@@ -248,7 +270,10 @@ const Usa = () => {
                         <div className="cta-content">
                             <h2>Your American Dream <br /> Starts Here</h2>
                             <p>Unlock access to top-tier universities and a global career. Let our country experts guide you through every step.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">KNOW MORE</button>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">BOOK FREE CONSULTATION</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1541339907198-e08756ebafe1?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

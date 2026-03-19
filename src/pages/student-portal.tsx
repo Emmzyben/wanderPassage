@@ -1,4 +1,4 @@
-import { useState } from "react"
+﻿import { useState } from "react"
 import { Link } from "react-router-dom"
 import PageTitle from "@/components/sections/pageTitle"
 
@@ -347,7 +347,7 @@ const StudentPortal = () => {
                                                             style={{ display: "none" }}
                                                             onChange={e => handleFileChange(doc.id, e.target.files?.[0] ?? null)}
                                                         />
-                                                        <small>PDF, JPG, PNG — max 10MB</small>
+                                                        <small>PDF, JPG, PNG - max 10MB</small>
                                                     </div>
                                                 </div>
                                             )
@@ -393,7 +393,7 @@ const StudentPortal = () => {
                                                             <td className="file-name-cell">
                                                                 {doc.fileName
                                                                     ? <><i className="fa-regular fa-file" /> {doc.fileName}</>
-                                                                    : <span className="no-file">—</span>}
+                                                                    : <span className="no-file">-</span>}
                                                             </td>
                                                             <td>
                                                                 <span className={`doc-status-badge ${st.className}`}>

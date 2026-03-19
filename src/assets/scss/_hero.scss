@@ -371,7 +371,7 @@
 
         &::before {
             @include before;
-            background-color: rgba($theme-color, 0.5);
+            background-color: rgba(#3a3086, 0.5);
             z-index: -1;
         }
 

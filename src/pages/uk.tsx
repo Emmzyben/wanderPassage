@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Uk = () => {
@@ -36,11 +37,11 @@ const Uk = () => {
                     </div>
                     <div className="row g-4">
                         {[
-                            { id: "01", title: "World-Class Education", desc: "The UK is home to prestigious universities with globally recognized degrees — including 4 of the world's top 10 institutions." },
+                            { id: "01", title: "World-Class Education", desc: "The UK is home to prestigious universities with globally recognized degrees - including 4 of the world's top 10 institutions." },
                             { id: "02", title: "Cultural Diversity", desc: "The UK offers a rich, multicultural experience, fostering global connections and broadening your personal and professional horizons." },
                             { id: "03", title: "Shorter Degree Programs", desc: "Undergraduate degrees typically last just three years, saving you valuable time and money compared to most other countries." },
                             { id: "04", title: "Post-Study Work Opportunities", desc: "The Graduate Route visa allows international graduates to live and work in the UK for up to two years after completing their degree." },
-                            { id: "05", title: "Historic & Vibrant Cities", desc: "Students can explore the UK's rich history, culture, and world-famous city life — from London to Edinburgh and beyond." },
+                            { id: "05", title: "Historic & Vibrant Cities", desc: "Students can explore the UK's rich history, culture, and world-famous city life - from London to Edinburgh and beyond." },
                         ].map((reason, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6">
                                 <div className="reason-card-modern">
@@ -308,7 +309,7 @@ const Uk = () => {
                             {
                                 name: "Rhodes Scholarship",
                                 eligibility: "Exceptional students with leadership &amp; academic distinction",
-                                amount: "Full funding — one of the world's most prestigious awards",
+                                amount: "Full funding - one of the world's most prestigious awards",
                                 icon: "fa-star",
                                 color: "#7b241c",
                             },
@@ -389,90 +390,137 @@ const Uk = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+            {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Monthly Expenses</span>
-                                <h2 className="text-white">Living Costs</h2>
-                            </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "£400 – £1,200 / mo", icon: "fa-house" },
-                                    { label: "Utilities", value: "£50 – £150 / mo", icon: "fa-bolt" },
-                                    { label: "Food & Groceries", value: "£150 – £300 / mo", icon: "fa-utensils" },
-                                    { label: "Transportation", value: "£30 – £100 / mo", icon: "fa-bus" },
-                                    { label: "Study Materials", value: "£40 – £100 / mo", icon: "fa-book" },
-                                    { label: "Personal Expenses", value: "£100 – £300 / mo", icon: "fa-shirt" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Average Living Cost:</span>
-                                <h3 className="mb-0 mt-2 text-white">£1,000 – £1,300 / month</h3>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>£400 – £1,200 / mo</p>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to the UK</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                <h5>Utilities</h5>
+                                <p>£50 – £150 / mo</p>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-shield-halved"></i>
-                                        <span><strong>Visa Fees:</strong> ~₹50,000 | Priority: +₹50,000</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-clock-rotate-left"></i>
-                                        <span><strong>Standard Decision:</strong> 3 weeks | Priority: 10 days</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-heart-pulse"></i>
-                                        <span><strong>NHS Surcharge:</strong> ₹46,000 / year (~£470)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-umbrella"></i>
-                                        <span><strong>Travel Insurance:</strong> ₹2,000 – ₹4,500 / mo</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-plane"></i>
-                                        <span><strong>Flight Ticket:</strong> ₹32,000 – ₹64,000</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-briefcase"></i>
-                                        <span><strong>Post-Study Work:</strong> 2 Years (Graduate Route)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-clock"></i>
-                                        <span><strong>Working Hours:</strong> 20 hrs / week</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-star"></i>
-                                        <span><strong>PR Possibilities:</strong> After 5 Years on Work Permit</span>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food & Groceries</h5>
+                                <p>£150 – £300 / mo</p>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Begin?</h4>
-                                <p>Book your FREE 30-minute session with our UK experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transportation</h5>
+                                <p>£30 – £100 / mo</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-book`}></i></div>
+                                <h5>Study Materials</h5>
+                                <p>£40 – £100 / mo</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-shirt`}></i></div>
+                                <h5>Personal Expenses</h5>
+                                <p>£100 – £300 / mo</p>
                             </div>
                         </div>
                     </div>
+                    <div className="cost-total-bar">
+                        <span>Average Living Cost:</span>
+                        <strong>£1,000 – £1,300 / month</strong>
+                    </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Visa Information</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>~₹50,000 | Priority: +₹50,000</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Standard Decision</h5>
+                                <p>3 weeks | Priority: 10 days</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>NHS Surcharge</h5>
+                                <p>₹46,000 / year (~£470)</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-umbrella`}></i>
+                                <h5>Travel Insurance</h5>
+                                <p>₹2,000 – ₹4,500 / mo</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-plane`}></i>
+                                <h5>Flight Ticket</h5>
+                                <p>₹32,000 – ₹64,000</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-briefcase`}></i>
+                                <h5>Post-Study Work</h5>
+                                <p>2 Years (Graduate Route)</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock`}></i>
+                                <h5>Working Hours</h5>
+                                <p>20 hrs / week</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-star`}></i>
+                                <h5>PR Possibilities</h5>
+                                <p>After 5 Years on Work Permit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30-minute session with our UK experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* IELTS & Intakes Info Cards */}
             <section className="uk-info-section section-padding">
@@ -487,7 +535,7 @@ const Uk = () => {
                                 <ul className="uk-info-list">
                                     <li>
                                         <span className="intake-badge intake-sep">September</span>
-                                        <p>Primary intake — widest range of courses across all major universities including Oxford, Cambridge and UCL. Best for MBA, Engineering &amp; Law.</p>
+                                        <p>Primary intake - widest range of courses across all major universities including Oxford, Cambridge and UCL. Best for MBA, Engineering &amp; Law.</p>
                                     </li>
                                     <li>
                                         <span className="intake-badge intake-jan">January</span>
@@ -533,7 +581,10 @@ const Uk = () => {
                         <div className="cta-content">
                             <h2>Your British Dream <br /> Starts Today</h2>
                             <p>Unlock access to world-renowned universities, an internationally respected degree, and an unmatched cultural experience. Let our experts guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=1471&auto=format&fit=crop")' }}></div>
                     </div>

@@ -1,9 +1,9 @@
-import { CountryMenuItemType, MegaMenuDataType, menuData, MenuItemDataType, SubMenuDataType } from '@/db/menuData';
+import { menuData, MenuItemDataType, SubMenuDataType } from '@/db/menuData';
 import { MouseEvent, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Link } from 'react-router-dom';
 
-const MobileNavBar = () => {
+const MobileNavBar = ({ onClose }: { onClose: () => void }) => {
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
     const toggleSubmenu = (e: MouseEvent, index: number) => {
@@ -14,101 +14,129 @@ const MobileNavBar = () => {
     };
 
     return (
-        <div className='mobile-menu d-lg-none'>
+        <div className='mobile-menu-wrapper'>
             {menuData.map((item, index) => {
                 const isOpen = openIndexes.includes(index);
-                return <MenuItem key={index} item={item} index={index} toggleSubmenu={toggleSubmenu} isOpen={isOpen} />;
+                return (
+                    <MenuItem
+                        key={index}
+                        item={item}
+                        index={index}
+                        toggleSubmenu={toggleSubmenu}
+                        isOpen={isOpen}
+                        onClose={onClose}
+                    />
+                );
             })}
         </div>
     );
 };
 
-const MenuItem = ({ item, index, toggleSubmenu, isOpen }: { item: MenuItemDataType; index: number; isOpen: boolean; toggleSubmenu: (e: MouseEvent, index: number) => void }) => {
+const MenuItem = ({ item, index, toggleSubmenu, isOpen, onClose }: {
+    item: MenuItemDataType;
+    index: number;
+    isOpen: boolean;
+    toggleSubmenu: (e: MouseEvent, index: number) => void;
+    onClose: () => void;
+}) => {
+    const hasChildren = !!(item.megamenu?.length || item.submenu?.length || item.countrymenu?.length);
+
     return (
-        <div key={index} className='menu-item'>
-            <Link to={item.link}>
-                {item.title}
-                {(item.megamenu?.length || item.submenu?.length || item.countrymenu?.length) && (
-                    <i onClick={(e) => toggleSubmenu(e, index)}>+</i>
+        <div className={`mm-item ${isOpen ? 'is-open' : ''}`}>
+            <div className="mm-link-row">
+                <Link to={item.link === '#' ? '#' : item.link} onClick={item.link === '#' ? (e) => toggleSubmenu(e, index) : onClose}>
+                    {item.title}
+                </Link>
+                {hasChildren && (
+                    <button className="mm-toggle" onClick={(e) => toggleSubmenu(e, index)} aria-label="Toggle Submenu">
+                        <i className={`fa-solid fa-chevron-right ${isOpen ? 'rotate-90' : ''}`}></i>
+                    </button>
                 )}
-            </Link>
-            {item.megamenu?.length && <MegaMenu megamenu={item.megamenu} isOpen={isOpen} index={index} />}
-            {item.submenu?.length && <Submenu submenu={item.submenu} isOpen={isOpen} index={index} />}
-            {item.countrymenu?.length && <CountryMenu countrymenu={item.countrymenu} isOpen={isOpen} index={index} />}
+            </div>
+
+            {item.megamenu?.length && (
+                <AnimateHeight duration={350} height={isOpen ? 'auto' : 0}>
+                    <div className="mm-sub-wrapper">
+                        {item.megamenu.map((mega) => (
+                            <div key={mega.title} className="mm-mega-box">
+                                <h5 className="mm-mega-title">{mega.title}</h5>
+                                <div className="mm-nested-links">
+                                    {mega.links.map(link => (
+                                        <Link key={link.link} to={link.link} onClick={onClose}>
+                                            {link.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </AnimateHeight>
+            )}
+
+            {item.submenu?.length && (
+                <AnimateHeight duration={350} height={isOpen ? 'auto' : 0}>
+                    <div className="mm-sub-wrapper">
+                        <Submenu submenu={item.submenu} onClose={onClose} />
+                    </div>
+                </AnimateHeight>
+            )}
+
+            {item.countrymenu?.length && (
+                <AnimateHeight duration={350} height={isOpen ? 'auto' : 0}>
+                    <div className="mm-country-grid">
+                        {item.countrymenu.map((country) => (
+                            <Link key={country.name} to={country.link} onClick={onClose} className="mm-country-card">
+                                <img src={country.flag} alt={country.name} />
+                                <span>{country.name}</span>
+                            </Link>
+                        ))}
+                    </div>
+                </AnimateHeight>
+            )}
         </div>
     );
 };
 
-const MegaMenu = ({ megamenu, isOpen, index }: { megamenu: MegaMenuDataType[]; isOpen: boolean; index: number }) => (
-    <AnimateHeight id={`submenu-${index}`} duration={300} height={isOpen ? 'auto' : 0}>
-        <div className='mega-menu'>
-            {megamenu.map(({ image, links, title }) => (
-                <div className="homemenu" key={title}>
-                    <div className="homemenu-thumb">
-                        <img src={image} alt="img" />
-                        <div className="demo-button">
-                            {links.map(({ link, title }) => (
-                                <Link key={link} to={link} className="theme-btn">
-                                    <span>{title}</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="homemenu-content text-center">
-                        <h4 className="homemenu-title">{title}</h4>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </AnimateHeight>
-);
-
-const Submenu = ({ submenu, isOpen, index }: { submenu: SubMenuDataType[]; isOpen: boolean; index: number }) => {
+const Submenu = ({ submenu, onClose }: { submenu: SubMenuDataType[]; onClose: () => void }) => {
     const [openSubIndexes, setOpenSubIndexes] = useState<number[]>([]);
 
-    const toggleNestedSubmenu = (e: MouseEvent, subIndex: number) => {
+    const toggleNested = (e: MouseEvent, idx: number) => {
         e.preventDefault();
-        setOpenSubIndexes((prev) =>
-            prev.includes(subIndex) ? prev.filter((i) => i !== subIndex) : [...prev, subIndex]
-        );
+        setOpenSubIndexes(prev => prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]);
     };
 
     return (
-        <AnimateHeight id={`submenu-${index}`} duration={500} height={isOpen ? 'auto' : 0}>
-            <div className='has-submenu'>
-                {submenu.map((item, subIndex) => {
-                    const nestedIsOpen = openSubIndexes.includes(subIndex);
-                    return (
-                        <div key={subIndex}>
-                            <Link to={item.link}>
-                                {item.title}
-                                {item.submenu?.length && (
-                                    <i onClick={(e) => toggleNestedSubmenu(e, subIndex)}>+</i>
-                                )}
+        <div className="mm-nested-list">
+            {submenu.map((sub, idx) => {
+                const isSubOpen = openSubIndexes.includes(idx);
+                const hasNested = !!sub.submenu?.length;
+                return (
+                    <div key={idx} className="mm-nested-item">
+                        <div className="mm-link-row">
+                            <Link to={sub.link === '#' ? '#' : sub.link} onClick={sub.link === '#' ? (e) => toggleNested(e, idx) : onClose}>
+                                {sub.title}
                             </Link>
-                            {item.submenu?.length && <Submenu submenu={item.submenu} isOpen={nestedIsOpen} index={subIndex} />}
+                            {hasNested && (
+                                <button className="mm-toggle small" onClick={(e) => toggleNested(e, idx)}>
+                                    <i className={`fa-solid fa-chevron-right ${isSubOpen ? 'rotate-90' : ''}`}></i>
+                                </button>
+                            )}
                         </div>
-                    );
-                })}
-            </div>
-        </AnimateHeight>
-    );
-};
-
-const CountryMenu = ({ countrymenu, isOpen, index }: { countrymenu: CountryMenuItemType[]; isOpen: boolean; index: number }) => {
-    return (
-        <AnimateHeight id={`countrymenu-${index}`} duration={500} height={isOpen ? 'auto' : 0}>
-            <div className='has-submenu'>
-                {countrymenu.map((country, idx) => (
-                    <div key={idx} className="mobile-country-item" style={{ padding: '5px 20px' }}>
-                        <Link to={country.link} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                            <img src={country.flag} alt={country.name} style={{ width: '24px', height: '16px', borderRadius: '2px', objectFit: 'cover' }} />
-                            <span>{country.name}</span>
-                        </Link>
+                        {hasNested && (
+                            <AnimateHeight duration={300} height={isSubOpen ? 'auto' : 0}>
+                                <div className="mm-deep-list">
+                                    {sub.submenu!.map(deep => (
+                                        <Link key={deep.link} to={deep.link} onClick={onClose}>
+                                            {deep.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </AnimateHeight>
+                        )}
                     </div>
-                ))}
-            </div>
-        </AnimateHeight>
+                );
+            })}
+        </div>
     );
 };
 

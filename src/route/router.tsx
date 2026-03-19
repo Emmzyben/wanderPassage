@@ -26,6 +26,7 @@ import UkImmigration from "@/pages/immigration-uk";
 import Canada from "@/pages/canada";
 import Uk from "@/pages/uk";
 import Ireland from "@/pages/ireland";
+import Belgium from "@/pages/belgium";
 import Blog from "@/pages/blog";
 import BlogDetails from "@/pages/blog-details";
 import BlogStandard from "@/pages/blog-standard";
@@ -38,6 +39,13 @@ import TravelAssistance from "@/pages/travel-assistance";
 import TestPreparation from "@/pages/test-preparation";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
+import MigrationCanadaPR from "@/pages/migration-canada-pr";
+import MigrationCanadaWork from "@/pages/migration-canada-work";
+import MigrationCanadaVisitor from "@/pages/migration-canada-visitor";
+import MigrationAustraliaPR from "@/pages/migration-australia-pr";
+import MigrationUkSkilled from "@/pages/migration-uk-skilled";
+import StudentAccommodation from "@/pages/student-accommodation";
+import StudentVisa from "@/pages/student-visa";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -142,6 +150,10 @@ export const router = createBrowserRouter([
                 element: <Ireland />
             },
             {
+                path: '/study-abroad/belgium',
+                element: <Belgium />
+            },
+            {
                 path: '/immigration/canada',
                 element: <CanadaImmigration />
             },
@@ -164,6 +176,34 @@ export const router = createBrowserRouter([
             {
                 path: '/services/test-preparation',
                 element: <TestPreparation />
+            },
+            {
+                path: '/migration/canada-pr',
+                element: <MigrationCanadaPR />
+            },
+            {
+                path: '/migration/canada-work',
+                element: <MigrationCanadaWork />
+            },
+            {
+                path: '/migration/canada-visitor',
+                element: <MigrationCanadaVisitor />
+            },
+            {
+                path: '/migration/australia-pr',
+                element: <MigrationAustraliaPR />
+            },
+            {
+                path: '/migration/uk-skilled',
+                element: <MigrationUkSkilled />
+            },
+            {
+                path: '/student-services/accommodation',
+                element: <StudentAccommodation />
+            },
+            {
+                path: '/student-services/visa',
+                element: <StudentVisa />
             },
 
 

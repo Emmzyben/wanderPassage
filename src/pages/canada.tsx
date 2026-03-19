@@ -1,4 +1,5 @@
-import PageTitle from "@/components/sections/pageTitle";
+﻿import PageTitle from "@/components/sections/pageTitle";
+import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
 const Canada = () => {
@@ -38,7 +39,7 @@ const Canada = () => {
                         {[
                             { id: "01", title: "Quality of Life", desc: "Canada consistently ranks among the world's most livable countries, with safe cities, clean environment, and excellent healthcare." },
                             { id: "02", title: "Renowned Education Quality", desc: "Home to world-class universities and colleges offering globally recognized degrees that open doors to career opportunities worldwide." },
-                            { id: "03", title: "Flexible & High-Quality Education", desc: "Choose from diverse institution types — universities, colleges, and research institutes — with flexible intakes across Fall, Winter, and Summer." },
+                            { id: "03", title: "Flexible & High-Quality Education", desc: "Choose from diverse institution types - universities, colleges, and research institutes - with flexible intakes across Fall, Winter, and Summer." },
                             { id: "04", title: "Diverse & Inclusive Society", desc: "Feel welcome in a multicultural country that values diversity, making international students feel at home from day one." },
                             { id: "05", title: "Memorable Adventures", desc: "From the Rocky Mountains to vibrant cities like Toronto and Vancouver, Canada offers unforgettable experiences beyond the classroom." },
                         ].map((reason, idx) => (
@@ -237,21 +238,21 @@ const Canada = () => {
                             {
                                 name: "Vanier Canada Graduate Scholarships",
                                 deadline: "7 August",
-                                amount: "$50,000 / yr — for three years",
+                                amount: "$50,000 / yr - for three years",
                                 link: "#",
                                 icon: "fa-graduation-cap",
                             },
                             {
                                 name: "Banting Postdoctoral Fellowships",
                                 deadline: "September",
-                                amount: "$70,000 annually — for two years",
+                                amount: "$70,000 annually - for two years",
                                 link: "#",
                                 icon: "fa-flask",
                             },
                             {
                                 name: "Ontario Graduate Scholarship",
                                 deadline: "September",
-                                amount: "$15,000 / yr — or $5,000 / term",
+                                amount: "$15,000 / yr - or $5,000 / term",
                                 link: "#",
                                 icon: "fa-award",
                             },
@@ -280,86 +281,130 @@ const Canada = () => {
                 </div>
             </section>
 
-            {/* Cost & Visa Section */}
-            <section className="cost-visa-section section-padding bg-dark text-white" style={{ borderRadius: '40px 40px 0 0' }}>
+                        {/* Living Costs Section */}
+            <section className="living-cost-section section-padding">
                 <div className="container">
-                    <div className="row g-5">
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Monthly Expenses</span>
-                                <h2 className="text-white">Living Costs</h2>
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Financial Planning</span>
+                        <h2>Living Costs</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center mb-4">
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                    <h5>Accommodation</h5>
+                                    <p>CAD 4,333 / mo</p>
+                                </div>
                             </div>
-                            <div className="row g-3">
-                                {[
-                                    { label: "Accommodation", value: "CAD 4,333 / mo", icon: "fa-house" },
-                                    { label: "Food", value: "CAD 324.66 / mo", icon: "fa-utensils" },
-                                    { label: "Mobile & Internet", value: "CAD 45.46 / mo", icon: "fa-wifi" },
-                                    { label: "Transport (Public)", value: "CAD 104.90 / mo", icon: "fa-bus" },
-                                    { label: "Transport (Cab)", value: "CAD 82.50 – 156 / mo", icon: "fa-taxi" },
-                                    { label: "Gas & Electricity", value: "19.2 cents / kWh", icon: "fa-bolt" },
-                                ].map((item, idx) => (
-                                    <div key={idx} className="col-sm-6">
-                                        <div className="visa-benefit-card bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                            <div className="icon-box" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-                                                <i className={`fa-solid ${item.icon}`}></i>
-                                            </div>
-                                            <h5>{item.label}</h5>
-                                            <p className="text-white-50">{item.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                    <h5>Food</h5>
+                                    <p>CAD 324.66 / mo</p>
+                                </div>
                             </div>
-                            <div className="total-highlight mt-4 p-4 text-center" style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '20px' }}>
-                                <span className="text-white-50">Average Living Cost:</span>
-                                <h3 className="mb-0 mt-2 text-white">CAD 2,500 / month</h3>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                    <h5>Mobile & Internet</h5>
+                                    <p>CAD 45.46 / mo</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="section-title-area">
-                                <span className="sub-title" style={{ color: '#aaa' }}>Gateway to Canada</span>
-                                <h2 className="text-white">Visa Requirements</h2>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                    <h5>Transport (Public)</h5>
+                                    <p>CAD 104.90 / mo</p>
+                                </div>
                             </div>
-                            <div className="list-card h-auto bg-transparent text-white" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-                                <ul className="premium-list text-white">
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-shield-halved"></i>
-                                        <span><strong>Visa Fees:</strong> INR 4,700 (Online Payment)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-clock-rotate-left"></i>
-                                        <span><strong>Processing:</strong> 4 – 6 weeks (avg)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-heart-pulse"></i>
-                                        <span><strong>Travel Insurance:</strong> Approx $206</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-plane"></i>
-                                        <span><strong>Flight Ticket:</strong> From ₹31,698 (one-way)</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-briefcase"></i>
-                                        <span><strong>Post-Study Work:</strong> 8 months – 3 years</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-star"></i>
-                                        <span><strong>PR Pathways:</strong> PNP, Express Entry, CEC</span>
-                                    </li>
-                                    <li className="text-white" style={{ borderBottomColor: 'rgba(255,255,255,0.05)' }}>
-                                        <i className="fa-solid fa-clock"></i>
-                                        <span><strong>Working Hours:</strong> 24 hrs / week</span>
-                                    </li>
-                                </ul>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-taxi`}></i></div>
+                                    <h5>Transport (Cab)</h5>
+                                    <p>CAD 82.50 – 156 / mo</p>
+                                </div>
                             </div>
-                            <div className="booking-card bg-white text-dark mt-4">
-                                <h4>Ready to Begin?</h4>
-                                <p>Book your FREE 30-minute session with our Canada experts today.</p>
-                                <button onClick={handleOpenModal} className="theme-btn w-100">BOOK NOW</button>
+                            <div className="col-lg-3 col-md-6">
+                                <div className="cost-item-card">
+                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                    <h5>Gas & Electricity</h5>
+                                    <p>19.2 cents / kWh</p>
+                                </div>
                             </div>
-                        </div>
+                    </div>
+                    <div className="cost-total-bar">
+                        <span>Average Living Cost:</span>
+                        <strong>CAD 2,500 / month</strong>
                     </div>
                 </div>
             </section>
+
+            {/* Visa Section */}
+            <section className="visa-section section-padding bg-light">
+                <div className="container">
+                    <div className="section-title-area text-center">
+                        <span className="sub-title">Visa Information</span>
+                        <h2>Visa Requirements</h2>
+                    </div>
+                    <div className="row g-3 justify-content-center">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-shield-halved`}></i>
+                                    <h5>Visa Fees</h5>
+                                    <p>INR 4,700 (Online Payment)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                    <h5>Processing</h5>
+                                    <p>4 – 6 weeks (avg)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-heart-pulse`}></i>
+                                    <h5>Travel Insurance</h5>
+                                    <p>Approx $206</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-plane`}></i>
+                                    <h5>Flight Ticket</h5>
+                                    <p>From ₹31,698 (one-way)</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-briefcase`}></i>
+                                    <h5>Post-Study Work</h5>
+                                    <p>8 months – 3 years</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-star`}></i>
+                                    <h5>PR Pathways</h5>
+                                    <p>PNP, Express Entry, CEC</p>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <div className="visa-info-card">
+                                    <i className={`fa-solid fa-clock`}></i>
+                                    <h5>Working Hours</h5>
+                                    <p>24 hrs / week</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <p className="visa-cta-text">Book your FREE 30-minute session with our Canada experts today.</p>
+                        <button onClick={handleOpenModal} className="theme-btn">BOOK NOW</button>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* CTA Final */}
             <section className="cta-section section-padding">
@@ -368,7 +413,10 @@ const Canada = () => {
                         <div className="cta-content">
                             <h2>Your Canadian Dream <br /> Starts Today</h2>
                             <p>Unlock access to world-class universities, a multicultural lifestyle, and unparalleled career prospects. Let our experts guide you every step of the way.</p>
-                            <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                            <div className="d-flex gap-3 flex-wrap mt-4">
+                                <button onClick={handleOpenModal} className="theme-btn">CONNECT WITH AN EXPERT</button>
+                                <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
+                            </div>
                         </div>
                         <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1578923812985-a0db0c1e8726?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>

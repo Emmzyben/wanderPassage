@@ -52,7 +52,7 @@ const HeroThree = () => {
                                 className="hero-button"
                                 style={{ marginTop: '0', display: 'flex', gap: '15px', flexWrap: 'wrap' }}
                             >
-                                <Link to="/contact" className="theme-btn hover-white">
+                                <Link to="/student-login" className="theme-btn hover-white">
                                     <span>
                                         Apply Now
                                         <i className="fa-solid fa-arrow-right-long" />
