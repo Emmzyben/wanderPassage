@@ -1189,14 +1189,15 @@
 	top: 0;
 	width: 400px;
 	height: 100vh;
-	-webkit-transform: translateX(calc(100% + 80px));
-	-moz-transform: translateX(calc(100% + 80px));
-	-ms-transform: translateX(calc(100% + 80px));
-	-o-transform: translateX(calc(100% + 80px));
-	transform: translateX(calc(100% + 80px));
-	-webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
-	-moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
-	transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+	visibility: hidden;
+	-webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out, visibility 0.45s ease-in-out;
+	-moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out, visibility 0.45s ease-in-out;
+	transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out, visibility 0.45s ease-in-out;
 	z-index: 99999;
 	overflow-y: scroll;
 	overscroll-behavior-y: contain;
@@ -1209,6 +1210,7 @@
 
 .offcanvas__info.info-open {
 	opacity: 1;
+	visibility: visible;
 	-webkit-transform: translateX(0);
 	-moz-transform: translateX(0);
 	-ms-transform: translateX(0);
