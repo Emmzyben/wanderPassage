@@ -690,11 +690,14 @@
 
 .header-3 {
 	position: relative;
+	z-index: 999;
 
 	&::before {
 		@include before;
 		background-color: $theme-color;
 		left: 72%;
+		width: auto;
+		right: 0;
 
 		@include breakpoint (max-xxxl) {
 			display: none;
@@ -1185,7 +1188,7 @@
 	right: 0;
 	top: 0;
 	width: 400px;
-	height: 100%;
+	height: 100vh;
 	-webkit-transform: translateX(calc(100% + 80px));
 	-moz-transform: translateX(calc(100% + 80px));
 	-ms-transform: translateX(calc(100% + 80px));
@@ -1224,7 +1227,7 @@
 .offcanvas__wrapper {
 	position: relative;
 	height: 100%;
-	padding: 30px 30px;
+	padding: 30px 20px;
 
 	.offcanvas__content {
 		.text {
@@ -1318,8 +1321,8 @@
 
 .offcanvas__overlay {
 	position: fixed;
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	background: #151515;
 	z-index: 900;
 	top: 0;
@@ -1333,15 +1336,16 @@
 	visibility: visible;
 }
 
-@media (max-width:450px) {
+@media (max-width: 450px) {
 	.offcanvas__info {
-		width: 300px;
+		width: 100%;
+		border-left: none;
 	}
 }
 
 @media (max-width: 575px) {
 	.offcanvas__wrapper {
-		padding: 20px;
+		padding: 20px 15px; // slightly less padding for very small screens
 	}
 }
 
