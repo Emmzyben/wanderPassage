@@ -25,8 +25,8 @@ const ExtraInfoOffcanvas = () => {
                                     </Link>
                                 </div>
                                 <div className="offcanvas__close">
-                                    <button onClick={toggleOffcanvas}>
-                                        <i className="fas fa-times" />
+                                    <button onClick={toggleOffcanvas} style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <i className="fa-solid fa-xmark" />
                                     </button>
                                 </div>
                             </div>
@@ -36,38 +36,38 @@ const ExtraInfoOffcanvas = () => {
                             </p>
                             <div className="mobile-menu fix mb-3" />
                             <div className="offcanvas__contact">
-                                <h4>Contact Info</h4>
+                                <h4 style={{ fontSize: '18px', marginBottom: '15px' }}>Contact Info</h4>
                                 <ul>
                                     <li className="d-flex align-items-center">
                                         <div className="offcanvas__contact-icon">
-                                            <i className="fal fa-map-marker-alt" />
+                                            <i className="fa-solid fa-location-dot" style={{ fontSize: '14px' }} />
                                         </div>
                                         <div className="offcanvas__contact-text">
-                                            <Link to="#">Plot 64 Ext 2, Arab Road, Abuja</Link>
+                                            <Link to="#" style={{ fontSize: '14px' }}>Plot 64 Ext 2, Arab Road, Abuja</Link>
                                         </div>
                                     </li>
                                     <li className="d-flex align-items-center">
                                         <div className="offcanvas__contact-icon mr-15">
-                                            <i className="fal fa-envelope" />
+                                            <i className="fa-solid fa-envelope" style={{ fontSize: '14px' }} />
                                         </div>
                                         <div className="offcanvas__contact-text">
-                                            <Link to="mailto:info@wanderpassage.com"><span className="mailto:info@wanderpassage.com">info@wanderpassage.com</span></Link>
+                                            <Link to="mailto:info@wanderpassage.com"><span className="mailto:info@wanderpassage.com" style={{ fontSize: '14px' }}>info@wanderpassage.com</span></Link>
                                         </div>
                                     </li>
                                     <li className="d-flex align-items-center">
                                         <div className="offcanvas__contact-icon mr-15">
-                                            <i className="fal fa-clock" />
+                                            <i className="fa-regular fa-clock" style={{ fontSize: '14px' }} />
                                         </div>
                                         <div className="offcanvas__contact-text">
-                                            <Link to="#">Mon - Fri, 09am - 05pm</Link>
+                                            <Link to="#" style={{ fontSize: '14px' }}>Mon - Fri, 09am - 05pm</Link>
                                         </div>
                                     </li>
                                     <li className="d-flex align-items-center">
                                         <div className="offcanvas__contact-icon mr-15">
-                                            <i className="far fa-phone" />
+                                            <i className="fa-solid fa-phone" style={{ fontSize: '14px' }} />
                                         </div>
                                         <div className="offcanvas__contact-text">
-                                            <Link to="tel:+2349135000681">+234 913 500 0681</Link>
+                                            <Link to="tel:+2349135000681" style={{ fontSize: '14px' }}>+234 913 500 0681</Link>
                                         </div>
                                     </li>
                                 </ul>
