@@ -105,3 +105,27 @@ export const menuData: MenuItemDataType[] = [
     link: '/contact',
   },
 ];
+
+export const menuDataAuthenticated: MenuItemDataType[] = [
+  ...menuData.filter(item => item.title !== 'Apply'),
+  {
+    title: 'Dashboard',
+    link: '/student-portal',
+  },
+  {
+    title: 'Logout',
+    link: '#logout',
+  },
+];
+
+export const menuDataAdmin: MenuItemDataType[] = [
+  ...menuData.filter(item => item.title !== 'Apply'),
+  {
+    title: 'Admin Hub',
+    link: '/admin-portal',
+  },
+  {
+    title: 'Logout',
+    link: '#logout',
+  },
+];

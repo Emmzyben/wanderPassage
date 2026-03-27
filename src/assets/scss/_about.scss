@@ -190,94 +190,86 @@
         }
     }
 
-    &.style-2 {
-        .about-image-items {
-            .circle-shape {
+    &.style-simple {
+        .about-image-simple {
+            position: relative;
+            margin-bottom: 40px;
+            
+            @include breakpoint(max-lg) {
+                margin-bottom: 60px;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .experience-badge {
                 position: absolute;
-                top: 0;
-                right: 25%;
-                animation: cir36 10s linear infinite;
-            }
+                bottom: -30px;
+                right: -20px;
+                background: var(--theme);
+                color: #fff;
+                padding: 25px 35px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 
-            .counter-shape {
-                background-color: $theme-color;
-                bottom: -70px;
-                left: 30px;
-
-                @include breakpoint (max-lg) {
-                    bottom: 20px;
+                @include breakpoint(max-lg) {
+                    right: 20px;
+                    bottom: -30px;
+                    padding: 15px 25px;
                 }
 
-                .icon {
-                    filter: grayscale(100%) brightness(300%)
+                @include breakpoint(max-sm) {
+                    position: relative;
+                    bottom: 0;
+                    right: 0;
+                    margin: -40px auto 0;
+                    width: fit-content;
+                    padding: 15px 30px;
                 }
 
-                .content {
-                    h3 {
-                        color: $white;
-                        font-size: 16px;
-                        font-weight: 500;
-
-                        span {
-                            font-size: 28px;
-                            font-weight: bold;
-                            margin-right: 5px;
-                        }
-                    }
-
-                    p {
-                        font-size: 14px;
-                        color: $white;
-                    }
+                h3 {
+                    font-size: 36px;
+                    font-weight: 800;
+                    line-height: 1;
+                    margin-bottom: 5px;
+                    color: #fff;
                 }
-            }
-
-            .about-image-1 {
-                max-width: 386px;
-                height: 415px;
-
-                @include breakpoint (max-lg) {
-                    max-width: 550px;
-                    height: 530px;
-                }
-
-                @include breakpoint (max-md) {
-                    max-width: 450px;
-                    height: 415px;
-                }
-
-                @include breakpoint (max-sm) {
-                    max-width: 550px;
-                    height: 500px;
-                }
-
-                .about-image-2 {
-                    border: 10px solid $white;
-                    box-shadow: $shadow;
-                    right: -40%;
-
-                    @include breakpoint (max-xl) {
-                        right: -20%;
-                    }
-
-                    @include breakpoint (max-sm) {
-                        right: 0;
-                    }
-                }
-
-                &::after {
-                    display: none;
+                span {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    display: block;
                 }
             }
         }
 
         .about-content {
-            .about-icon-items {
+            @include breakpoint(max-lg) {
+                margin-top: 20px;
+                padding: 0 15px;
+            }
 
-                .icon-items {
-                    .icon {
-                        background-color: $white;
-                        color: $theme-color;
+            .about-simple-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    font-size: 16px;
+                    color: #444;
+                    margin-bottom: 12px;
+                    font-weight: 500;
+
+                    i {
+                        color: var(--theme);
+                        font-size: 20px;
                     }
                 }
             }

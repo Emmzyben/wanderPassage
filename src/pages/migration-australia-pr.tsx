@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const MigrationAustraliaPR = () => {
@@ -23,18 +23,12 @@ const MigrationAustraliaPR = () => {
                         <p>Australia offers multiple pathways to Permanent Residency through its SkillSelect points-based system. Our experts help you identify the best visa subclass and build a competitive application.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "4,500+", label: "PR Approvals" },
-                            { value: "96%", label: "Success Rate" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "6", label: "Visa Subclasses" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1470&auto=format&fit=crop"
+                            alt="Australia PR Visa"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

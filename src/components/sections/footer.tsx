@@ -47,7 +47,7 @@ const studentServices = [
 
 const Footer = () => {
     return (
-        <footer className="footer-section footer-bg">
+        <footer className="footer-section footer-bg fix">
             <div className="container">
                 <div className="contact-info-area">
                     {contactInfo.map((info, index) => (

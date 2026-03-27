@@ -1,23 +1,36 @@
-import { menuData, MenuItemDataType } from "@/db/menuData";
+import { menuData, MenuItemDataType, menuDataAuthenticated, menuDataAdmin } from "@/db/menuData";
 import { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { menuDataSingleHomePage } from "@/db/menuDataSingleHomePage";
+import { useAuth } from "@/context/AuthContext";
 
 function Navbar() {
+    const { user, logout } = useAuth()
     const pathName = useLocation().pathname
     const [data, setData] = useState<MenuItemDataType[]>([])
+
     useEffect(() => {
         if (pathName === '/home-one-single' || pathName === '/home-two-single' || pathName === '/home-three-single' || pathName === '/home-four-single') {
             setData(menuDataSingleHomePage)
+        } else if (user) {
+            setData(user.role === 'admin' ? menuDataAdmin : menuDataAuthenticated)
         } else {
             setData(menuData)
         }
-    })
+    }, [pathName, user]) // Included dependencies
+
+    const handleLinkClick = (e: React.MouseEvent, link: string) => {
+        if (link === '#logout') {
+            e.preventDefault();
+            logout();
+        }
+    }
+
     return (
         <ul>
             {data.map(({ link, title, megamenu, submenu, countrymenu }, index) => (
-                <li key={index} className={`${megamenu ? 'menu-thumb' : ''} ${submenu || countrymenu ? 'has-dropdown' : ''} ${index === 0 ? 'active' : ''}`}>
-                    <Link to={link}>
+                <li key={index} className={`${megamenu ? 'menu-thumb' : ''} ${submenu || countrymenu ? 'has-dropdown' : ''} ${pathName === link ? 'active' : ''}`}>
+                    <Link to={link} onClick={(e) => handleLinkClick(e, link)}>
                         {title}{' '}
                         {
                             megamenu || submenu || countrymenu ? <i className="fas fa-angle-down" /> : ''

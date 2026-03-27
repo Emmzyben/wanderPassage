@@ -33,7 +33,10 @@ import BlogStandard from "@/pages/blog-standard";
 import Contact from "@/pages/contact";
 import StudentLogin from "@/pages/student-login";
 import StudentPortal from "@/pages/student-portal";
+import AdminPortal from "@/pages/admin-portal";
 import Home from "@/pages/home";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import AdminProtectedRoute from "@/components/auth/AdminProtectedRoute";
 import VisaProcessing from "@/pages/visa-processing";
 import TravelAssistance from "@/pages/travel-assistance";
 import TestPreparation from "@/pages/test-preparation";
@@ -221,7 +224,7 @@ export const router = createBrowserRouter([
                 element: <BlogStandard />
             },
             {
-                path: '/news-details',
+                path: '/news-details/:slug',
                 element: <BlogDetails />
             },
             {
@@ -234,7 +237,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/student-portal',
-                element: <StudentPortal />
+                element: (
+                    <ProtectedRoute>
+                        <StudentPortal />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: '/admin-portal',
+                element: (
+                    <AdminProtectedRoute>
+                        <AdminPortal />
+                    </AdminProtectedRoute>
+                )
             },
             {
                 path: '/privacy-policy',

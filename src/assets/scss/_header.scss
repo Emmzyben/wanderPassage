@@ -1,6 +1,6 @@
 //>>>>> Header Top Start <<<<<//
 .header-top-section {
-	background-color: $header-color;
+	background-color: $theme-color;
 	padding: 10px 0;
 	position: relative;
 	z-index: 99;
@@ -96,37 +96,8 @@
 		.flag-wrap {
 			position: relative;
 			width: 160px;
-
-			.nice-select {
-				padding: 0 0 0 60px;
-				background: transparent;
-				border: none;
-				text-align: center;
-				margin: 0 auto;
-				position: relative;
-				z-index: 999;
-				border: none !important;
-				padding-bottom: 0 !important;
-
-				&::after {
-					right: 23px;
-					border-bottom: 2px solid transparent;
-					border-right: 2px solid transparent;
-					width: 10px;
-					height: 10px;
-					top: 15px;
-					border-bottom: 2px solid transparent;
-					border-color: $theme-color;
-					border-right: 2px solid theme-color;
-				}
-
-				span {
-					font-size: 16px;
-					font-weight: 500;
-					text-transform: capitalize;
-					color: $white;
-				}
-			}
+			display: flex !important;
+			align-items: center;
 
 			.flag {
 				position: absolute;
@@ -144,6 +115,35 @@
 					border-radius: 50%;
 				}
 			}
+
+			#google_translate_element {
+				margin-left: 60px; // Offset for the flag
+
+				.goog-te-gadget {
+					font-family: inherit !important;
+					font-size: 0 !important;
+					color: transparent !important;
+					display: flex;
+					align-items: center;
+
+					.goog-te-combo {
+						background: transparent;
+						border: none;
+						color: $white;
+						padding: 4px 8px;
+						font-size: 15px;
+						font-weight: 500;
+						outline: none;
+						cursor: pointer;
+						margin: 0;
+
+						option {
+							background: $header-color;
+							color: $white;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -154,6 +154,23 @@
 			margin-left: 0;
 		}
 	}
+}
+
+// Hide Google Translate attribution and banner
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-gadget-icon,
+.goog-logo-link {
+	display: none !important;
+}
+
+.goog-te-gadget {
+	color: transparent !important;
+}
+
+body {
+	top: 0 !important;
 }
 
 //>>>>> Header Main Area Start <<<<<//
@@ -890,7 +907,7 @@
 
 	.mm-item {
 		border-bottom: 1px solid rgba(#000, 0.05);
-		
+
 		&:last-child {
 			border-bottom: none;
 		}
@@ -932,6 +949,7 @@
 
 				i {
 					@include transition;
+
 					&.rotate-90 {
 						transform: rotate(90deg);
 					}
@@ -950,7 +968,7 @@
 		// Mega Menu Style
 		.mm-mega-box {
 			padding: 10px 15px;
-			
+
 			.mm-mega-title {
 				font-size: 13px;
 				font-weight: 700;
@@ -1027,14 +1045,14 @@
 
 		.mm-nested-item {
 			border-bottom: 1px solid rgba(#000, 0.03);
-			
+
 			&:last-child {
 				border-bottom: none;
 			}
 
 			.mm-link-row {
 				padding: 10px 0;
-				
+
 				a {
 					font-size: 14px;
 					text-transform: none;

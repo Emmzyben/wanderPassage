@@ -1,6 +1,6 @@
 import Footer from '@/components/sections/footer'
 import HeaderThree from '@/components/headers/headerThree'
-import { Outlet, ScrollRestoration } from 'react-router-dom'
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
 import useAnimation from '@/hooks/useAnimation';
 import WhatsAppButton from '@/components/ui/whatsappButton'
 import ConsultationModal from '@/components/ui/ConsultationModal'
@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 
 const RootLayout = () => {
     useAnimation()
+    const { pathname } = useLocation();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
@@ -16,12 +17,14 @@ const RootLayout = () => {
         return () => window.removeEventListener('toggle-consultation-modal', handleToggleModal);
     }, []);
 
+    const isDashboard = pathname === '/student-portal' || pathname === '/admin-portal';
+
     return (
         <>
-            <HeaderThree />
+            {!isDashboard && <HeaderThree />}
             <Outlet />
-            <Footer />
-            <WhatsAppButton />
+            {!isDashboard && <Footer />}
+            {!isDashboard && <WhatsAppButton />}
             <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <ScrollRestoration />
         </>

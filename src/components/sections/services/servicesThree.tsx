@@ -5,7 +5,7 @@ import SectionTitle from "@/components/ui/sectionTitle"
 
 const ServicesThree = () => {
     return (
-        <section id="services" className="service-section-3 section-padding bg-cover" style={{ backgroundImage: 'url("/img/service/service-bg-3.jpg")', position: 'relative', zIndex: '1' }}>
+        <section id="services" className="service-section-3 section-padding bg-cover fix" style={{ backgroundImage: 'url("/img/service/service-bg-3.jpg")', position: 'relative', zIndex: '1' }}>
             <div className="container">
                 <div className="section-title-area">
                     <SectionTitle>

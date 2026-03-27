@@ -1,9 +1,11 @@
-import { menuData, MenuItemDataType, SubMenuDataType } from '@/db/menuData';
+import { menuData, MenuItemDataType, SubMenuDataType, menuDataAuthenticated, menuDataAdmin } from '@/db/menuData';
 import { MouseEvent, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Link } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 
 const MobileNavBar = ({ onClose }: { onClose: () => void }) => {
+    const { user, logout } = useAuth();
     const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
     const toggleSubmenu = (e: MouseEvent, index: number) => {
@@ -13,10 +15,22 @@ const MobileNavBar = ({ onClose }: { onClose: () => void }) => {
         );
     };
 
+    const handleLogout = (e: MouseEvent) => {
+        e.preventDefault();
+        logout();
+        onClose();
+    };
+
+    const displayData = user 
+        ? (user.role === 'admin' ? menuDataAdmin : menuDataAuthenticated) 
+        : menuData;
+
     return (
         <div className='mobile-menu-wrapper'>
-            {menuData.map((item, index) => {
+            {displayData.map((item, index) => {
                 const isOpen = openIndexes.includes(index);
+                const isLogout = item.link === '#logout';
+
                 return (
                     <MenuItem
                         key={index}
@@ -25,6 +39,7 @@ const MobileNavBar = ({ onClose }: { onClose: () => void }) => {
                         toggleSubmenu={toggleSubmenu}
                         isOpen={isOpen}
                         onClose={onClose}
+                        onLogout={isLogout ? handleLogout : undefined}
                     />
                 );
             })}
@@ -32,19 +47,20 @@ const MobileNavBar = ({ onClose }: { onClose: () => void }) => {
     );
 };
 
-const MenuItem = ({ item, index, toggleSubmenu, isOpen, onClose }: {
+const MenuItem = ({ item, index, toggleSubmenu, isOpen, onClose, onLogout }: {
     item: MenuItemDataType;
     index: number;
     isOpen: boolean;
     toggleSubmenu: (e: MouseEvent, index: number) => void;
     onClose: () => void;
+    onLogout?: (e: MouseEvent) => void;
 }) => {
     const hasChildren = !!(item.megamenu?.length || item.submenu?.length || item.countrymenu?.length);
 
     return (
         <div className={`mm-item ${isOpen ? 'is-open' : ''}`}>
             <div className="mm-link-row">
-                <Link to={item.link === '#' ? '#' : item.link} onClick={item.link === '#' ? (e) => toggleSubmenu(e, index) : onClose}>
+                <Link to={item.link === '#' ? '#' : item.link} onClick={onLogout ? onLogout : (item.link === '#' ? (e) => toggleSubmenu(e, index) : onClose)}>
                     {item.title}
                 </Link>
                 {hasChildren && (

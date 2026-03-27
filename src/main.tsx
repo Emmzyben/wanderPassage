@@ -6,9 +6,12 @@ import '@/assets/css/animate.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import 'react-modal-video/scss/modal-video.scss';
 import App from './App.tsx'
+import { AuthProvider } from './context/AuthContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </StrictMode>,
 )

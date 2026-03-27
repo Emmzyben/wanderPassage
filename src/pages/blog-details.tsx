@@ -1,107 +1,223 @@
-import BlogCommentFrom from "@/components/sections/blogs/blogCommentFrom"
-import BlogComments from "@/components/sections/blogs/blogComments"
-import BlogSidebar from "@/components/sections/blogs/blogSIdebar"
-import PageTitle from "@/components/sections/pageTitle"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from 'react';
+import { useParams, Link } from "react-router-dom";
+import { blogsApi, Blog, BlogComment, BACKEND_URL } from "@/lib/api";
+import PageTitle from "@/components/sections/pageTitle";
+import BlogComments from "@/components/sections/blogs/blogComments";
+import BlogCommentFrom from "@/components/sections/blogs/blogCommentFrom";
 
 const BlogDetails = () => {
+    const { slug } = useParams<{ slug: string }>();
+    const [blog, setBlog] = useState<Blog | null>(null);
+    const [comments, setComments] = useState<BlogComment[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (slug) fetchBlog();
+    }, [slug]);
+
+    useEffect(() => {
+        if (blog) fetchComments();
+    }, [blog]);
+
+    const fetchBlog = async () => {
+        try {
+            const res = await blogsApi.getBySlug(slug!);
+            if (res.status === 'success' && res.blog) {
+                setBlog(res.blog);
+                // Update Page Title and Meta Tags
+                document.title = `${res.blog.title} - WanderPassage`;
+
+                // Update Open Graph Title & Description
+                updateMetaTag('property', 'og:title', res.blog.title);
+                updateMetaTag('property', 'og:description', res.blog.content.slice(0, 160) + '...');
+                if (res.blog.image_path) {
+                    updateMetaTag('property', 'og:image', `${BACKEND_URL}/${res.blog.image_path}`);
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const fetchComments = async () => {
+        try {
+            const res = await blogsApi.listComments(blog!.id);
+            if (res.status === 'success') {
+                setComments(res.comments || []);
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    const updateMetaTag = (attr: string, value: string, content: string) => {
+        let element = document.querySelector(`meta[${attr}="${value}"]`);
+        if (!element) {
+            element = document.createElement('meta');
+            element.setAttribute(attr, value);
+            document.head.appendChild(element);
+        }
+        element.setAttribute('content', content);
+    };
+
+    const handleShare = (platform: string) => {
+        const url = window.location.href;
+        const title = blog?.title || '';
+        let shareUrl = '';
+
+        switch (platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                break;
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+                break;
+            case 'linkedin':
+                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+                break;
+        }
+
+        if (shareUrl) {
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="text-center py-5" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="spinner-border text-primary" style={{ width: '3.5rem', height: '3.5rem', borderWidth: '0.25em' }}></div>
+            </div>
+        );
+    }
+
+    if (!blog) {
+        return (
+            <div className="text-center py-5" style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <i className="fa-solid fa-file-circle-exclamation text-muted mb-4" style={{ fontSize: '4rem' }}></i>
+                <h2 className="fw-bold">Article Not Found</h2>
+                <p className="text-muted mb-4">The article you're looking for might have been moved or deleted.</p>
+                <Link to="/news" className="theme-btn">Back to Articles</Link>
+            </div>
+        );
+    }
+
     return (
-        <>
-            <PageTitle currentPage="Blog Details" title="Blog Details" />
-            <section className="news-standard fix section-padding">
+        <div className="blog-details-view overflow-hidden">
+            <PageTitle
+                currentPage="Article Details"
+                title={blog.title}
+                backgroundImage="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1920"
+            />
+
+            <section className="blog-details-section section-padding" style={{ background: '#fff' }}>
                 <div className="container">
-                    <div className="news-details-area">
-                        <div className="row g-5">
-                            <div className="col-12 col-lg-8">
-                                <div className="blog-post-details">
-                                    <div className="single-blog-post">
-                                        <div className="post-featured-thumb bg-cover" style={{ backgroundImage: 'url("/img/news/post-4.jpg")' }} />
-                                        <div className="post-content">
-                                            <ul className="post-list d-flex align-items-center">
-                                                <li>
-                                                    <i className="fa-regular fa-user" />
-                                                    By Admin
-                                                </li>
-                                                <li>
-                                                    <i className="fa-solid fa-calendar-days" />
-                                                    18 Dec, 2025
-                                                </li>
-                                                <li>
-                                                    <i className="fa-solid fa-tag" />
-                                                    IT Services
-                                                </li>
-                                            </ul>
-                                            <h3>5 energy innovations revolution</h3>
-                                            <p className="mb-3">
-                                                Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore of magna aliqua. Ut enim ad minim veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea dolor commodo consequat. Duis aute irure and dolor in reprehenderit.
-                                            </p>
-                                            <p className="mb-3">
-                                                The is ipsum dolor sit amet consectetur adipiscing elit. Fusce eleifend porta arcu In hac habitasse the is platea augue thelorem turpoi dictumst. In lacus libero faucibus at malesuada sagittis placerat eros sed istincidunt augue ac ante rutrum sed the is sodales augue consequat.
-                                            </p>
-                                            <p>
-                                                Nulla facilisi. Vestibulum tristique sem in eros eleifend imperdiet. Donec quis convallis neque. In id lacus pulvinar lacus, eget vulputate lectus. Ut viverra bibendum lorem, at tempus nibh mattis in. Sed a massa eget lacus consequat auctor.
-                                            </p>
-                                            <div className="hilight-text mt-4 mb-4">
-                                                <p>Pellentesque sollicitudin congue dolor non aliquam. Morbi volutpat, nisi vel
-                                                    ultricies urnacondimentum, sapien neque
-                                                    lobortis tortor, quis efficitur mi ipsum eu metus. Praesent eleifend orci sit
-                                                    amet
-                                                    est vehicula.</p>
-                                                <svg width={36} height={36} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M0 20.3698H7.71428L2.57139 30.5546H10.2857L15.4286 20.3698V5.09247H0V20.3698Z" fill="#D4AF37" />
-                                                    <path d="M20.5703 5.09247V20.3698H28.2846L23.1417 30.5546H30.856L35.9989 20.3698V5.09247H20.5703Z" fill="#D4AF37" />
-                                                </svg>
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-lg-10 col-xl-9">
+                            <article className="blog-article-wrapper">
+                                {/* Article Header Info */}
+                                <div className="article-meta-modern mb-5 pb-4 border-bottom d-flex flex-wrap justify-content-start align-items-center" style={{ gap: '30px' }}>
+                                    <div className="meta-item d-flex align-items-center">
+                                        <div className="author-avatar-img me-3">
+                                            <div className="rounded-circle bg-primary-subtle d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px' }}>
+                                                <i className="fa-solid fa-user text-primary fs-5"></i>
                                             </div>
-                                            <p className="mt-4 mb-5">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros.
-                                            </p>
-                                            <div className="row g-4">
-                                                <div className="col-lg-6">
-                                                    <div className="details-image">
-                                                        <img src="/img/news/post-5.jpg" alt="img" />
-                                                    </div>
-                                                </div>
-                                                <div className="col-lg-6">
-                                                    <div className="details-image">
-                                                        <img src="/img/news/post-6.jpg" alt="img" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p className="pt-5">
-                                                Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore of magna aliqua. Ut enim ad minim veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea dolor commodo consequat. Duis aute irure and dolor in reprehenderit.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore of magna aliqua. Ut enim ad minim veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea dolor commodo consequat. Duis aute irure and dolor in reprehenderit.
-                                            </p>
+                                        </div>
+                                        <div>
+                                            <span className="text-muted d-block small text-uppercase fw-bold ls-1">Author</span>
+                                            <span className="fw-bold text-dark">{blog.author_name || 'Admin'}</span>
                                         </div>
                                     </div>
-                                    <div className="row tag-share-wrap mt-4 mb-5">
-                                        <div className="col-lg-8 col-12">
-                                            <div className="tagcloud">
-                                                <Link to="/news-details">News</Link>
-                                                <Link to="/news-details">business</Link>
-                                                <Link to="/news-details">marketing</Link>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-12 mt-3 mt-lg-0 text-lg-end">
-                                            <div className="social-share">
-                                                <span className="me-3">Share:</span>
-                                                <Link to="#"><i className="fab fa-facebook-f" /></Link>
-                                                <Link to="#"><i className="fa-brands fa-x-twitter" /></Link>
-                                                <Link to="#"><i className="fab fa-linkedin-in" /></Link>
-                                            </div>
-                                        </div>
+                                    <div className="meta-item">
+                                        <span className="text-muted d-block small text-uppercase fw-bold ls-1">Published</span>
+                                        <span className="fw-bold text-dark">{new Date(blog.created_at).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                                     </div>
-                                    <BlogComments />
-                                    <BlogCommentFrom />
+                                    <div className="meta-item">
+                                        <span className="text-muted d-block small text-uppercase fw-bold ls-1">Category</span>
+                                        <span className="badge bg-light text-primary px-3 py-2 rounded-pill fw-bold border">Travel & Visa</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-12 col-lg-4">
-                                <BlogSidebar />
-                            </div>
+
+                                {/* Main Heading (if not in PageTitle) */}
+                                <h2 className="mb-5 display-5 fw-extra-bold ls-tight" style={{ color: '#1a1a1a', lineHeight: '1.2', wordBreak: 'break-word', overflowWrap: 'break-word' }}>{blog.title}</h2>
+
+                                {/* Featured Image */}
+                                {blog.image_path && (
+                                    <div className="article-featured-image-container mb-5 rounded-5 shadow-lg overflow-hidden">
+                                        <img
+                                            src={`${BACKEND_URL}/${blog.image_path}`}
+                                            alt={blog.title}
+                                            className="w-100"
+                                            style={{ height: 'auto', display: 'block', maxHeight: '600px', objectFit: 'contain', backgroundColor: '#f8f9fa' }}
+                                        />
+                                    </div>
+                                )}
+
+                                {/* Article Content */}
+                                <div className="article-content-rich" style={{
+                                    fontSize: '1.25rem',
+                                    lineHeight: '2',
+                                    color: '#343a40',
+                                    fontWeight: '400',
+                                    whiteSpace: 'pre-wrap',
+                                    wordBreak: 'break-word',
+                                    overflowWrap: 'break-word'
+                                }}>
+                                    {blog.content}
+                                </div>
+
+                                {/* Article Footer - Share & Tags */}
+                                <div className="article-footer mt-5 pt-5 border-top d-flex flex-wrap justify-content-between align-items-center gap-4">
+                                    <div className="tags-container d-flex align-items-center gap-2">
+                                        <i className="fa-solid fa-tags text-primary me-2"></i>
+                                        <Link to="#" className="btn btn-sm btn-light border rounded-pill px-4 text-dark hover-primary-btn transition">Visa</Link>
+                                        <Link to="#" className="btn btn-sm btn-light border rounded-pill px-4 text-dark hover-primary-btn transition">Study Abroad</Link>
+                                    </div>
+
+                                    <div className="social-shares-modern d-flex align-items-center gap-3">
+                                        <span className="fw-bold text-muted small text-uppercase">Share this article:</span>
+                                        <div className="d-flex gap-2">
+                                            <Link to="#" onClick={(e) => { e.preventDefault(); handleShare('facebook'); }} className="social-icon-btn rounded-circle transition" style={{ width: '40px', height: '40px', background: '#3b5998', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                                                <i className="fab fa-facebook-f"></i>
+                                            </Link>
+                                            <Link to="#" onClick={(e) => { e.preventDefault(); handleShare('twitter'); }} className="social-icon-btn rounded-circle transition" style={{ width: '40px', height: '40px', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                                                <i className="fa-brands fa-x-twitter"></i>
+                                            </Link>
+                                            <Link to="#" onClick={(e) => { e.preventDefault(); handleShare('linkedin'); }} className="social-icon-btn rounded-circle transition" style={{ width: '40px', height: '40px', background: '#0077b5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                                                <i className="fab fa-linkedin-in"></i>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Comments Section */}
+                                <div className="mt-5">
+                                    <BlogComments comments={comments} />
+                                    <BlogCommentFrom blogId={blog.id} onCommentAdded={fetchComments} />
+                                </div>
+
+                                {/* Back Link */}
+                                <div className="text-center mt-5 pt-4">
+                                    <Link to="/news" className="theme-btn hover-white">
+                                        <i className="fa-solid fa-arrow-left me-2"></i> Back to All Articles
+                                    </Link>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
             </section>
 
-        </>
+            <style>{`
+                .ls-1 { letter-spacing: 1px; }
+                .ls-tight { letter-spacing: -0.5px; }
+                .fw-extra-bold { font-weight: 800; }
+                .social-icon-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+                .hover-primary-btn:hover { background: var(--primary-color) !important; color: #fff !important; }
+                .article-content-rich p { margin-bottom: 1.5rem; }
+            `}</style>
+        </div>
     )
 }
 

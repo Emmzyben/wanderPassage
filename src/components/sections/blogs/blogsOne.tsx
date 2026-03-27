@@ -1,8 +1,10 @@
 import SectionTitle from "@/components/ui/sectionTitle"
 import { blogPostsOneData } from "@/db/blogPostsOneData"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const BlogsOne = () => {
+    const navigate = useNavigate();
+    
     return (
         <section id="blog" className="news-section section-padding fix">
             <div className="container">
@@ -15,7 +17,14 @@ const BlogsOne = () => {
                 <div className="row">
                     {blogPostsOneData.map((post) => (
                         <div className="col-xl-4 col-lg-6 col-md-6 wow slideUp" data-delay={post.delay} key={post.id}>
-                            <div className="single-news-items">
+                            <div 
+                                className="single-news-items"
+                                onClick={(e) => {
+                                    if ((e.target as HTMLElement).closest('a')) return;
+                                    navigate(post.link);
+                                }}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <div className="news-image bg-cover" style={{ backgroundImage: `url(${post.image})` }}>
                                     <div className="post-date">
                                         <span>{post.date.month} {post.date.year}</span>
@@ -38,8 +47,7 @@ const BlogsOne = () => {
                 </div>
             </div>
         </section>
-
     )
 }
 
-export default BlogsOne
+export default BlogsOne

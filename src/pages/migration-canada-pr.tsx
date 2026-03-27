@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const MigrationCanadaPR = () => {
@@ -23,18 +23,11 @@ const MigrationCanadaPR = () => {
                         <p>Canada's Permanent Residency program offers one of the world's most respected immigration pathways. Our certified experts guide you through every stage - from profile assessment to landing.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "5,000+", label: "PR Approvals" },
-                            { value: "98%", label: "Success Rate" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "6", label: "PR Pathways" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1469&auto=format&fit=crop"
+                            alt="Canada PR Visa"
+                        />
                     </div>
                 </div>
             </div>

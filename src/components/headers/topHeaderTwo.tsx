@@ -1,23 +1,39 @@
-import { useState } from "react";
-import CustomDropdown from "../ui/customDropdown";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const options = [
-    { value: 'english', label: 'English' },
-    { value: 'bangla', label: 'Bangla' },
-    { value: 'hindi', label: 'Hindi' }
-];
-interface Option {
-    value: string;
-    label: string;
+declare global {
+    interface Window {
+        googleTranslateElementInit: () => void;
+        google: any;
+    }
 }
-const TopHeaderTwo = () => {
-    const [_, setSelectedLanguage] = useState<Option | null>(null);
 
-    const handleSelect = (option: Option) => {
-        setSelectedLanguage(option);
-    };
-    // console.log(selectedLanguage)
+const TopHeaderTwo = () => {
+    useEffect(() => {
+        const addGoogleTranslateScript = () => {
+            if (!document.querySelector('script[src*="translate.google.com"]')) {
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+                document.body.appendChild(script);
+            }
+
+            window.googleTranslateElementInit = () => {
+                if (window.google && window.google.translate) {
+                    new window.google.translate.TranslateElement(
+                        {
+                            pageLanguage: "en",
+                            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                            autoDisplay: false,
+                        },
+                        "google_translate_element"
+                    );
+                }
+            };
+        };
+
+        addGoogleTranslateScript();
+    }, []);
 
     return (
         <div className="header-top-section top-style-3">
@@ -34,14 +50,10 @@ const TopHeaderTwo = () => {
                         </li>
                     </ul>
                     <div className="top-right">
-                        <div className="flag-wrap d-flex justify-content-end">
-                            <div className="flag">
-                                <img src="/img/flag.png" alt="flag" />
-                            </div>
-                            <CustomDropdown options={options} onSelect={handleSelect} />
+                        <div className="google-translate-container d-flex justify-content-end align-items-center">
+                            <div id="google_translate_element"></div>
                         </div>
                         <div className="social-icon d-flex align-items-center">
-                            <span>Follow Us:</span>
                             <Link to="#"><i className="fab fa-facebook-f" /></Link>
                             <Link to="#"><i className="fa-brands fa-x-twitter" /></Link>
                             <Link to="#"><i className="fa-brands fa-linkedin-in" /></Link>
@@ -51,7 +63,7 @@ const TopHeaderTwo = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default TopHeaderTwo
+export default TopHeaderTwo;

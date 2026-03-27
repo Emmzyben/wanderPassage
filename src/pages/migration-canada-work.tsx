@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const MigrationCanadaWork = () => {
@@ -23,18 +23,12 @@ const MigrationCanadaWork = () => {
                         <p>A Canada Work Permit allows foreign nationals to legally work in Canada for a specified employer and period. It is often the first step toward Canadian Permanent Residency.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "3,000+", label: "Work Permits" },
-                            { value: "96%", label: "Approval Rate" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "6", label: "Permit Types" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1470&auto=format&fit=crop"
+                            alt="Canada Work Permit"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

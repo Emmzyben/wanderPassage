@@ -1,9 +1,21 @@
 import { BlogPostDataType } from "@/db/blogPostsThreeData"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const BlogCard = ({ news, className }: { news: BlogPostDataType, className?: string }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = (e: React.MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('a') || target.closest('button')) return;
+        navigate(news.link);
+    };
+
     return (
-        <div className={`news-card-items ${className}`}>
+        <div 
+            className={`news-card-items ${className}`}
+            onClick={handleCardClick}
+            style={{ cursor: 'pointer' }}
+        >
             <div className="news-image">
                 <img src={news.image} alt="news-img" />
                 <div className="post-date">

@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -34,18 +34,12 @@ const UkImmigration = () => {
                         <p>Our certified UK immigration consultants have guided thousands of skilled professionals to work and settle in the United Kingdom. From securing a sponsor to submitting your application - we navigate every step for you.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "70", label: "Points Required" },
-                            { value: "5 Yrs", label: "Pathway to ILR" },
-                            { value: "8 Wks", label: "Avg. Processing" },
-                            { value: "£26.2K", label: "Min. Salary" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1530&auto=format&fit=crop"
+                            alt="UK Immigration"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

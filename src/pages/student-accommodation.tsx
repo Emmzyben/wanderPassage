@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const StudentAccommodation = () => {
@@ -23,18 +23,12 @@ const StudentAccommodation = () => {
                         <p>Finding the right accommodation abroad is one of the most important steps in your study journey. Wander Passage guides you through every option so you can settle comfortably and focus on your studies.</p>
                         <button onClick={handleOpenModal} className="theme-btn">GET ACCOMMODATION HELP</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "20+", label: "Countries Covered" },
-                            { value: "6", label: "Housing Types" },
-                            { value: "Free", label: "Consultation" },
-                            { value: "24/7", label: "Support" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1469&auto=format&fit=crop"
+                            alt="Student Accommodation"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

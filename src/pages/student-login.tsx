@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
 
 
 const StudentLogin = () => {
+    const { login, register } = useAuth()
     const [activeTab, setActiveTab] = useState<"login" | "register">("login")
     const navigate = useNavigate()
 
@@ -11,6 +13,7 @@ const StudentLogin = () => {
     const [loginPassword, setLoginPassword] = useState("")
     const [loginError, setLoginError] = useState("")
     const [showLoginPass, setShowLoginPass] = useState(false)
+    const [isLoggingIn, setIsLoggingIn] = useState(false)
 
     // --- Register state ---
     const [regFirstName, setRegFirstName] = useState("")
@@ -21,23 +24,38 @@ const StudentLogin = () => {
     const [regConfirm, setRegConfirm] = useState("")
     const [regError, setRegError] = useState("")
     const [showRegPass, setShowRegPass] = useState(false)
+    const [isRegistering, setIsRegistering] = useState(false)
     const [agreed, setAgreed] = useState(false)
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoginError("")
         if (!loginEmail || !loginPassword) {
             setLoginError("Please fill in all fields.")
             return
         }
-        if (loginEmail === "student@wanderpassage.com" && loginPassword === "password") {
-            navigate("/student-portal")
-        } else {
-            setLoginError("Invalid email or password. Please try again.")
+
+        setIsLoggingIn(true)
+        try {
+            const result = await login(loginEmail, loginPassword)
+            if (result.status === "success") {
+                if (result.user?.role === 'admin') {
+                    navigate("/admin-portal")
+                } else {
+                    navigate("/student-portal")
+                }
+            } else {
+                setLoginError(result.message || "Invalid email or password. Please try again.")
+            }
+        } catch (error) {
+            setLoginError("Failed to connect to authentication server.")
+            console.error(error)
+        } finally {
+            setIsLoggingIn(false)
         }
     }
 
-    const handleRegister = (e: React.FormEvent) => {
+    const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault()
         setRegError("")
         if (!regFirstName || !regLastName || !regEmail || !regPhone || !regPassword || !regConfirm) {
@@ -52,7 +70,26 @@ const StudentLogin = () => {
             setRegError("You must agree to the terms and conditions.")
             return
         }
-        navigate("/student-portal")
+
+        setIsRegistering(true)
+        try {
+            const username = `${regFirstName} ${regLastName}`
+            const result = await register(username, regEmail, regPassword)
+            if (result.status === "success") {
+                if (result.user?.role === 'admin') {
+                    navigate("/admin-portal")
+                } else {
+                    navigate("/student-portal")
+                }
+            } else {
+                setRegError(result.message || "Registration failed. Please try again.")
+            }
+        } catch (error) {
+            setRegError("Failed to connect to authentication server.")
+            console.error(error)
+        } finally {
+            setIsRegistering(false)
+        }
     }
 
     return (
@@ -156,8 +193,21 @@ const StudentLogin = () => {
                                                 </div>
                                             )}
 
-                                            <button id="login-submit-btn" type="submit" className="auth-submit-btn">
-                                                <i className="fa-solid fa-right-to-bracket" /> Sign In to Portal
+                                            <button 
+                                                id="login-submit-btn" 
+                                                type="submit" 
+                                                className="auth-submit-btn"
+                                                disabled={isLoggingIn}
+                                            >
+                                                {isLoggingIn ? (
+                                                    <>
+                                                        <i className="fa-solid fa-spinner fa-spin" /> Signing In...
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <i className="fa-solid fa-right-to-bracket" /> Sign In to Portal
+                                                    </>
+                                                )}
                                             </button>
                                         </form>
 
@@ -295,8 +345,21 @@ const StudentLogin = () => {
                                                 </div>
                                             )}
 
-                                            <button id="register-submit-btn" type="submit" className="auth-submit-btn">
-                                                <i className="fa-solid fa-user-plus" /> Create My Account
+                                            <button 
+                                                id="register-submit-btn" 
+                                                type="submit" 
+                                                className="auth-submit-btn"
+                                                disabled={isRegistering}
+                                            >
+                                                {isRegistering ? (
+                                                    <>
+                                                        <i className="fa-solid fa-spinner fa-spin" /> Creating Account...
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <i className="fa-solid fa-user-plus" /> Create My Account
+                                                    </>
+                                                )}
                                             </button>
                                         </form>
 

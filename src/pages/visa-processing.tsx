@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const faq = [
@@ -30,18 +30,11 @@ const VisaProcessing = () => {
                         <p>Navigating complex international visa requirements is stressful. Our certified consultants simplify the entire process - from document preparation to embassy submission - ensuring your application is flawless and has the highest possible chance of approval.</p>
                         <button onClick={handleOpenModal} className="theme-btn">BOOK A FREE ASSESSMENT</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "98%", label: "Approval Rate" },
-                            { value: "15,000+", label: "Visas Processed" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "20+", label: "Destinations" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?q=80&w=1470&auto=format&fit=crop"
+                            alt="Visa Processing"
+                        />
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ $body-font: "Inter", sans-serif;
 //font-family: "Font Awesome 6 Free";
 $fa: "Font Awesome 6 Free";
 
-body {
+html, body {
 	font-family: $body-font;
 	font-size: 15px;
 	font-weight: normal;
@@ -19,7 +19,14 @@ body {
 	background-color: $white;
 	padding: 0;
 	margin: 0;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
+	max-width: 100%;
+	position: relative;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 ul {

@@ -1,0 +1,45 @@
+<?php
+// backend/api/book_consultation.php
+require_once __DIR__ . '/../config/db.php';
+
+header("Content-Type: application/json");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(["status" => "error", "message" => "Method not allowed"]);
+    exit();
+}
+
+$data = json_decode(file_get_contents("php://input"));
+
+if (empty($data->full_name) || empty($data->email) || empty($data->phone) || empty($data->service)) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Required fields are missing"]);
+    exit();
+}
+
+try {
+    $stmt = $conn->prepare("INSERT INTO consultation_requests (full_name, email, phone, service, preferred_date, preferred_time, message) VALUES (:name, :email, :phone, :service, :date, :time, :message)");
+    
+    $stmt->execute([
+        ':name'    => $data->full_name,
+        ':email'   => $data->email,
+        ':phone'   => $data->phone,
+        ':service' => $data->service,
+        ':date'    => $data->preferred_date,
+        ':time'    => $data->preferred_time,
+        ':message' => $data->message ?? null
+    ]);
+
+    echo json_encode(["status" => "success", "message" => "Consultation request booked successfully"]);
+
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
+}
+?>

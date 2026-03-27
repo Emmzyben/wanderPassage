@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const StudentVisa = () => {
@@ -11,7 +11,7 @@ const StudentVisa = () => {
             <PageTitle
                 title="Student Visa"
                 currentPage="Student Visa"
-                backgroundImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1471&auto=format&fit=crop"
+                backgroundImage="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1470&auto=format&fit=crop"
             />
 
             {/* Intro Banner */}
@@ -23,18 +23,12 @@ const StudentVisa = () => {
                         <p>A student visa is your legal permission to study abroad. Each destination has its own process, fees, and requirements. Our expert consultants walk you through every step - from documentation to approval.</p>
                         <button onClick={handleOpenModal} className="theme-btn">BOOK FREE CONSULTATION</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "8,000+", label: "Student Visas" },
-                            { value: "98%", label: "Success Rate" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "8+", label: "Countries" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1470&auto=format&fit=crop"
+                            alt="Student Visa"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>
@@ -106,7 +100,7 @@ const StudentVisa = () => {
                                 <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
                             </div>
                         </div>
-                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1471&auto=format&fit=crop")' }}></div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

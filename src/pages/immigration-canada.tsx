@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -34,18 +34,12 @@ const CanadaImmigration = () => {
                         <p>Our certified immigration professionals have helped thousands of families build their Canadian dream. From Express Entry to PNP - we guide you through every step of the journey with precision and care.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "10,000+", label: "Successful Applications" },
-                            { value: "95%", label: "Approval Rate" },
-                            { value: "15+", label: "Years of Experience" },
-                            { value: "50+", label: "Expert Consultants" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1469&auto=format&fit=crop"
+                            alt="Canada Immigration"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const MigrationCanadaVisitor = () => {
@@ -23,18 +23,12 @@ const MigrationCanadaVisitor = () => {
                         <p>The Canada Visitor Visa allows foreign nationals to visit Canada for tourism, family visits, or business for up to 6 months. Our team ensures a smooth, well-documented application.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO AN EXPERT FOR FREE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "4,000+", label: "Visas Approved" },
-                            { value: "97%", label: "Success Rate" },
-                            { value: "10+", label: "Years Experience" },
-                            { value: "6", label: "Visit Types" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1574&auto=format&fit=crop"
+                            alt="Canada Visitor Visa"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

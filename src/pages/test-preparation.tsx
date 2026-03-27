@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -42,18 +42,12 @@ const TestPreparation = () => {
                         <p>Standardised tests are often the first major hurdle in your study abroad journey. Our certified trainers provide personalised coaching - combining strategy, time management and intensive practice - to help you hit your target score on the first attempt.</p>
                         <button onClick={handleOpenModal} className="theme-btn">ENROL IN A COURSE</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "+1.5", label: "Avg. IELTS Band Gain" },
-                            { value: "8 Wks", label: "Core Programme" },
-                            { value: "500+", label: "Students Coached" },
-                            { value: "6", label: "Tests Covered" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop"
+                            alt="Test Preparation"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

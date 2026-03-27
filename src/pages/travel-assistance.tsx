@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 
 const TravelAssistance = () => {
@@ -23,18 +23,12 @@ const TravelAssistance = () => {
                         <p>Landing in a new country is exhilarating, but the logistics can be overwhelming. WanderPassage provides end-to-end travel and accommodation support - from your flight booking to finding a place you can call home abroad.</p>
                         <button onClick={handleOpenModal} className="theme-btn">TALK TO A TRAVEL EXPERT</button>
                     </div>
-                    <div className="immig-intro-stats">
-                        {[
-                            { value: "5,000+", label: "Students Assisted" },
-                            { value: "20+", label: "Countries" },
-                            { value: "Free", label: "Consultation" },
-                            { value: "24/7", label: "Support" },
-                        ].map((s, i) => (
-                            <div key={i} className="intro-stat-item">
-                                <h3>{s.value}</h3>
-                                <span>{s.label}</span>
-                            </div>
-                        ))}
+                    <div className="immig-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1473&auto=format&fit=crop"
+                            alt="Travel Assistance"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        />
                     </div>
                 </div>
             </div>

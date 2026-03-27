@@ -6,7 +6,7 @@ import SectionTitle from "@/components/ui/sectionTitle"
 
 const TestimonialThree = () => {
     return (
-        <section className="tesimonial-section-3 section-padding section-bg-2 bg-cover">
+        <section className="tesimonial-section-3 section-padding section-bg-2 bg-cover fix">
             <div className="line-shape">
                 <img src="/img/team/line-shape.png" alt="shape-img" />
             </div>

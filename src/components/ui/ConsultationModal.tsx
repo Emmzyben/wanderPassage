@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { consultationApi } from '../../lib/api';
 
 interface ConsultationModalProps {
     isOpen: boolean;
@@ -8,6 +9,17 @@ interface ConsultationModalProps {
 const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
     const [isAnimating, setIsAnimating] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    
+    const [formData, setFormData] = useState({
+        full_name: '',
+        email: '',
+        phone: '',
+        service: '',
+        preferred_date: '',
+        preferred_time: '',
+        message: ''
+    });
 
     useEffect(() => {
         if (isOpen) {
@@ -22,10 +34,22 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
 
     if (!isOpen && !isAnimating) return null;
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => onClose(), 2000);
+        setLoading(true);
+        try {
+            const res = await consultationApi.book(formData);
+            if (res.status === 'success') {
+                setSubmitted(true);
+                setTimeout(() => onClose(), 2000);
+            } else {
+                alert(res.message || "Something went wrong. Please try again.");
+            }
+        } catch (err) {
+            alert("Connection error. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -56,22 +80,44 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                             <div className="cm-row">
                                 <div className="cm-field">
                                     <label>Full Name</label>
-                                    <input type="text" placeholder="John Doe" required />
+                                    <input 
+                                        type="text" 
+                                        placeholder="John Doe" 
+                                        required 
+                                        value={formData.full_name}
+                                        onChange={(e) => setFormData({...formData, full_name: e.target.value})}
+                                    />
                                 </div>
                                 <div className="cm-field">
                                     <label>Phone Number</label>
-                                    <input type="tel" placeholder="+234 800 000 0000" required />
+                                    <input 
+                                        type="tel" 
+                                        placeholder="+234 800 000 0000" 
+                                        required 
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                    />
                                 </div>
                             </div>
 
                             <div className="cm-field">
                                 <label>Email Address</label>
-                                <input type="email" placeholder="john@example.com" required />
+                                <input 
+                                    type="email" 
+                                    placeholder="john@example.com" 
+                                    required 
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                />
                             </div>
 
                             <div className="cm-field">
                                 <label>Service of Interest</label>
-                                <select required>
+                                <select 
+                                    required 
+                                    value={formData.service}
+                                    onChange={(e) => setFormData({...formData, service: e.target.value})}
+                                >
                                     <option value="">Select a service</option>
                                     <option value="study-abroad">Study Abroad</option>
                                     <option value="visa">Visa Processing</option>
@@ -88,11 +134,17 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                                         type="date"
                                         min={new Date().toISOString().split('T')[0]}
                                         required
+                                        value={formData.preferred_date}
+                                        onChange={(e) => setFormData({...formData, preferred_date: e.target.value})}
                                     />
                                 </div>
                                 <div className="cm-field">
                                     <label>Preferred Time</label>
-                                    <select required>
+                                    <select 
+                                        required 
+                                        value={formData.preferred_time}
+                                        onChange={(e) => setFormData({...formData, preferred_time: e.target.value})}
+                                    >
                                         <option value="">Select time</option>
                                         <option value="09:00">9:00 AM</option>
                                         <option value="10:00">10:00 AM</option>
@@ -109,11 +161,16 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
 
                             <div className="cm-field">
                                 <label>Message <span>(optional)</span></label>
-                                <textarea placeholder="Tell us about your goals..." rows={2}></textarea>
+                                <textarea 
+                                    placeholder="Tell us about your goals..." 
+                                    rows={2}
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                ></textarea>
                             </div>
 
-                            <button type="submit" className="cm-submit">
-                                Send Request <i className="fa-solid fa-paper-plane"></i>
+                            <button type="submit" className="cm-submit" disabled={loading}>
+                                {loading ? 'Sending...' : 'Send Request'} <i className="fa-solid fa-paper-plane"></i>
                             </button>
                         </form>
                     )}
