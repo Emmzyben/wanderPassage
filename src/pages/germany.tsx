@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -233,60 +233,7 @@ const Germany = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Max Award</th>
-                                        <th>Deadline</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>DAAD Scholarships</td>
-                                        <td>Varies (covers tuition, living & more)</td>
-                                        <td>Varies by program</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Heinrich Böll Foundation</td>
-                                        <td>Up to €934/month + allowances</td>
-                                        <td>March 1 / September 1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Deutschland Stipendium</td>
-                                        <td>€300/month</td>
-                                        <td>Varies by university</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Erasmus+ Scholarships</td>
-                                        <td>Covers travel, living & participation</td>
-                                        <td>Varies by program</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Konrad-Adenauer-Stiftung (KAS)</td>
-                                        <td>€850/month + allowances</td>
-                                        <td>July 15 each year</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED EXPENSE ESTIMATE</button>
-                    </div>
-                </div>
-            </section>
-
-                        {/* Living Costs Section */}
+            {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
                 <div className="container">
                     <div className="section-title-area text-center">
@@ -294,55 +241,55 @@ const Germany = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>€300 – €600 / mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>€300 – €600 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>€150 – €300 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>€150 – €300 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
-                                    <h5>Internet</h5>
-                                    <p>€20 – €40 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                <h5>Internet</h5>
+                                <p>€20 – €40 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
-                                    <h5>Transport</h5>
-                                    <p>€50 – €100 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transport</h5>
+                                <p>€50 – €100 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
-                                    <h5>Working Hours</h5>
-                                    <p>20 hrs/week (semester)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                <h5>Working Hours</h5>
+                                <p>20 hrs/week (semester)</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
-                                    <h5>Post-Study Permit</h5>
-                                    <p>18 Months</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                <h5>Post-Study Permit</h5>
+                                <p>18 Months</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
-                                    <h5>PR Possibilities</h5>
-                                    <p>33 months (Blue Card)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                <h5>PR Possibilities</h5>
+                                <p>33 months (Blue Card)</p>
                             </div>
+                        </div>
                     </div>
                     <div className="cost-total-bar">
                         <span>Total Estimated Average:</span>
@@ -359,48 +306,48 @@ const Germany = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>€75</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>€75</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision Duration</h5>
-                                    <p>4–12 Weeks</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision Duration</h5>
+                                <p>4–12 Weeks</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Health Insurance</h5>
-                                    <p>€130 – €150 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Health Insurance</h5>
+                                <p>€130 – €150 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-plane`}></i>
-                                    <h5>Flight Cost (from India)</h5>
-                                    <p>~€600 – €700</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-plane`}></i>
+                                <h5>Flight Cost (from India)</h5>
+                                <p>~€600 – €700</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-piggy-bank`}></i>
-                                    <h5>Proof of Funds</h5>
-                                    <p>€11,904 (Blocked Account)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-piggy-bank`}></i>
+                                <h5>Proof of Funds</h5>
+                                <p>€11,904 (Blocked Account)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-file-lines`}></i>
-                                    <h5>Key Documents</h5>
-                                    <p>Passport, Admission Letter, SOP, Transcripts</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-file-lines`}></i>
+                                <h5>Key Documents</h5>
+                                <p>Passport, Admission Letter, SOP, Transcripts</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins session with our Germany experts today.</p>
@@ -408,8 +355,6 @@ const Germany = () => {
                     </div>
                 </div>
             </section>
-
-
 
             {/* Best Universities Deep Dive */}
             <section className="universities-section section-padding">

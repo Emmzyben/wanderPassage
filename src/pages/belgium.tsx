@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -23,7 +23,7 @@ const Belgium = () => {
             <PageTitle
                 title="Study in Belgium"
                 currentPage="Belgium"
-                backgroundImage="https://images.unsplash.com/photo-1559113513-d5406b089839?q=80&w=1470&auto=format&fit=crop"
+                backgroundImage="https://images.unsplash.com/photo-1491555103944-7c647fd857e6?q=80&w=1470&auto=format&fit=crop"
             />
 
             <OverviewBar items={overviewItems} />
@@ -253,58 +253,7 @@ const Belgium = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>Max Award</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>VLIR-UOS Scholarships</td>
-                                        <td>February</td>
-                                        <td>Full tuition + living stipend</td>
-                                    </tr>
-                                    <tr>
-                                        <td>KU Leuven International Scholarships</td>
-                                        <td>March</td>
-                                        <td>€8,000 – €12,000 / year</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ghent University Master Mind Scholarship</td>
-                                        <td>March</td>
-                                        <td>€8,000 + tuition waiver</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ULB Excellence Grants</td>
-                                        <td>June</td>
-                                        <td>€5,000 – €10,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Belgian Government Scholarship</td>
-                                        <td>Rolling</td>
-                                        <td>Full funding for select programmes</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED SCHOLARSHIP ADVICE</button>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
@@ -385,7 +334,7 @@ const Belgium = () => {
                                 <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
                             </div>
                         </div>
-                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1559113513-d5406b089839?q=80&w=1470&auto=format&fit=crop")' }}></div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1491555103944-7c647fd857e6?q=80&w=1470&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

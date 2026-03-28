@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
-import { adminApi, blogsApi, UserSummary, Message, ConsultationRequest, ApiUser, UserDocument, Blog, BlogComment, BACKEND_URL } from '../lib/api';
+import { adminApi, blogsApi, dashboardApi, UserSummary, Message, ConsultationRequest, ApiUser, UserDocument, Blog, BlogComment, BACKEND_URL, Notification } from '../lib/api';
 
 const AdminPortal: React.FC = () => {
     const { user, logout } = useAuth();
@@ -38,6 +38,11 @@ const AdminPortal: React.FC = () => {
     // Toast state
     const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
 
+    // Notification state
+    const [notifications, setNotifications] = useState<Notification[]>([]);
+    const [showNotifs, setShowNotifs] = useState(false);
+    const notifRef = useRef<HTMLDivElement>(null);
+
     // View message state
     const [viewMessageModal, setViewMessageModal] = useState<{
         title: string;
@@ -49,9 +54,42 @@ const AdminPortal: React.FC = () => {
         setToast({ message, type });
         setTimeout(() => setToast({ message: '', type: null }), 3000);
     };
+
     useEffect(() => {
         fetchData();
     }, [activeTab]);
+
+    useEffect(() => {
+        const fetchNotifs = async () => {
+            const res = await dashboardApi.getNotifications();
+            if (res.status === 'success') setNotifications(res.notifications || []);
+        };
+        fetchNotifs();
+        const timer = setInterval(fetchNotifs, 60000);
+        return () => clearInterval(timer);
+    }, []);
+
+    useEffect(() => {
+        const handleOutside = (e: MouseEvent) => {
+            if (notifRef.current && !notifRef.current.contains(e.target as Node)) {
+                setShowNotifs(false);
+            }
+        };
+        document.addEventListener('mousedown', handleOutside);
+        return () => document.removeEventListener('mousedown', handleOutside);
+    }, []);
+
+    const unreadCount = notifications.filter(n => n.is_read === 0).length;
+
+    const handleMarkRead = async (id: number) => {
+        setNotifications(prev => prev.map(n => n.id === id ? { ...n, is_read: 1 } : n));
+        await dashboardApi.markNotificationRead(id);
+    };
+
+    const handleMarkAllRead = async () => {
+        setNotifications(prev => prev.map(n => ({ ...n, is_read: 1 })));
+        await dashboardApi.markNotificationRead();
+    };
 
     const fetchData = async () => {
         setLoading(true);
@@ -351,6 +389,57 @@ const AdminPortal: React.FC = () => {
                             {activeTab === 'profile' && "Account Settings"}
                         </h2>
                         <div className="admin-user-info" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            {/* Notification bell */}
+                            <div className="notifications-wrapper" ref={notifRef}>
+                                <button className="action-btn notifications" onClick={() => setShowNotifs(!showNotifs)}>
+                                    <i className="fa-regular fa-bell"></i>
+                                    {unreadCount > 0 && <span className="notification-badge">{unreadCount}</span>}
+                                </button>
+                                {showNotifs && (
+                                    <div className="notif-dropdown animate-fade-in">
+                                        <div className="notif-header">
+                                            <h6>Notifications</h6>
+                                            {unreadCount > 0 && (
+                                                <button
+                                                    className="mark-all-read-btn"
+                                                    onClick={handleMarkAllRead}
+                                                >
+                                                    Mark all read
+                                                </button>
+                                            )}
+                                        </div>
+                                        <div className="notif-body">
+                                            {notifications.length === 0 ? (
+                                                <div className="no-notifs">
+                                                    <i className="fa-regular fa-bell-slash"></i>
+                                                    No notifications yet.
+                                                </div>
+                                            ) : notifications.map(n => (
+                                                <div
+                                                    key={n.id}
+                                                    className={`notif-item ${n.is_read === 0 ? 'unread' : ''}`}
+                                                    onClick={() => n.is_read === 0 && handleMarkRead(n.id)}
+                                                    style={{ cursor: n.is_read === 0 ? 'pointer' : 'default' }}
+                                                >
+                                                    <div className={`notif-icon ${n.type}`}>
+                                                        <i className={`fa-solid ${
+                                                            n.type === 'success' ? 'fa-circle-check' :
+                                                            n.type === 'danger'  ? 'fa-circle-xmark' :
+                                                            n.type === 'warning' ? 'fa-triangle-exclamation' : 'fa-circle-info'
+                                                        }`}></i>
+                                                    </div>
+                                                    <div className="notif-content">
+                                                        <div className="notif-title">{n.title}</div>
+                                                        <div className="notif-text">{n.message}</div>
+                                                        <div className="notif-time">{new Date(n.created_at).toLocaleString()}</div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
                             <div style={{ width: '45px', height: '45px', borderRadius: '50%', backgroundColor: '#e2e8f0', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                 {user?.avatar ? (
                                     <img src={`${BACKEND_URL}/${user.avatar}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

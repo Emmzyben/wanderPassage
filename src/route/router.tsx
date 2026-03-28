@@ -49,6 +49,7 @@ import MigrationAustraliaPR from "@/pages/migration-australia-pr";
 import MigrationUkSkilled from "@/pages/migration-uk-skilled";
 import StudentAccommodation from "@/pages/student-accommodation";
 import StudentVisa from "@/pages/student-visa";
+import RegistrationSuccess from "@/pages/registration-success";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -258,6 +259,10 @@ export const router = createBrowserRouter([
             {
                 path: '/terms-of-service',
                 element: <TermsOfService />
+            },
+            {
+                path: '/registration-success',
+                element: <RegistrationSuccess />
             },
         ]
     },

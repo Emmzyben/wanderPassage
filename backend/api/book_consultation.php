@@ -1,6 +1,7 @@
 <?php
 // backend/api/book_consultation.php
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../utils/email_helper.php';
 
 header("Content-Type: application/json");
 
@@ -19,7 +20,7 @@ $data = json_decode(file_get_contents("php://input"));
 
 if (empty($data->full_name) || empty($data->email) || empty($data->phone) || empty($data->service)) {
     http_response_code(400);
-    echo json_encode(["status" => "error", "message" => "Required fields are missing"]);
+    echo json_encode(["status" => "error", "message" => "Required fields are missing: full_name, email, phone, service"]);
     exit();
 }
 
@@ -35,6 +36,21 @@ try {
         ':time'    => $data->preferred_time,
         ':message' => $data->message ?? null
     ]);
+
+    // Send email notification to info@wanderpassage.com
+    $to = "info@wanderpassage.com";
+    $subject = "New Consultation Booking: " . $data->full_name;
+    $emailMessage = "You have a new consultation booking request:\n\n" .
+                "Name: " . $data->full_name . "\n" .
+                "Email: " . $data->email . "\n" .
+                "Phone: " . $data->phone . "\n" .
+                "Service: " . $data->service . "\n" .
+                "Preferred Date: " . $data->preferred_date . "\n" .
+                "Preferred Time: " . $data->preferred_time . "\n" .
+                "Message: " . ($data->message ?? "No message provided") . "\n\n" .
+                "This request has been saved in the database.";
+    
+    send_email($to, $subject, $emailMessage);
 
     echo json_encode(["status" => "success", "message" => "Consultation request booked successfully"]);
 

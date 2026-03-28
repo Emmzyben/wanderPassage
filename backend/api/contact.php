@@ -3,6 +3,7 @@
 // Public endpoint — no auth required
 
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../utils/email_helper.php';
 
 header("Content-Type: application/json");
 
@@ -50,6 +51,19 @@ try {
         ':subject' => $subject,
         ':message' => $message
     ]);
+
+    // Send email notification to info@wanderpassage.com
+    $to = "info@wanderpassage.com";
+    $emailSubject = "New Contact Message: " . ($subject ?: "From $name");
+    $emailMessage = "You have received a new message from the contact form:\n\n" .
+                "Name: $name\n" .
+                "Email: $email\n" .
+                "Phone: " . ($phone ?: "Not provided") . "\n" .
+                "Subject: " . ($subject ?: "No subject") . "\n\n" .
+                "Message:\n$message\n\n" .
+                "This message has been saved in the database.";
+    
+    send_email($to, $emailSubject, $emailMessage);
 
     echo json_encode([
         "status"  => "success",

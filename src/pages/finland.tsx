@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -27,8 +27,6 @@ const Finland = () => {
             />
 
             <OverviewBar items={overviewItems} />
-
-
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">
@@ -223,50 +221,7 @@ const Finland = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>Max Award</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>University of Eastern Finland Scholarship</td>
-                                        <td>January</td>
-                                        <td>€5,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fulbright – University of Helsinki Graduate Award</td>
-                                        <td>October</td>
-                                        <td>€1,000/month (9 months)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>COLFUTURO Loan-Scholarships</td>
-                                        <td>February</td>
-                                        <td>$50,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED EXPENSE ESTIMATE</button>
-                    </div>
-                </div>
-            </section>
-
-                        {/* Living Costs Section */}
+            {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
                 <div className="container">
                     <div className="section-title-area text-center">
@@ -274,69 +229,69 @@ const Finland = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>€250 – €600 / mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>€250 – €600 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>From €2.24 per meal</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>From €2.24 per meal</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
-                                    <h5>Gas & Electricity</h5>
-                                    <p>~€100 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                <h5>Gas & Electricity</h5>
+                                <p>~€100 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
-                                    <h5>Transport</h5>
-                                    <p>€60 – €2,700 / yr (zone-based)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transport</h5>
+                                <p>€60 – €2,700 / yr (zone-based)</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
-                                    <h5>Haircut</h5>
-                                    <p>~€30</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                <h5>Haircut</h5>
+                                <p>~€30</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-piggy-bank`}></i></div>
-                                    <h5>Proof of Funds</h5>
-                                    <p>Min €6,720 in bank</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-piggy-bank`}></i></div>
+                                <h5>Proof of Funds</h5>
+                                <p>Min €6,720 in bank</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
-                                    <h5>Working Hours</h5>
-                                    <p>8 hrs / day</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                <h5>Working Hours</h5>
+                                <p>8 hrs / day</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
-                                    <h5>Post-Study Work</h5>
-                                    <p>2 Years</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                <h5>Post-Study Work</h5>
+                                <p>2 Years</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
-                                    <h5>PR After</h5>
-                                    <p>4 Years Continuous Residence (A-Permit)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                <h5>PR After</h5>
+                                <p>4 Years Continuous Residence (A-Permit)</p>
                             </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -349,62 +304,62 @@ const Finland = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>€350</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>€350</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision Duration</h5>
-                                    <p>2 – 3 Months (apply early)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision Duration</h5>
+                                <p>2 – 3 Months (apply early)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-umbrella`}></i>
-                                    <h5>Travel Insurance</h5>
-                                    <p>Minimum €30,000 coverage required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-umbrella`}></i>
+                                <h5>Travel Insurance</h5>
+                                <p>Minimum €30,000 coverage required</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Health Insurance</h5>
-                                    <p>Min €30,000 medical + €100,000 cover required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Health Insurance</h5>
+                                <p>Min €30,000 medical + €100,000 cover required</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-ticket`}></i>
-                                    <h5>Flight Cost (from India)</h5>
-                                    <p>From ₹48,887</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-ticket`}></i>
+                                <h5>Flight Cost (from India)</h5>
+                                <p>From ₹48,887</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-piggy-bank`}></i>
-                                    <h5>Proof of Funds</h5>
-                                    <p>Bank statement showing min €6,720 balance</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-piggy-bank`}></i>
+                                <h5>Proof of Funds</h5>
+                                <p>Bank statement showing min €6,720 balance</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-passport`}></i>
-                                    <h5>Identity Proof</h5>
-                                    <p>Valid Passport required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-passport`}></i>
+                                <h5>Identity Proof</h5>
+                                <p>Valid Passport required</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-file-lines`}></i>
-                                    <h5>Invitation Letter</h5>
-                                    <p>University Admission Letter required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-file-lines`}></i>
+                                <h5>Invitation Letter</h5>
+                                <p>University Admission Letter required</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins consultation with our Finland experts today.</p>
@@ -412,8 +367,6 @@ const Finland = () => {
                     </div>
                 </div>
             </section>
-
-
 
             {/* Final CTA */}
             <section className="cta-section section-padding">

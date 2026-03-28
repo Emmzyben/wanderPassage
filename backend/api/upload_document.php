@@ -47,9 +47,11 @@ $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
 $safeName  = $docKey . '_' . time() . '.' . $extension;
 $destPath  = $uploadDir . $safeName;
 
+require_once __DIR__ . '/../utils/notification_helper.php';
+
 if (move_uploaded_file($file['tmp_name'], $destPath)) {
     try {
-        // Use UPSERT (INSERT ... ON DUPLICATE KEY UPDATE)
+        // ... (existing insert/update logic)
         $stmt = $conn->prepare("
             INSERT INTO application_documents (user_id, doc_key, file_name, file_path, status)
             VALUES (:user_id, :doc_key, :file_name, :file_path, 'uploaded')
@@ -66,11 +68,42 @@ if (move_uploaded_file($file['tmp_name'], $destPath)) {
             ':file_path' => 'uploads/documents/' . $userId . '/' . $safeName
         ]);
 
+        // Notify Admins
+        $studentName = $payload->username;
+        $docLabel = str_replace('_', ' ', ucfirst($docKey));
+        $adminsStmt = $conn->prepare("SELECT id FROM users WHERE role = 'admin'");
+        $adminsStmt->execute();
+        $admins = $adminsStmt->fetchAll();
+
+        foreach ($admins as $admin) {
+            create_notification(
+                $admin['id'],
+                "New Document Uploaded: $docLabel",
+                "Student **$studentName** has uploaded a new document ($docLabel). Please review it in the admin portal.",
+                "info"
+            );
+        }
+
+        // If it's a passport, also use it as the student's avatar
+        $avatarPath = null;
+        $imageExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+        if (strtolower($docKey) === 'passport' && in_array(strtolower($extension), $imageExtensions)) {
+            $avatarDir  = __DIR__ . '/../../uploads/avatars/';
+            if (!is_dir($avatarDir)) mkdir($avatarDir, 0777, true);
+            $avatarName = 'avatar_' . $userId . '_' . time() . '.' . $extension;
+            $avatarDest = $avatarDir . $avatarName;
+            @copy($destPath, $avatarDest);
+            $avatarPath = 'uploads/avatars/' . $avatarName;
+            $conn->prepare("UPDATE users SET avatar = :avatar WHERE id = :id")
+                 ->execute([':avatar' => $avatarPath, ':id' => $userId]);
+        }
+
         echo json_encode([
             "status"    => "success",
             "message"   => "File uploaded successfully",
             "fileName"  => $file['name'],
-            "filePath"  => 'uploads/documents/' . $userId . '/' . $safeName
+            "filePath"  => 'uploads/documents/' . $userId . '/' . $safeName,
+            "avatar"    => $avatarPath
         ]);
 
     } catch (PDOException $e) {

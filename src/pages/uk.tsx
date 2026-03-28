@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -279,82 +279,6 @@ const Uk = () => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Scholarships Section */}
-            <section className="scholarships-section section-padding bg-light">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>UK Scholarships for International Students</h2>
-                    </div>
-                    <div className="row g-4">
-                        {[
-                            {
-                                name: "Chevening Scholarships",
-                                eligibility: "Indian citizens with 2+ years work experience",
-                                amount: "Full tuition, living expenses & airfare",
-                                icon: "fa-crown",
-                                color: "#1a3a6b",
-                            },
-                            {
-                                name: "Commonwealth Scholarships",
-                                eligibility: "Indian students applying for Master's / PhD with strong academics",
-                                amount: "Tuition, airfare & stipend",
-                                icon: "fa-globe",
-                                color: "#145a32",
-                            },
-                            {
-                                name: "Rhodes Scholarship",
-                                eligibility: "Exceptional students with leadership &amp; academic distinction",
-                                amount: "Full funding - one of the world's most prestigious awards",
-                                icon: "fa-star",
-                                color: "#7b241c",
-                            },
-                            {
-                                name: "GREAT Scholarship",
-                                eligibility: "Indian UG/PG students at partner UK universities",
-                                amount: "£10,000 towards tuition fees",
-                                icon: "fa-graduation-cap",
-                                color: "#1a6bcc",
-                            },
-                            {
-                                name: "Charles Wallace India Trust",
-                                eligibility: "Indian citizens in arts, humanities &amp; social sciences",
-                                amount: "Grants for short visits, fellowships &amp; residencies",
-                                icon: "fa-palette",
-                                color: "#6c3483",
-                            },
-                            {
-                                name: "Inlaks Shivdasani Foundation",
-                                eligibility: "Indian citizens below 30 with outstanding academics",
-                                amount: "Up to USD 100,000",
-                                icon: "fa-award",
-                                color: "#935116",
-                            },
-                        ].map((s, idx) => (
-                            <div key={idx} className="col-lg-4 col-md-6">
-                                <div className="scholarship-card uk-scholarship-card">
-                                    <div className="scholarship-icon" style={{ background: s.color }}>
-                                        <i className={`fa-solid ${s.icon}`}></i>
-                                    </div>
-                                    <h5>{s.name}</h5>
-                                    <div className="scholarship-meta">
-                                        <span className="meta-item">
-                                            <i className="fa-solid fa-user-check"></i>
-                                            {s.eligibility}
-                                        </span>
-                                        <span className="meta-item amount">
-                                            <i className="fa-solid fa-sterling-sign"></i>
-                                            {s.amount}
-                                        </span>
-                                    </div>
-                                    <button onClick={handleOpenModal} className="theme-btn scholarship-btn">Apply Now</button>
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>

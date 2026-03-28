@@ -158,11 +158,31 @@ form {
         }
     }
 
+    .cm-input-icon {
+        position: relative;
+        width: 100%;
+
+        i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 14px;
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+
+        &:focus-within i {
+            color: var(--theme, #3a3086);
+        }
+    }
+
     input,
     select,
     textarea {
         width: 100%;
-        padding: 10px 14px;
+        padding: 10px 14px 10px 38px;
         background: #f8faff;
         border: 1.5px solid #e4e9f5;
         border-radius: 10px;

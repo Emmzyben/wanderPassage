@@ -79,7 +79,7 @@ const HeroThree = () => {
                             style={{ padding: '20px' }}
                         >
                             <img
-                                src="/img/testimonial.webp"
+                                src="/img/students.jpg"
                                 alt="Two students laughing"
                                 style={{
                                     objectFit: 'cover',

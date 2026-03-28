@@ -172,6 +172,23 @@
                 font-size: 16px;
             }
         }
+
+        .theme-btn-2 {
+            color: $theme-color;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+
+            i {
+                margin: 0;
+            }
+
+            &:hover {
+                color: $header-color;
+            }
+        }
     }
 
     &.style-3 {

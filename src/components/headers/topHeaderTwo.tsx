@@ -20,6 +20,7 @@ const TopHeaderTwo = () => {
 
             window.googleTranslateElementInit = () => {
                 if (window.google && window.google.translate) {
+                    // Initialize desktop
                     new window.google.translate.TranslateElement(
                         {
                             pageLanguage: "en",
@@ -28,11 +29,41 @@ const TopHeaderTwo = () => {
                         },
                         "google_translate_element"
                     );
+                    
+                    // Direct initialization for mobile if already in DOM
+                    const mobileEl = document.getElementById("google_translate_element_mobile");
+                    if (mobileEl) {
+                        new window.google.translate.TranslateElement(
+                            {
+                                pageLanguage: "en",
+                                layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                                autoDisplay: false,
+                            },
+                            "google_translate_element_mobile"
+                        );
+                    }
                 }
             };
         };
 
+        // Watch for mobile drawer being opened
+        const observer = new MutationObserver(() => {
+            const mobileEl = document.getElementById("google_translate_element_mobile");
+            if (mobileEl && !mobileEl.querySelector('.goog-te-gadget') && window.google?.translate) {
+                new window.google.translate.TranslateElement(
+                    {
+                        pageLanguage: "en",
+                        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                        autoDisplay: false,
+                    },
+                    "google_translate_element_mobile"
+                );
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
         addGoogleTranslateScript();
+        return () => observer.disconnect();
     }, []);
 
     return (

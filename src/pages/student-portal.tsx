@@ -85,7 +85,7 @@ const statusConfig: Record<DocStatus, { label: string; className: string; icon: 
 }
 
 const StudentPortal = () => {
-    const { user, logout } = useAuth()
+    const { user, logout, updateUser } = useAuth()
     const navigate = useNavigate()
     const [documents, setDocuments] = useState<Document[]>(initialDocuments)
     const [activeSection, setActiveSection] = useState<"overview" | "documents" | "status" | "profile">("overview")
@@ -160,6 +160,10 @@ const StudentPortal = () => {
                         d.id === docId ? { ...d, status: "uploaded", fileName: res.fileName, filePath: res.filePath } : d
                     )
                 )
+                // If it's a passport image, update the header avatar immediately
+                if (docId === 'passport' && res.avatar) {
+                    updateUser({ avatar: res.avatar })
+                }
                 showToast(`"${file.name}" uploaded successfully!`)
             } else {
                 showToast(res.message || "Upload failed", "error")

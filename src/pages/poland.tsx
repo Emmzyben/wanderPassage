@@ -220,55 +220,7 @@ const Poland = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>Max Award</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Eastern Partnership & Post-Soviet Countries Scholarships</td>
-                                        <td>March</td>
-                                        <td>RUB 15,000 – 35,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hani Zeini Scholarship</td>
-                                        <td>March</td>
-                                        <td>INR 73,736</td>
-                                    </tr>
-                                    <tr>
-                                        <td>JN Tata Endowment Loan Scholarship</td>
-                                        <td>September</td>
-                                        <td>INR 1 Lakh – 10 Lakhs</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Young Women in Public Affairs Awards</td>
-                                        <td>February</td>
-                                        <td>INR 4,16,750</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED EXPENSE ESTIMATE</button>
-                    </div>
-                </div>
-            </section>
-
-                        {/* Living Costs Section */}
+            {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
                 <div className="container">
                     <div className="section-title-area text-center">
@@ -276,55 +228,55 @@ const Poland = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>~$500 / mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>~$500 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>$4 – $8 per meal</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>$4 – $8 per meal</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
-                                    <h5>Internet & Mobile</h5>
-                                    <p>40 zł / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                <h5>Internet & Mobile</h5>
+                                <p>40 zł / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
-                                    <h5>Transport (Public)</h5>
-                                    <p>PLN 1.5 – 3 per ride</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transport (Public)</h5>
+                                <p>PLN 1.5 – 3 per ride</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
-                                    <h5>Working Hours</h5>
-                                    <p>8 hrs / day</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                <h5>Working Hours</h5>
+                                <p>8 hrs / day</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
-                                    <h5>Post-Study Work</h5>
-                                    <p>1 – 3 Years</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                <h5>Post-Study Work</h5>
+                                <p>1 – 3 Years</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
-                                    <h5>PR After</h5>
-                                    <p>5 Years Continuous</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                <h5>PR After</h5>
+                                <p>5 Years Continuous</p>
                             </div>
+                        </div>
                     </div>
                     <div className="cost-total-bar">
                         <span>Total Estimated Average:</span>
@@ -341,62 +293,62 @@ const Poland = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>INR 8,272 (Adults)</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>INR 8,272 (Adults)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision Duration</h5>
-                                    <p>Within 15 Days</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision Duration</h5>
+                                <p>Within 15 Days</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-umbrella`}></i>
-                                    <h5>Travel Insurance</h5>
-                                    <p>Mandatory for Poland Visa</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-umbrella`}></i>
+                                <h5>Travel Insurance</h5>
+                                <p>Mandatory for Poland Visa</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Health Insurance</h5>
-                                    <p>Mandatory Requirement</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Health Insurance</h5>
+                                <p>Mandatory Requirement</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-ticket`}></i>
-                                    <h5>Flight Cost (from Mumbai)</h5>
-                                    <p>~₹54,202</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-ticket`}></i>
+                                <h5>Flight Cost (from Mumbai)</h5>
+                                <p>~₹54,202</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-piggy-bank`}></i>
-                                    <h5>Proof of Funds</h5>
-                                    <p>Bank Certificate, Scholarship Letter, Traveler's Cheque</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-piggy-bank`}></i>
+                                <h5>Proof of Funds</h5>
+                                <p>Bank Certificate, Traveler's Cheque</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-passport`}></i>
-                                    <h5>Identity Proof</h5>
-                                    <p>Valid Passport Required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-passport`}></i>
+                                <h5>Identity Proof</h5>
+                                <p>Valid Passport Required</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-file-lines`}></i>
-                                    <h5>Invitation Letter</h5>
-                                    <p>Admission Letter Required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-file-lines`}></i>
+                                <h5>Invitation Letter</h5>
+                                <p>Admission Letter Required</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins consultation session with our Poland experts.</p>
@@ -404,8 +356,6 @@ const Poland = () => {
                     </div>
                 </div>
             </section>
-
-
 
             {/* Final CTA */}
             <section className="cta-section section-padding">

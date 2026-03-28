@@ -2,11 +2,11 @@
 // backend/auth/register.php
 
 require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/../utils/auth_helper.php';
+require_once __DIR__ . '/../utils/email_helper.php';
 
 header("Content-Type: application/json");
 
-
+// Allow Cross-Origin Requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
@@ -54,34 +54,37 @@ try {
 
     // Insert new user
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+    $verificationToken = bin2hex(random_bytes(32)); 
+    
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password, verification_token, is_verified) VALUES (:username, :email, :password, :token, 0)");
     $stmt->execute([
         ':username' => $username,
         ':email'    => $email,
-        ':password' => $hashedPassword
+        ':password' => $hashedPassword,
+        ':token'    => $verificationToken
     ]);
 
     $userId = (int) $conn->lastInsertId();
 
-    $payload = [
-        'sub'      => $userId,
-        'username' => $username,
-        'email'    => $email,
-        'iat'      => time(),
-        'exp'      => time() + (24 * 3600) // 24 hours
-    ];
-    $token = generate_jwt($payload);
+    // Verification link
+    $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+    $verificationLink = $baseUrl . "/backend/verify_email.php?token=" . $verificationToken;
+
+    // Send the email
+    $subject = "Verify Your Account - WanderPassage";
+    $message = "Hello $username,\n\nWelcome to WanderPassage! Please verify your email by clicking the link below:\n\n$verificationLink\n\nIf you did not create an account, please ignore this email.";
+
+    $emailSent = send_email($email, $subject, $message);
 
     http_response_code(201);
     echo json_encode([
         "status"  => "success",
-        "message" => "Account created successfully",
-        "token"   => $token,
-        "user"    => ["id" => $userId, "username" => $username, "email" => $email]
+        "message" => "Account created successfully. Please check your email ($email) to verify your account before logging in.",
+        "email_status" => $emailSent ? "sent" : "failed"
     ]);
 
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(["status" => "error", "message" => "Registration failed. Please try again."]);
+    echo json_encode(["status" => "error", "message" => "Registration failed. Please try again. " . $e->getMessage()]);
 }
 ?>

@@ -55,6 +55,7 @@ export interface UploadResponse {
     message?: string
     fileName?: string
     filePath?: string
+    avatar?: string | null
 }
 
 export interface ApiUser {
@@ -203,6 +204,52 @@ export interface ListCommentsResponse {
 }
 
 
+export interface Notification {
+    id: number
+    user_id: number
+    title: string
+    message: string
+    type: 'info' | 'success' | 'warning' | 'danger'
+    is_read: number
+    created_at: string
+}
+
+export interface ListNotificationsResponse {
+    status: 'success' | 'error'
+    notifications?: Notification[]
+    message?: string
+}
+
+
+// ─── Health Check ───────────────────────────────────────────────────────────
+
+export interface HealthResponse {
+    status: 'success' | 'error'
+    message: string
+    timestamp?: string
+    database?: string
+    error?: string
+}
+
+export const healthApi = {
+    check: async (): Promise<HealthResponse> => {
+        try {
+            const response = await fetch(`${API_BASE}/health.php`)
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`)
+            }
+            const data = await response.json()
+            return data as HealthResponse
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+            return {
+                status: 'error',
+                message: `Cannot reach backend: ${errorMessage}`,
+            }
+        }
+    }
+}
+
 // ─── Auth Endpoints ──────────────────────────────────────────────────────────
 
 export const authApi = {
@@ -261,7 +308,22 @@ export const dashboardApi = {
             method: 'POST',
             body: formData
         })
-    }
+    },
+
+    /**
+     * Fetch notifications for current user.
+     */
+    getNotifications: () =>
+        request<ListNotificationsResponse>(`${API_BASE}/get_notifications.php`),
+
+    /**
+     * Mark a single notification (by id) or all notifications as read.
+     */
+    markNotificationRead: (id?: number) =>
+        request<ApiResponse>(`${API_BASE}/mark_notification_read.php`, {
+            method: 'POST',
+            body: JSON.stringify(id !== undefined ? { id } : {})
+        })
 }
 
 // ─── Contact Endpoint ────────────────────────────────────────────────────────

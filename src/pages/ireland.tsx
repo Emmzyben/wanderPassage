@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -191,58 +191,7 @@ const Ireland = () => {
                 </div>
             </section>
 
-            {/* Scholarships Table */}
-            <section className="scholarships-section section-padding bg-light">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>Max Award</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Ireland Government Int'l Education Scholarship</td>
-                                        <td>March</td>
-                                        <td>Full tuition + €10,000 stipend</td>
-                                    </tr>
-                                    <tr>
-                                        <td>UCD Global Scholarships</td>
-                                        <td>Rolling</td>
-                                        <td>Partial to full tuition</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trinity College Dublin Scholarships</td>
-                                        <td>February</td>
-                                        <td>Global Excellence Awards</td>
-                                    </tr>
-                                    <tr>
-                                        <td>University of Galway Scholarships</td>
-                                        <td>April</td>
-                                        <td>UG and Master's awards</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Irish Research Council Scholarships</td>
-                                        <td>October</td>
-                                        <td>Postgraduate research funding</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED SCHOLARSHIP ADVICE</button>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Living Costs Section */}
             <section className="living-cost-section section-padding">

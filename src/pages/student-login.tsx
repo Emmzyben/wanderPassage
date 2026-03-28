@@ -76,11 +76,7 @@ const StudentLogin = () => {
             const username = `${regFirstName} ${regLastName}`
             const result = await register(username, regEmail, regPassword)
             if (result.status === "success") {
-                if (result.user?.role === 'admin') {
-                    navigate("/admin-portal")
-                } else {
-                    navigate("/student-portal")
-                }
+                navigate("/registration-success")
             } else {
                 setRegError(result.message || "Registration failed. Please try again.")
             }

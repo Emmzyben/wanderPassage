@@ -183,34 +183,34 @@ const Usa = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>$1,000 - 1,500 /mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>$1,000 - 1,500 /mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>$150 - 200 /mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>$150 - 200 /mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
-                                    <h5>Internet</h5>
-                                    <p>$30 - 40 /mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                <h5>Internet</h5>
+                                <p>$30 - 40 /mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
-                                    <h5>Transport</h5>
-                                    <p>$45 - 100 /mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transport</h5>
+                                <p>$45 - 100 /mo</p>
                             </div>
+                        </div>
                     </div>
                     <div className="cost-total-bar">
                         <span>PR Possibilities:</span>
@@ -227,34 +227,34 @@ const Usa = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>$185 (F1 Visa)</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>$185 (F1 Visa)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision</h5>
-                                    <p>Typically 8 Days</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision</h5>
+                                <p>Typically 8 Days</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Insurance</h5>
-                                    <p>Health Optional (Not Required)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Insurance</h5>
+                                <p>Health Optional (Not Required)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-briefcase`}></i>
-                                    <h5>Post-Study</h5>
-                                    <p>2 Years Work Permit</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-briefcase`}></i>
+                                <h5>Post-Study</h5>
+                                <p>2 Years Work Permit</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins session with our experts today.</p>
@@ -275,7 +275,7 @@ const Usa = () => {
                                 <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
                             </div>
                         </div>
-                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1541339907198-e08756ebafe1?q=80&w=1470&auto=format&fit=crop")' }}></div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1510&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

@@ -80,93 +80,114 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                             <div className="cm-row">
                                 <div className="cm-field">
                                     <label>Full Name</label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="John Doe" 
-                                        required 
-                                        value={formData.full_name}
-                                        onChange={(e) => setFormData({...formData, full_name: e.target.value})}
-                                    />
+                                    <div className="cm-input-icon">
+                                        <i className="fa-solid fa-user"></i>
+                                        <input 
+                                            type="text" 
+                                            placeholder="John Doe" 
+                                            required 
+                                            value={formData.full_name}
+                                            onChange={(e) => setFormData({...formData, full_name: e.target.value})}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="cm-field">
                                     <label>Phone Number</label>
-                                    <input 
-                                        type="tel" 
-                                        placeholder="+234 800 000 0000" 
-                                        required 
-                                        value={formData.phone}
-                                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                                    />
+                                    <div className="cm-input-icon">
+                                        <i className="fa-solid fa-phone"></i>
+                                        <input 
+                                            type="tel" 
+                                            placeholder="+234 800 000 0000" 
+                                            required 
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="cm-field">
                                 <label>Email Address</label>
-                                <input 
-                                    type="email" 
-                                    placeholder="john@example.com" 
-                                    required 
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                                />
+                                <div className="cm-input-icon">
+                                    <i className="fa-solid fa-envelope"></i>
+                                    <input 
+                                        type="email" 
+                                        placeholder="john@example.com" 
+                                        required 
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                    />
+                                </div>
                             </div>
 
                             <div className="cm-field">
                                 <label>Service of Interest</label>
-                                <select 
-                                    required 
-                                    value={formData.service}
-                                    onChange={(e) => setFormData({...formData, service: e.target.value})}
-                                >
-                                    <option value="">Select a service</option>
-                                    <option value="study-abroad">Study Abroad</option>
-                                    <option value="visa">Visa Processing</option>
-                                    <option value="immigration">Immigration (PR / Work Visa)</option>
-                                    <option value="test-prep">Test Preparation</option>
-                                    <option value="travel">Travel & Accommodation</option>
-                                </select>
+                                <div className="cm-input-icon">
+                                    <i className="fa-solid fa-briefcase"></i>
+                                    <select 
+                                        required 
+                                        value={formData.service}
+                                        onChange={(e) => setFormData({...formData, service: e.target.value})}
+                                    >
+                                        <option value="">Select a service</option>
+                                        <option value="study-abroad">Study Abroad</option>
+                                        <option value="visa">Visa Processing</option>
+                                        <option value="immigration">Immigration (PR / Work Visa)</option>
+                                        <option value="test-prep">Test Preparation</option>
+                                        <option value="travel">Travel & Accommodation</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div className="cm-row">
                                 <div className="cm-field">
                                     <label>Preferred Date</label>
-                                    <input
-                                        type="date"
-                                        min={new Date().toISOString().split('T')[0]}
-                                        required
-                                        value={formData.preferred_date}
-                                        onChange={(e) => setFormData({...formData, preferred_date: e.target.value})}
-                                    />
+                                    <div className="cm-input-icon">
+                                        <i className="fa-solid fa-calendar-days"></i>
+                                        <input
+                                            type="date"
+                                            min={new Date().toISOString().split('T')[0]}
+                                            required
+                                            value={formData.preferred_date}
+                                            onChange={(e) => setFormData({...formData, preferred_date: e.target.value})}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="cm-field">
                                     <label>Preferred Time</label>
-                                    <select 
-                                        required 
-                                        value={formData.preferred_time}
-                                        onChange={(e) => setFormData({...formData, preferred_time: e.target.value})}
-                                    >
-                                        <option value="">Select time</option>
-                                        <option value="09:00">9:00 AM</option>
-                                        <option value="10:00">10:00 AM</option>
-                                        <option value="11:00">11:00 AM</option>
-                                        <option value="12:00">12:00 PM</option>
-                                        <option value="13:00">1:00 PM</option>
-                                        <option value="14:00">2:00 PM</option>
-                                        <option value="15:00">3:00 PM</option>
-                                        <option value="16:00">4:00 PM</option>
-                                        <option value="17:00">5:00 PM</option>
-                                    </select>
+                                    <div className="cm-input-icon">
+                                        <i className="fa-solid fa-clock"></i>
+                                        <select 
+                                            required 
+                                            value={formData.preferred_time}
+                                            onChange={(e) => setFormData({...formData, preferred_time: e.target.value})}
+                                        >
+                                            <option value="">Select time</option>
+                                            <option value="09:00">9:00 AM</option>
+                                            <option value="10:00">10:00 AM</option>
+                                            <option value="11:00">11:00 AM</option>
+                                            <option value="12:00">12:00 PM</option>
+                                            <option value="13:00">1:00 PM</option>
+                                            <option value="14:00">2:00 PM</option>
+                                            <option value="15:00">3:00 PM</option>
+                                            <option value="16:00">4:00 PM</option>
+                                            <option value="17:00">5:00 PM</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="cm-field">
                                 <label>Message <span>(optional)</span></label>
-                                <textarea 
-                                    placeholder="Tell us about your goals..." 
-                                    rows={2}
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                                ></textarea>
+                                <div className="cm-input-icon">
+                                    <i className="fa-solid fa-comment-dots" style={{ top: '14px' }}></i>
+                                    <textarea 
+                                        placeholder="Tell us about your goals..." 
+                                        rows={2}
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                    ></textarea>
+                                </div>
                             </div>
 
                             <button type="submit" className="cm-submit" disabled={loading}>

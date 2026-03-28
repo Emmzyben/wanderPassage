@@ -116,30 +116,34 @@
 				}
 			}
 
-			#google_translate_element {
-				margin-left: 60px; // Offset for the flag
+			#google_translate_element,
+			#google_translate_element_mobile {
+				display: block !important;
+				visibility: visible !important;
+				opacity: 1 !important;
 
 				.goog-te-gadget {
 					font-family: inherit !important;
 					font-size: 0 !important;
 					color: transparent !important;
-					display: flex;
+					display: flex !important;
 					align-items: center;
 
 					.goog-te-combo {
-						background: transparent;
-						border: none;
-						color: $white;
-						padding: 4px 8px;
-						font-size: 15px;
-						font-weight: 500;
+						background: #fff !important;
+						border: 1px solid #ddd !important;
+						color: #333 !important;
+						padding: 6px 10px !important;
+						font-size: 14px !important;
+						font-weight: 600 !important;
 						outline: none;
 						cursor: pointer;
 						margin: 0;
+						border-radius: 4px;
 
 						option {
-							background: $header-color;
-							color: $white;
+							background: #fff;
+							color: #333;
 						}
 					}
 				}

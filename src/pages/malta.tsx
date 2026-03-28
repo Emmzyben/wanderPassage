@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -23,7 +23,7 @@ const Malta = () => {
             <PageTitle
                 title="Study in Malta"
                 currentPage="Malta"
-                backgroundImage="https://images.unsplash.com/photo-1602541648578-ad8b27fb97fd?q=80&w=1470&auto=format&fit=crop"
+                backgroundImage="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1500&auto=format&fit=crop"
             />
 
             <OverviewBar items={overviewItems} />
@@ -39,7 +39,7 @@ const Malta = () => {
                         {[
                             { id: "01", title: "IELTS is Not Mandatory", desc: "Malta is one of the few English-speaking EU countries where IELTS is not required for admission - making entry simpler for many students." },
                             { id: "02", title: "Educational Gap is Acceptable", desc: "Maltese institutions have a flexible approach to academic gaps, giving more students the opportunity to pursue higher education." },
-                            { id: "03", title: "Scholarships Available", desc: "The Malta Government Scholarship Scheme and other awards make studying in Malta financially accessible for international students." },
+                            { id: "03", title: "Affordability", desc: "Malta offers one of the lowest tuition fees and costs of living in the EU, making it a great choice for international students." },
                             { id: "04", title: "Affordable Living", desc: "Malta offers one of the lowest costs of living in the EU, making it an excellent choice for budget-conscious students." },
                             { id: "05", title: "Free Healthcare for Indian Students", desc: "Indian students in Malta benefit from access to public healthcare services, providing peace of mind throughout their studies." },
                         ].map((reason, idx) => (
@@ -220,40 +220,7 @@ const Malta = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>Max Award</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Malta Government Scholarship Scheme</td>
-                                        <td>June</td>
-                                        <td>€465.87 / year</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED EXPENSE ESTIMATE</button>
-                    </div>
-                </div>
-            </section>
-
-                        {/* Living Costs Section */}
+            {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
                 <div className="container">
                     <div className="section-title-area text-center">
@@ -261,55 +228,55 @@ const Malta = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>€925 – €1,150 / mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>€925 – €1,150 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>€200 – €300 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>€200 – €300 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
-                                    <h5>Internet & Mobile</h5>
-                                    <p>€20 – €50 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                <h5>Internet & Mobile</h5>
+                                <p>€20 – €50 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
-                                    <h5>Haircut</h5>
-                                    <p>€10 – €22</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                <h5>Haircut</h5>
+                                <p>€10 – €22</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
-                                    <h5>Working Hours</h5>
-                                    <p>8 hrs / day</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                <h5>Working Hours</h5>
+                                <p>8 hrs / day</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
-                                    <h5>Post-Study Work</h5>
-                                    <p>1 Year Permit</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                <h5>Post-Study Work</h5>
+                                <p>1 Year Permit</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
-                                    <h5>PR Possibilities</h5>
-                                    <p>Yes (Investment Route)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                <h5>PR Possibilities</h5>
+                                <p>Yes (Investment Route)</p>
                             </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -322,62 +289,62 @@ const Malta = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>US$72 (Schengen)</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>US$72 (Schengen)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision Duration</h5>
-                                    <p>3 Days</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision Duration</h5>
+                                <p>3 Days</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-umbrella`}></i>
-                                    <h5>Travel Insurance</h5>
-                                    <p>Mandatory (Full Schengen Coverage)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-umbrella`}></i>
+                                <h5>Travel Insurance</h5>
+                                <p>Mandatory (Full Schengen Coverage)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Health Insurance</h5>
-                                    <p>Required - must cover all medical emergencies</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Health Insurance</h5>
+                                <p>Required - must cover all medical emergencies</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-ticket`}></i>
-                                    <h5>Flight Cost (from India)</h5>
-                                    <p>From ₹43,492</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-ticket`}></i>
+                                <h5>Flight Cost (from India)</h5>
+                                <p>From ₹43,492</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-piggy-bank`}></i>
-                                    <h5>Proof of Funds</h5>
-                                    <p>Min €854/mo of stay - Bank statements (3 months)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-piggy-bank`}></i>
+                                <h5>Proof of Funds</h5>
+                                <p>Min €854/mo of stay - Bank statements (3 months)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-passport`}></i>
-                                    <h5>Identity Proof</h5>
-                                    <p>Valid Passport Required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-passport`}></i>
+                                <h5>Identity Proof</h5>
+                                <p>Valid Passport Required</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-file-lines`}></i>
-                                    <h5>Invitation Letter</h5>
-                                    <p>University Admission Letter</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-file-lines`}></i>
+                                <h5>Invitation Letter</h5>
+                                <p>University Admission Letter</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins consultation with our Malta experts today.</p>
@@ -385,8 +352,6 @@ const Malta = () => {
                     </div>
                 </div>
             </section>
-
-
 
             {/* Final CTA */}
             <section className="cta-section section-padding">
@@ -400,7 +365,7 @@ const Malta = () => {
                                 <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
                             </div>
                         </div>
-                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1602541648578-ad8b27fb97fd?q=80&w=1470&auto=format&fit=crop")' }}></div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1500&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

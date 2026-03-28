@@ -76,6 +76,9 @@ const ExtraInfoOffcanvas = () => {
                                         <span>get A Quote<i className="fa-solid fa-arrow-right-long" /></span>
                                     </Link>
                                 </div>
+                                <div className="google-translate-mobile mt-4">
+                                    <div id="google_translate_element_mobile"></div>
+                                </div>
                                 <div className="social-icon d-flex align-items-center">
                                     <Link to="#"><i className="fab fa-facebook-f" /></Link>
                                     <Link to="#"><i className="fa-brands fa-x-twitter" /></Link>

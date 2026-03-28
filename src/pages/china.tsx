@@ -1,4 +1,4 @@
-﻿import PageTitle from "@/components/sections/pageTitle";
+import PageTitle from "@/components/sections/pageTitle";
 import { Link } from "react-router-dom";
 import OverviewBar from "@/components/sections/country/OverviewBar";
 
@@ -27,8 +27,6 @@ const China = () => {
             />
 
             <OverviewBar items={overviewItems} />
-
-
 
             {/* Why Study Section */}
             <section className="why-study-section section-padding">
@@ -234,50 +232,7 @@ const China = () => {
                 </div>
             </section>
 
-            {/* Scholarships */}
-            <section className="scholarships-section section-padding">
-                <div className="container">
-                    <div className="section-title-area text-center">
-                        <span className="sub-title">Fund Your Education</span>
-                        <h2>Scholarships Available</h2>
-                    </div>
-                    <div className="custom-table-wrapper">
-                        <div className="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Scholarship</th>
-                                        <th>Deadline</th>
-                                        <th>What's Covered</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Chinese Government Scholarship (CSC)</td>
-                                        <td>December – March (varies)</td>
-                                        <td>Full / partial tuition, monthly stipend, accommodation, medical insurance</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Confucius Institute Scholarship</td>
-                                        <td>March – May (varies)</td>
-                                        <td>Tuition fees, accommodation, monthly allowance, insurance</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Provincial / University Scholarships</td>
-                                        <td>February – June (varies)</td>
-                                        <td>Partial or full tuition fee waiver (varies by institution)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div className="text-center mt-4">
-                        <button onClick={handleOpenModal} className="theme-btn">GET PERSONALISED EXPENSE ESTIMATE</button>
-                    </div>
-                </div>
-            </section>
-
-                        {/* Living Costs Section */}
+            {/* Living Costs Section */}
             <section className="living-cost-section section-padding">
                 <div className="container">
                     <div className="section-title-area text-center">
@@ -285,69 +240,69 @@ const China = () => {
                         <h2>Living Costs</h2>
                     </div>
                     <div className="row g-3 justify-content-center mb-4">
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
-                                    <h5>Accommodation</h5>
-                                    <p>CNY 800 – 2,500 / mo</p>
-                                </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-house`}></i></div>
+                                <h5>Accommodation</h5>
+                                <p>CNY 800 – 2,500 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
-                                    <h5>Food</h5>
-                                    <p>CNY 1,000 – 1,500 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-utensils`}></i></div>
+                                <h5>Food</h5>
+                                <p>CNY 1,000 – 1,500 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
-                                    <h5>Internet & Mobile</h5>
-                                    <p>CNY 100 – 200 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-wifi`}></i></div>
+                                <h5>Internet & Mobile</h5>
+                                <p>CNY 100 – 200 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
-                                    <h5>Transport (Public)</h5>
-                                    <p>CNY 2 – 5 per trip</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bus`}></i></div>
+                                <h5>Transport (Public)</h5>
+                                <p>CNY 2 – 5 per trip</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
-                                    <h5>Gas & Electricity</h5>
-                                    <p>CNY 250 – 400 / mo</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-bolt`}></i></div>
+                                <h5>Gas & Electricity</h5>
+                                <p>CNY 250 – 400 / mo</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
-                                    <h5>Haircut</h5>
-                                    <p>CNY 30 – 60</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-scissors`}></i></div>
+                                <h5>Haircut</h5>
+                                <p>CNY 30 – 60</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
-                                    <h5>Working Hours</h5>
-                                    <p>Up to 20 hrs / wk (during study)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-clock`}></i></div>
+                                <h5>Working Hours</h5>
+                                <p>Up to 20 hrs / wk (during study)</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
-                                    <h5>Post-Study Work</h5>
-                                    <p>Job offer + employer sponsorship</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-briefcase`}></i></div>
+                                <h5>Post-Study Work</h5>
+                                <p>Job offer + employer sponsorship</p>
                             </div>
-                            <div className="col-lg-3 col-md-6">
-                                <div className="cost-item-card">
-                                    <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
-                                    <h5>PR Possibilities</h5>
-                                    <p>Long-term residence (work exp. required)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="cost-item-card">
+                                <div className="cost-icon"><i className={`fa-solid fa-id-card`}></i></div>
+                                <h5>PR Possibilities</h5>
+                                <p>Long-term residence (work exp. required)</p>
                             </div>
+                        </div>
                     </div>
                     <div className="cost-total-bar">
                         <span>Average Total Living Cost</span>
@@ -364,55 +319,55 @@ const China = () => {
                         <h2>Visa Requirements</h2>
                     </div>
                     <div className="row g-3 justify-content-center">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-shield-halved`}></i>
-                                    <h5>Visa Fees</h5>
-                                    <p>INR 4,000 – 8,000 (varies by visa type)</p>
-                                </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-shield-halved`}></i>
+                                <h5>Visa Fees</h5>
+                                <p>INR 4,000 – 8,000 (varies by visa type)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-clock-rotate-left`}></i>
-                                    <h5>Decision Duration</h5>
-                                    <p>1 – 3 Weeks</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-clock-rotate-left`}></i>
+                                <h5>Decision Duration</h5>
+                                <p>1 – 3 Weeks</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-umbrella`}></i>
-                                    <h5>Travel Insurance</h5>
-                                    <p>Recommended for international students</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-umbrella`}></i>
+                                <h5>Travel Insurance</h5>
+                                <p>Recommended for international students</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-heart-pulse`}></i>
-                                    <h5>Health Insurance</h5>
-                                    <p>Mandatory - CNY 600 – 1,000 per year</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-heart-pulse`}></i>
+                                <h5>Health Insurance</h5>
+                                <p>Mandatory - CNY 600 – 1,000 per year</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-ticket`}></i>
-                                    <h5>Flight (from India)</h5>
-                                    <p>INR 30,000 – 55,000 (one-way)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-ticket`}></i>
+                                <h5>Flight (from India)</h5>
+                                <p>INR 30,000 – 55,000 (one-way)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-piggy-bank`}></i>
-                                    <h5>Proof of Funds</h5>
-                                    <p>Min CNY 30,000 – 50,000 (tuition + living)</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-piggy-bank`}></i>
+                                <h5>Proof of Funds</h5>
+                                <p>Min CNY 30,000 – 50,000 (tuition + living)</p>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="visa-info-card">
-                                    <i className={`fa-solid fa-passport`}></i>
-                                    <h5>Identity Proof</h5>
-                                    <p>Valid Passport required</p>
-                                </div>
+                        </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6">
+                            <div className="visa-info-card">
+                                <i className={`fa-solid fa-passport`}></i>
+                                <h5>Identity Proof</h5>
+                                <p>Valid Passport required</p>
                             </div>
+                        </div>
                     </div>
                     <div className="text-center mt-5">
                         <p className="visa-cta-text">Book your FREE 30 mins consultation with our China experts today.</p>
@@ -420,8 +375,6 @@ const China = () => {
                     </div>
                 </div>
             </section>
-
-
 
             {/* Final CTA */}
             <section className="cta-section section-padding">

@@ -260,7 +260,7 @@ const Australia = () => {
                                 <Link to="/student-login" className="theme-btn hover-white">APPLY NOW</Link>
                             </div>
                         </div>
-                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1541339907198-e08756ebafe1?q=80&w=1470&auto=format&fit=crop")' }}></div>
+                        <div className="cta-image" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1530&auto=format&fit=crop")' }}></div>
                     </div>
                 </div>
             </section>

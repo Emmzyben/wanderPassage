@@ -60,7 +60,7 @@ const MigrationCategory = () => {
                     <div className="col-lg-6">
                         <div className="migration-image-area position-relative">
                             <div className="main-img wow zoomIn" data-wow-delay=".3s">
-                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1469&auto=format&fit=crop" alt="migration" className="img-fluid rounded-10" />
+                                <img src="/img/skilledworkers.jpg" alt="migration" className="img-fluid rounded-10" />
                             </div>
                             <div className="overlay-badge wow rotateIn" data-wow-delay=".5s">
                                 <div className="badge-content">
