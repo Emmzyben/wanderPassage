@@ -284,6 +284,15 @@ export const authApi = {
         request<ApiResponse>(`${AUTH_BASE}/update_password.php`, {
             method: 'POST',
             body: JSON.stringify({ current_password, new_password })
+        }),
+
+    /**
+     * Request a password reset link via email.
+     */
+    forgotPassword: (email: string) =>
+        request<ApiResponse>(`${AUTH_BASE}/forgot_password.php`, {
+            method: 'POST',
+            body: JSON.stringify({ email })
         })
 }
 
@@ -344,6 +353,19 @@ export const contactApi = {
         request<ApiResponse>(`${API_BASE}/contact.php`, {
             method: 'POST',
             body: JSON.stringify(payload)
+        })
+}
+
+// ─── Application Endpoint ───────────────────────────────────────────────────
+
+export const applyApi = {
+    /**
+     * Submit the full student application (form data + file uploads).
+     */
+    submit: (formData: FormData) =>
+        request<ApiResponse>(`${API_BASE}/apply.php`, {
+            method: 'POST',
+            body: formData
         })
 }
 

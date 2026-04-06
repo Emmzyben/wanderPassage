@@ -32,7 +32,7 @@ const ExtraInfoOffcanvas = () => {
                             </div>
                             <MobileMenuList onClose={toggleOffcanvas} />
                             <p className="text d-none d-lg-block">
-                                Wander Passage Travels and Tours is your trusted partner for global education and migration, providing expert guidance from Nigeria to the world.
+                                WanderPassage Travels and Tours is your trusted partner for global education and migration, providing expert guidance from Nigeria to the world.
                             </p>
                             <div className="mobile-menu fix mb-3" />
                             <div className="offcanvas__contact">

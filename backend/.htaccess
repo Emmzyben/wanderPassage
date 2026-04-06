@@ -1,11 +1,6 @@
 Options -Indexes
 
 # Allow cross-origin requests (adjust origin in production)
-Header always set Access-Control-Allow-Origin "*"
-Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+# CORS headers are handled by backend/utils/cors.php
 
-# Handle preflight OPTIONS requests
-RewriteEngine On
-RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
+# Preflight OPTIONS requests are handled by backend/utils/cors.php (via db.php)

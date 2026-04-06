@@ -32,9 +32,9 @@ const HeaderThree = () => {
                                 </div>
                                 <SearchPopup />
                                 <div className="header-button">
-                                    <Link to="/contact" className="theme-btn bg-white">
+                                    <Link to="/apply" className="theme-btn bg-white">
                                         <span>
-                                            Get In Touch
+                                            Apply Now
                                             <i className="fa-solid fa-arrow-right-long" />
                                         </span>
                                     </Link>

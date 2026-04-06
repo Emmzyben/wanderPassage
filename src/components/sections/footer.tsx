@@ -89,7 +89,7 @@ const Footer = () => {
                                 </div>
                                 <div className="footer-content">
                                     <p>
-                                        Wander Passage Travels and Tours is your trusted partner for global education and migration, providing expert guidance from Nigeria to the world.
+                                        WanderPassage Travels and Tours is your trusted partner for global education and migration, providing expert guidance from Nigeria to the world.
                                     </p>
                                     <div className="social-icon d-flex align-items-center">
                                         <Link to="#">
@@ -187,7 +187,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="footer-wrapper d-flex align-items-center justify-content-between">
                         <p className="wow slideLeft color-2" data-delay=".3">
-                            © All Copyright 2026 by <Link to="/">Wander Passage</Link>
+                            © All Copyright 2026 by <Link to="/">WanderPassage</Link>
                         </p>
                         <ul className="footer-menu wow slideRight" data-delay=".5">
                             <li>

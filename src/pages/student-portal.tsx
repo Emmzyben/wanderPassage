@@ -20,17 +20,25 @@ interface Document {
 
 const initialDocuments: Document[] = [
     {
-        id: "passport",
-        label: "Passport",
-        description: "International passport (bio-data page). Must be valid for at least 6 months.",
+        id: "intl_passport",
+        label: "International Passport",
+        description: "Bio-data page of your international passport.",
         icon: "fa-passport",
         required: true,
         status: "pending",
     },
     {
-        id: "transcripts",
-        label: "Academic Transcripts",
-        description: "Official transcripts from all attended institutions.",
+        id: "degree_certificate",
+        label: "Degree Certificate",
+        description: "Official certificate of your highest degree.",
+        icon: "fa-graduation-cap",
+        required: true,
+        status: "pending",
+    },
+    {
+        id: "degree_transcript",
+        label: "Degree Transcript",
+        description: "Official academic transcripts.",
         icon: "fa-file-lines",
         required: true,
         status: "pending",
@@ -38,41 +46,33 @@ const initialDocuments: Document[] = [
     {
         id: "cv",
         label: "Curriculum Vitae (CV)",
-        description: "Updated CV detailing your academic and professional background.",
+        description: "Updated CV detailing your history.",
         icon: "fa-id-card",
         required: true,
         status: "pending",
     },
     {
-        id: "sop",
-        label: "Statement of Purpose (SOP)",
-        description: "A detailed statement explaining your purpose and goals for study abroad.",
-        icon: "fa-pen-to-square",
-        required: true,
-        status: "pending",
-    },
-    {
-        id: "waec",
-        label: "WAEC / NECO Certificate",
-        description: "West African Examinations Council or National Examinations Council results.",
-        icon: "fa-certificate",
-        required: true,
-        status: "pending",
-    },
-    {
-        id: "recommendation",
-        label: "Recommendation Letters",
-        description: "At least two academic or professional recommendation letters.",
+        id: "reference_letter",
+        label: "Reference Letter",
+        description: "Academic or professional recommendation letter.",
         icon: "fa-envelope-open-text",
         required: true,
         status: "pending",
     },
     {
-        id: "research",
-        label: "Research Proposal",
-        description: "Required for postgraduate applicants. Outline your research intent and methodology.",
-        icon: "fa-microscope",
-        required: false,
+        id: "waec_neco",
+        label: "WAEC or NECO",
+        description: "West African Examinations Council or NECO result.",
+        icon: "fa-certificate",
+        required: true,
+        status: "pending",
+    },
+    {
+        id: "english_test",
+        label: "English Test",
+        description: "IELTS, TOEFL, or other english proficiency test.",
+        icon: "fa-language",
+        required: true,
         status: "pending",
     },
 ]
@@ -292,14 +292,11 @@ const StudentPortal = () => {
                             <div className="portal-view-container fade-in">
                                 <div className="portal-welcome-banner">
                                     <div className="banner-content">
-                                        <h2 style={{ color: 'white' }}>Complete Your Application, {user?.username}!</h2>
-                                        <p style={{ color: 'white' }}>You're almost there! Upload your remaining documents to speed up your visa process.</p>
+                                        <h2>Complete Your Application, {user?.username}!</h2>
+                                        <p>You're almost there! Upload your remaining documents to speed up your visa process.</p>
                                         <button className="banner-btn" onClick={() => setActiveSection("documents")}>
                                             Upload Now <i className="fa-solid fa-arrow-right"></i>
                                         </button>
-                                    </div>
-                                    <div className="banner-icon">
-                                        <i className="fa-solid fa-graduation-cap"></i>
                                     </div>
                                 </div>
 
@@ -307,7 +304,6 @@ const StudentPortal = () => {
                                     <div className="portal-stat-card-v2">
                                         <div className="stat-header">
                                             <div className="icon uploaded"><i className="fa-solid fa-cloud-arrow-up"></i></div>
-                                            <span className="trend positive">Uploaded</span>
                                         </div>
                                         <div className="stat-body">
                                             <h4>{uploaded}</h4>
@@ -317,7 +313,6 @@ const StudentPortal = () => {
                                     <div className="portal-stat-card-v2">
                                         <div className="stat-header">
                                             <div className="icon verified"><i className="fa-solid fa-circle-check"></i></div>
-                                            <span className="trend positive">Verified</span>
                                         </div>
                                         <div className="stat-body">
                                             <h4>{verifiedUsers}</h4>
@@ -327,7 +322,6 @@ const StudentPortal = () => {
                                     <div className="portal-stat-card-v2">
                                         <div className="stat-header">
                                             <div className="icon pending"><i className="fa-solid fa-clock"></i></div>
-                                            <span className="trend">Pending</span>
                                         </div>
                                         <div className="stat-body">
                                             <h4>{total - uploaded}</h4>
@@ -337,7 +331,6 @@ const StudentPortal = () => {
                                     <div className="portal-stat-card-v2">
                                         <div className="stat-header">
                                             <div className="icon progress-icon"><i className="fa-solid fa-percent"></i></div>
-                                            <span className="trend positive">Success Rate</span>
                                         </div>
                                         <div className="stat-body">
                                             <h4>{progress}%</h4>

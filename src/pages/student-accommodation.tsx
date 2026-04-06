@@ -20,7 +20,7 @@ const StudentAccommodation = () => {
                     <div className="immig-intro-content">
                         <span className="sub-title">Where You'll Call Home</span>
                         <h2>Student Accommodation Assistance</h2>
-                        <p>Finding the right accommodation abroad is one of the most important steps in your study journey. Wander Passage guides you through every option so you can settle comfortably and focus on your studies.</p>
+                        <p>Finding the right accommodation abroad is one of the most important steps in your study journey. WanderPassage guides you through every option so you can settle comfortably and focus on your studies.</p>
                         <button onClick={handleOpenModal} className="theme-btn">GET ACCOMMODATION HELP</button>
                     </div>
                     <div className="immig-intro-image">

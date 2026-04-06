@@ -1,5 +1,6 @@
 <?php
 // backend/config/db.php
+require_once __DIR__ . '/../utils/cors.php';
 
 $host = 'localhost';
 $db_name = 'wander_passage'; // Change to your actual database name

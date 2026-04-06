@@ -21,7 +21,7 @@ const heroSlides = [
     },
     {
         image: '/img/hero/hero-9.jpg',
-        title: 'Explore New Horizons with Wander Passage',
+        title: 'Explore New Horizons with WanderPassage',
         description: 'Unlock worldwide opportunities and transform your career. Join thousands of successful students guided by our local Nigerian expertise.',
         link: '/contact',
     },

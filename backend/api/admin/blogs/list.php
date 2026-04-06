@@ -5,6 +5,12 @@ require_once __DIR__ . '/../../../utils/auth_helper.php';
 
 header("Content-Type: application/json");
 
+// Handle preflight
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 $token = get_bearer_token();
 if (!$token) {
     http_response_code(401); echo json_encode(["status" => "error", "message" => "Unauthorized"]); exit();

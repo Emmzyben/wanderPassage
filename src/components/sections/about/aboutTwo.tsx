@@ -10,7 +10,7 @@ const AboutTwo = () => {
                         <div className="col-lg-6">
                             <div className="about-image-simple wow slideLeft" data-delay=".3">
                                 <img
-                                    src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1471&auto=format&fit=crop"
+                                    src="/img/students.jpg"
                                     alt="About WanderPassage"
                                     className="img-fluid rounded-4 shadow-lg"
                                 />

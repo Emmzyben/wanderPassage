@@ -15,6 +15,10 @@ CREATE TABLE IF NOT EXISTS users (
     role       ENUM('student', 'admin') DEFAULT 'student',
     application_status VARCHAR(50) DEFAULT 'document_submission',
     avatar     VARCHAR(255)  DEFAULT NULL,
+    reset_token VARCHAR(255) DEFAULT NULL,
+    reset_expires DATETIME DEFAULT NULL,
+    is_verified TINYINT(1) DEFAULT 1,
+    verification_token VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP     DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;

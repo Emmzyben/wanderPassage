@@ -38,7 +38,7 @@ const HomeContactOne = () => {
                             <div className="contact-content">
                                 <div className="section-title">
                                     <span className="wow slideUp" style={{ visibility: 'visible' }}>Get in touch</span>
-                                    <h2 className="wow slideUp" data-delay=".3" style={{ visibility: 'visible', animationDelay: '0.3s' }}>Start Your Journey with <br /> Wander Passage</h2>
+                                    <h2 className="wow slideUp" data-delay=".3" style={{ visibility: 'visible', animationDelay: '0.3s' }}>Start Your Journey with <br /> WanderPassage</h2>
                                 </div>
                                 {status && (
                                     <div className={`alert alert-${status.type === 'success' ? 'success' : 'danger'} mt-3`}>

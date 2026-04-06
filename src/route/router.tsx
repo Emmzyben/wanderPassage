@@ -50,6 +50,8 @@ import MigrationUkSkilled from "@/pages/migration-uk-skilled";
 import StudentAccommodation from "@/pages/student-accommodation";
 import StudentVisa from "@/pages/student-visa";
 import RegistrationSuccess from "@/pages/registration-success";
+import ForgotPassword from "@/pages/forgot-password";
+import Apply from "@/pages/apply";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -237,6 +239,10 @@ export const router = createBrowserRouter([
                 element: <StudentLogin />
             },
             {
+                path: '/apply',
+                element: <Apply />
+            },
+            {
                 path: '/student-portal',
                 element: (
                     <ProtectedRoute>
@@ -263,6 +269,10 @@ export const router = createBrowserRouter([
             {
                 path: '/registration-success',
                 element: <RegistrationSuccess />
+            },
+            {
+                path: '/forgot-password',
+                element: <ForgotPassword />
             },
         ]
     },

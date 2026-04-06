@@ -18,11 +18,11 @@ const AboutThree = () => {
                         <div className="col-lg-6 mt-4 mt-lg-0">
                             <div className="about-content">
                                 <SectionTitle>
-                                    <SectionTitle.SubTitle>ABOUT WANDER PASSAGE</SectionTitle.SubTitle>
+                                    <SectionTitle.SubTitle>ABOUT WANDERPASSAGE</SectionTitle.SubTitle>
                                     <SectionTitle.Title>Expert Immigration & <br /> Study Services</SectionTitle.Title>
                                 </SectionTitle>
                                 <p className="mt-3 mt-md-0 wow slideUp" data-delay=".5">
-                                    At Wander Passage Travels and Tours, our team of adept professionals is dedicated to helping you achieve your international education dreams through expert, step-by-step guidance.
+                                    At WanderPassage Travels and Tours, our team of adept professionals is dedicated to helping you achieve your international education dreams through expert, step-by-step guidance.
                                 </p>
                                 <div className="icon-area wow slideUp" data-delay=".7">
                                     <ul className="list">

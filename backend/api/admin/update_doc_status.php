@@ -5,29 +5,45 @@ require_once __DIR__ . '/../../utils/auth_helper.php';
 
 header("Content-Type: application/json");
 
+// Handle preflight
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 $token = get_bearer_token();
 if (!$token) {
-    http_response_code(401); echo json_encode(["status" => "error", "message" => "Unauthorized"]); exit();
+    http_response_code(401);
+    echo json_encode(["status" => "error", "message" => "Unauthorized"]);
+    exit();
 }
 
 $payload = verify_jwt($token);
 if (!$payload || $payload->role !== 'admin') {
-    http_response_code(403); echo json_encode(["status" => "error", "message" => "Forbidden: Admin access only"]); exit();
+    http_response_code(403);
+    echo json_encode(["status" => "error", "message" => "Forbidden: Admin access only"]);
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405); echo json_encode(["status" => "error", "message" => "Method not allowed"]); exit();
+    http_response_code(405);
+    echo json_encode(["status" => "error", "message" => "Method not allowed"]);
+    exit();
 }
 
 $data = json_decode(file_get_contents("php://input"));
 
 if (empty($data->doc_id) || empty($data->status)) {
-    http_response_code(400); echo json_encode(["status" => "error", "message" => "doc_id and status are required"]); exit();
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "doc_id and status are required"]);
+    exit();
 }
 
 $valid_statuses = ['pending', 'uploaded', 'verified', 'rejected'];
 if (!in_array($data->status, $valid_statuses)) {
-    http_response_code(400); echo json_encode(["status" => "error", "message" => "Invalid status"]); exit();
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Invalid status"]);
+    exit();
 }
 
 require_once __DIR__ . '/../../utils/notification_helper.php';
@@ -48,17 +64,17 @@ try {
 
         // 2. Friendly notification based on doc status
         if ($statusRaw === 'verified') {
-            $title = "\u2705 Your $docKey document is verified!";
-            $msg   = "Woohoo! We\u2019ve just verified your $docKey document. Everything looks great \u2014 keep going, you\u2019re doing amazing! \ud83d\udcaa";
-            $type  = 'success';
+            $title = "Your $docKey document is verified!";
+            $msg = "Woohoo! We’ve just verified your $docKey document. Everything looks great — keep going, you’re doing amazing! 💪";
+            $type = 'success';
         } elseif ($statusRaw === 'rejected') {
-            $title = "\u26a0\ufe0f Action needed: $docKey document needs attention";
-            $msg   = "Heads up! Unfortunately your $docKey document couldn\u2019t be accepted this time. Please log in, check the feedback, and re-upload the correct file. We\u2019re here to help! \ud83d\ude0a";
-            $type  = 'danger';
+            $title = "Action needed: $docKey document needs attention";
+            $msg = "Heads up! Unfortunately your $docKey document couldn’t be accepted this time. Please log in, check the feedback, and re-upload the correct file. We’re here to help! 😊";
+            $type = 'danger';
         } else {
-            $title = "\ud83d\udcc4 $docKey document update";
-            $msg   = "Just a quick update \u2014 your $docKey document status has changed to \u2018" . ucfirst($statusRaw) . "\u2019. Log in to your portal for details.";
-            $type  = 'info';
+            $title = "$docKey document update";
+            $msg = "Just a quick update — your $docKey document status has changed to ‘" . ucfirst($statusRaw) . "’. Log in to your portal for details.";
+            $type = 'info';
         }
 
         create_notification($userId, $title, $msg, $type);

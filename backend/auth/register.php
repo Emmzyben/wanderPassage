@@ -4,7 +4,7 @@
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../utils/email_helper.php';
 
-header("Content-Type: application/json");
+// Header management moved to backend/utils/cors.php (via db.php)
 
 // Allow Cross-Origin Requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {

@@ -16,7 +16,7 @@ const slidesData: SlideType[] = [
   {
     id: 1,
     image: '/img/hero/hero-12.jpg',
-    title: 'WELCOME TO WANDER PASSAGE',
+    title: 'WELCOME TO WANDERPASSAGE',
     heading: 'Navigate Your Path <br /> to Global Excellence',
     description: "Nigeria's leading study abroad consultancy. We provide comprehensive support for your international education journey, from university selection to visa success.",
     link: '/about',

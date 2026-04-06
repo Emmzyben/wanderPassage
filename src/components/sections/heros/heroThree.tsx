@@ -43,7 +43,7 @@ const HeroThree = () => {
                                 transition={{ duration: 0.6, delay: 0.6 }}
                                 style={{ opacity: '0.9', maxWidth: '650px' }}
                             >
-                                At Wander Passage Travels and Tours, our experienced study abroad consultants are dedicated to helping you achieve your international education dreams. Based in Nigeria, our expert advisors provide end-to-end guidance, from university selection to visa processing and pre-departure support.
+                                At WanderPassage Travels and Tours, our experienced study abroad consultants are dedicated to helping you achieve your international education dreams. Based in Nigeria, our expert advisors provide end-to-end guidance, from university selection to visa processing and pre-departure support.
                             </motion.p>
                             <motion.div
                                 initial={{ y: 30, opacity: 0 }}

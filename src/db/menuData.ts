@@ -93,7 +93,7 @@ export const menuData: MenuItemDataType[] = [
     link: '#',
     submenu: [
       { title: 'Student Application Portal Login', link: '/student-login' },
-      { title: 'New Application', link: '/student-login' },
+      { title: 'New Application', link: '/apply' },
     ],
   },
   {
